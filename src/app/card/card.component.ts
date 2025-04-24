@@ -6,14 +6,8 @@ import { Component } from '@angular/core';
   styleUrl: './card.component.scss'
 })
 export class CardComponent {
-  //@ts-ignore
-  prop;
-  plano = {
-    tipo: 'Simples',
-    preco: 100
-  }
-
-  getFullPrice() {
-    return `R$${this.plano.preco},00/Mês`
+  // Com any, você está dizendo: "A variável plano pode ser qualquer coisa (objeto, string, número, função...)".
+  plano: any = {
+    infos: undefined
   }
 }
