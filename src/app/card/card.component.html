@@ -1,6 +1,7 @@
 <div class="card">
-    <div class="card__plan card__item">Plano <b>{{tipo}}</b></div>
+    <div class="card__plan card__item">Plano <b>{{plano.tipo}}</b></div>
     <div class="card__price card__item">{{getFullPrice()}}</div>
+    <!-- Entendendo como funciona optional chanel -->
+    <p>{{prop?.valor ? "Tem valor" : "Não tem valor"}}</p> 
     <app-card-button></app-card-button>
-    {{numero}}
 </div>
