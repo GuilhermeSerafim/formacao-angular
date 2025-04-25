@@ -32,6 +32,6 @@
 }
 
 // Perceba que o ng-deep é em um escopo global - pai para filho
-::ng-deep .card-cancel-button {
-    background-color: yellow !important;
+::ng-deep .card-cancel-button2 .card-cancel-button  {
+    background-color: blue !important;
 }
