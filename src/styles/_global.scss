@@ -1,0 +1,6 @@
+// Contexto global da nossa aplicação, portanto, não precisamos usar o ng-deep, só usamos ele (Ñ recomendado) em componente
+
+// Alterando Slider Angular Material
+.mdc-slider__track--active_fill {
+    border-color: yellowgreen !important;
+}
