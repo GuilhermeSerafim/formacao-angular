@@ -36,3 +36,8 @@
 :host::ng-deep app-card-button-cancel .card-cancel-button  {
     background-color: blue !important;
 }
+
+// Alterando algo global só que apenas nesse componente
+:host::ng-deep .mdc-slider__track--active_fill {
+    border-color: red;
+}
