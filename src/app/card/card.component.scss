@@ -30,3 +30,8 @@
         font-weight: bold;
     }
 }
+
+// Perceba que o ng-deep é em um escopo global - pai para filho
+::ng-deep .card-cancel-button {
+    background-color: yellow !important;
+}

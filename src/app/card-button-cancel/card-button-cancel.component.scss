@@ -9,3 +9,8 @@
     font-weight: bold;
     padding: 10px;
 }
+
+// Perceba que o ng-deep é em um escopo global - filho para pai
+::ng-deep .card-roxo {
+    background-color: yellow !important;
+}
