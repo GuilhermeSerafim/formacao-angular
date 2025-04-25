@@ -31,7 +31,7 @@
     }
 }
 
-// Perceba que o ng-deep é em um escopo global - pai para filho
-::ng-deep .card-cancel-button2 .card-cancel-button  {
+// ::ng-deep .classe-pai .classe-filha, os que tiverem com essas classes, em toda a aplicação (::ng-deep), os estilos serão aplicados
+::ng-deep app-card-button-cancel .card-cancel-button  {
     background-color: blue !important;
 }
