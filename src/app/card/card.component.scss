@@ -42,6 +42,7 @@
     border-color: red;
 }
 
-.emulated {
-    color: blue;
+// Comportamento do ngdeep com emulated
+::ng-deep .card-cancel-button {
+    color: yellow;
 }
