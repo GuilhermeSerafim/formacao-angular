@@ -4,9 +4,11 @@
 body { margin: 0; font-family: 'Open Sans', sans-serif !important}
 
 
-// mat-slider .mdc-slider__track--active_fill {
-//     // border-color: yellowgreen !important;
-// }
+// Não dei espaço por que a tag está no mat-slider, quando damos espaço para selecionar é justamente por que
+// Queremos nos referenciar ao componente que está dentro, que é o caso do mdc-slider...
+mat-slider.custom-slider .mdc-slider__track--active_fill {
+    border-color: yellowgreen !important;
+}
 
 
 
