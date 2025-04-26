@@ -1,4 +1,10 @@
-.cards-container {
+.container {
     display: flex;
     justify-content: space-evenly;
+}
+
+// :not(:disabled)	Aplica apenas se o botão NÃO estiver desabilitado
+.mat-mdc-unelevated-button:not(:disabled) {
+    color: white;
+    background-color: black;
 }

@@ -1,14 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
 
-body { margin: 0; font-family: 'Open Sans', sans-serif !important}
-
-
-// Não dei espaço por que a tag está no mat-slider, quando damos espaço para selecionar é justamente por que
-// Queremos nos referenciar ao componente que está dentro, que é o caso do mdc-slider...
-mat-slider.custom-slider .mdc-slider__track--active_fill {
-    border-color: yellowgreen !important;
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif !important
 }
-
-
-
