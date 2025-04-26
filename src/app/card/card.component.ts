@@ -15,7 +15,7 @@ interface IInfos {
   styleUrl: './card.component.scss',
   // Estilos aplicados à apenas esse componente
   // Mas pode sofrer estilizações globais
-  encapsulation: ViewEncapsulation.Emulated, // Mais usada!!
+  encapsulation: ViewEncapsulation.ShadowDom, // Mais usada!!
 })
 
 export class CardComponent {
