@@ -8,4 +8,19 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'prj-angular';
   inputText = "Texto dinâmico padrão";
+  inputType = "text";
+  isDisabled = false;
+  enableInput() {
+    this.isDisabled = false;
+  }
+
+  disableInput() {
+    this.isDisabled = true;
+  }
+  setPasswordTypeInput() {
+   this.inputType = "password";
+  }
+  setTextTypeInput() {
+   this.inputType = "text";
+  }
 }

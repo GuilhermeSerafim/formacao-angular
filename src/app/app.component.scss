@@ -1,6 +1,9 @@
 .container {
     display: flex;
     justify-content: space-evenly;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
 }
 
 .container mat-form-field {
