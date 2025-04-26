@@ -1,20 +1,8 @@
-// Contexto global da nossa aplicação, portanto, não precisamos usar o ng-deep, só usamos ele (Ñ recomendado) em componente
 
-// Alterando Slider Angular Material
-// .mdc-slider__track--active_fill {
-//     border-color: yellowgreen !important;
+// mat-slider .mdc-slider__track--active_fill {
+//     // border-color: yellowgreen !important;
 // }
-
-// Sobrescrevendo estilos Encapsulation Emulated - Para melhor entendimento 
-.emulated {
-    color: forestgreen !important;
-}
 
 body {
     font-family: 'Open Sans', sans-serif;
-}
-
-// Para testar o encapsulamento shadow dom em cardcomponent
-.card-cancel-button {
-    background-color: aqua;
 }

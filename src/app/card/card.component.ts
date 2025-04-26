@@ -13,9 +13,6 @@ interface IInfos {
   selector: 'app-card',
   templateUrl: './card.component.html',
   styleUrl: './card.component.scss',
-  // Estilos aplicados à apenas esse componente
-  // Mas pode sofrer estilizações globais
-  encapsulation: ViewEncapsulation.ShadowDom, // Mais usada!!
 })
 
 export class CardComponent {

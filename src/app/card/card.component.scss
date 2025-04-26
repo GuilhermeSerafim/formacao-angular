@@ -29,19 +29,3 @@
         font-weight: bold;
     }
 }
-
-// "Evite usar ::ng-deep, está deprecated'
-// ::ng-deep .classe-pai .classe-filha, os que tiverem com essas classes, em toda a aplicação (::ng-deep), os estilos serão aplicados
-:host::ng-deep app-card-button-cancel .card-cancel-button  {
-    background-color: blue !important;
-}
-
-// O mat-slider funciona como componente filho, portanto, precisamos usar o ng-deep
-:host::ng-deep mat-slider .mdc-slider__track--active_fill {
-    border-color: red;
-}
-
-
-.card-cancel-button {
-    background-color: powderblue; 
-}
