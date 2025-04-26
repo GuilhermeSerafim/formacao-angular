@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'prj-angular';
+  inputText = "Texto dinâmico padrão";
 }

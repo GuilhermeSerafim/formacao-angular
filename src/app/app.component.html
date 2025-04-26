@@ -1,5 +1,7 @@
 <div class="container">
-        <button mat-flat-button>Basic</button>
-        <button mat-flat-button disabled>Disabled</button>
-        <a mat-flat-button href="https://www.google.com/" target="_blank">Link</a>
+    <mat-form-field  appearance="fill">
+        <mat-label>Seu nome</mat-label>
+        <!-- Para fazermos bind em propriedades, temos que declarar entre conchetes o atributo, portanto o valor dele será dinâmico -->
+        <input matInput placeholder="Digite seu nome" [value]="inputText">
+    </mat-form-field>
 </div>
