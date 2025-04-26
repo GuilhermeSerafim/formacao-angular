@@ -13,3 +13,8 @@
 body {
     font-family: 'Open Sans', sans-serif;
 }
+
+// Para testar o encapsulamento shadow dom em cardcomponent
+.card-cancel-button {
+    background-color: aqua;
+}
