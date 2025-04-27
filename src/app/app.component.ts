@@ -10,6 +10,7 @@ export class AppComponent {
   inputText = "Texto dinâmico padrão";
   inputType = "text";
   isDisabled = false;
+  inputTitle = "KKKKKKKKKK";
   enableInput() {
     this.isDisabled = false;
   }

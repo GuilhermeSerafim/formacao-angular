@@ -1,7 +1,21 @@
+<!-- Ou seja:
+
+[propriedade] (sem attr) → altera uma propriedade JavaScript (tipo input.value, input.disabled). -> MAIS USADO
+
+[attr.atributo] → altera um atributo HTML puro, como title, aria-label, data-*, id, etc. -->
+
+<!-- Sempre que precisar alterar estado ou comportamento: use Property Binding.
+
+Sempre que precisar alterar metadados ou atributos visuais: use Attribute Binding ([attr.]). -->
+
 <div class="container">
     <mat-form-field appearance="outline">
-        <mat-label>Seu nome</mat-label>
-        <input matInput placeholder="Digite seu nome" [value]="inputText" (keyup)="HandleInputKeyup($event)" [disabled]="isDisabled">
+        <mat-label>ATRIBUTO chumbado</mat-label>
+        <input title="Atributo chumbado" matInput (keyup)="HandleInputKeyup($event)" [disabled]="isDisabled">
     </mat-form-field>
-    
+    <mat-form-field appearance="outline">
+        <mat-label>ATRIBUTO dinâmico</mat-label>
+        <input [attr.title]="inputTitle" matInput (keyup)="HandleInputKeyup($event)" [disabled]="isDisabled">
+    </mat-form-field>
+
 </div>
