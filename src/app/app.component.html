@@ -10,10 +10,12 @@ Sempre que precisar alterar metadados ou atributos visuais: use Attribute Bindin
 
 <div class="container">
     <mat-form-field appearance="outline">
+        <!-- Tituo nativo do html -->
         <mat-label>ATRIBUTO chumbado</mat-label>
         <input title="Atributo chumbado" matInput (keyup)="HandleInputKeyup($event)" [disabled]="isDisabled">
     </mat-form-field>
     <mat-form-field appearance="outline">
+        <!-- Attribute binding -->
         <mat-label>ATRIBUTO dinâmico</mat-label>
         <input [attr.title]="inputTitle" matInput (keyup)="HandleInputKeyup($event)" [disabled]="isDisabled">
     </mat-form-field>
