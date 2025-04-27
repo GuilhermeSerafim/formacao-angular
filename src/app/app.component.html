@@ -1,17 +1,7 @@
-<!-- Quando você coloca algo entre colchetes []-->
-<!-- Você está ligando uma propriedade HTML -->
-<!-- Você não está modificando apenas o atributo HTML, mas sim a propriedade real do DOM Element no JavaScript -->
 <div class="container">
-    <mat-form-field appearance="fill">
+    <mat-form-field appearance="outline">
         <mat-label>Seu nome</mat-label>
-
-        <!-- Property binding - Modificando propriedade gerada pelo js no browse -->
-        <input matInput placeholder="Digite seu nome" [value]="inputText" [type]="inputType" [disabled]="isDisabled">
+        <input matInput placeholder="Digite seu nome" [value]="inputText" (keyup)="HandleInputKeyup($event)" [disabled]="isDisabled">
     </mat-form-field>
-    <!-- Event Binding -->
-    <button mat-raised-button color="primary" (click)="enableInput()">Enable</button>
-    <button mat-raised-button color="accent" (click)="disableInput()">Disable</button>
-
-    <button mat-raised-button color="primary" (click)="setPasswordTypeInput()">Password Type</button>
-    <button mat-raised-button color="accent" (click)="setTextTypeInput()">Text Type</button>
+    
 </div>

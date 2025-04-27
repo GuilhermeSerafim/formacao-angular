@@ -18,9 +18,14 @@ export class AppComponent {
     this.isDisabled = true;
   }
   setPasswordTypeInput() {
-   this.inputType = "password";
+    this.inputType = "password";
   }
   setTextTypeInput() {
-   this.inputType = "text";
+    this.inputType = "text";
+  }
+  HandleInputKeyup($event: KeyboardEvent) {
+    // Fazendo um casting - Dizendo ao Angular que o evento que estou recebendo é um input element
+    const currentText = ($event.target as HTMLInputElement).value;
+    console.log(currentText);
   }
 }
