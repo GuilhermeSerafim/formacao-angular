@@ -1,4 +1,4 @@
 <div class="container">
-    <app-card (buttonClicked)="onCardButtonClicked()" [cardPlan]="'Simples'" [cardPrice]="100" />
-    <app-card (buttonClicked)="onCardButtonClicked()" [cardStyle]="'purple'" [cardPlan]="'Completo'" [cardPrice]="300" />
+    <app-card (buttonClicked)="onCardButtonClicked()" [cardPlan]="planoSimples.tipo" [cardPrice]="planoSimples.preco" />
+    <app-card (buttonClicked)="onCardButtonClicked()" [cardStyle]="'purple'" [cardPlan]="planoPremium.tipo" [cardPrice]="planoPremium.preco" />
 </div>
