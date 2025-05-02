@@ -1,4 +1,9 @@
 <div class="card">
+    <!-- 
+    No Angular, quando você usa {{ planType }} no template, o framework procura:
+    Uma propriedade pública chamada planType
+    Ou um getter com nome get planType() -> Nosso caso
+    -->
     <div class="card__plan card__item">Plano <b>{{planType}}</b></div>
     <div class="card__price card__item">R${{planPrice}},00/Mês</div>
     <app-card-button (buttonClickEmitter)="buttonClicked($event)"></app-card-button>

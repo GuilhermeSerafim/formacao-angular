@@ -16,11 +16,12 @@ interface IInfos {
 })
 
 export class CardComponent {
-  @Input({ required: true, alias: 'planPriceAlias' }) planPrice: number = 0;
-
-  // Set
   private _planType: string = '';
-  @Input() set planType(value: string) {
+  @Input({ required: true, alias: 'planPriceAlias' }) planPrice: number = 0;
+  
+  // Set
+  @Input("planType") // Boa prática
+  set planType(value: string) {
     this._planType = value.toUpperCase();
   }
 
@@ -31,8 +32,7 @@ export class CardComponent {
 
 
   buttonClicked(valueEmited: object) {
-    console.log("Set value...")
-    this._planType = 'Value123';
+    // Exibindo valor manipulado com uppercase
     console.log("Get value:", this._planType);
   }
 }
