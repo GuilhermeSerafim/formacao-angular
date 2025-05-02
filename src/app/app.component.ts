@@ -6,6 +6,9 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
+  onCardButtonClicked() {
+    console.log("Simulando chamada HTTP")
+  }
   buttonClicked() {
     console.log("clicado")
   }
