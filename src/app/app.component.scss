@@ -1,9 +1,10 @@
 .container {
     display: flex;
     justify-content: space-evenly;
-    flex-direction: column;
     gap: 30px;
+    margin-top: 200px;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .container mat-form-field {

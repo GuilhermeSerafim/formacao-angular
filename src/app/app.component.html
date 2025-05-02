@@ -1,23 +1,7 @@
-<!-- Ou seja:
-
-[propriedade] (sem attr) → altera uma propriedade JavaScript (tipo input.value, input.disabled). -> MAIS USADO
-
-[attr.atributo] → altera um atributo HTML puro, como title, aria-label, data-*, id, etc. -->
-
-<!-- Sempre que precisar alterar estado ou comportamento: use Property Binding.
-
-Sempre que precisar alterar metadados ou atributos visuais: use Attribute Binding ([attr.]). -->
-
 <div class="container">
-    <mat-form-field appearance="outline">
-        <!-- Tituo nativo do html -->
-        <mat-label>ATRIBUTO chumbado</mat-label>
-        <input title="Atributo chumbado" matInput (keyup)="HandleInputKeyup($event)" [disabled]="isDisabled">
-    </mat-form-field>
-    <mat-form-field appearance="outline">
-        <!-- Attribute binding -->
-        <mat-label>ATRIBUTO dinâmico</mat-label>
-        <input [attr.title]="inputTitle" matInput (keyup)="HandleInputKeyup($event)" [disabled]="isDisabled">
-    </mat-form-field>
-
+    <app-card [planTypeAlias]="cardPlanType" [planPriceAlias]="cardPlanPrice" />
+    <!-- Sem conchetes estou passando uma string literal -->
+    <app-card planTypeAlias="Medium" [planPriceAlias]="200" />
+    <app-card planTypeAlias="Hard" [planPriceAlias]="300" />
+    <app-card planTypeAlias="Insane" [planPriceAlias]="400    " />
 </div>

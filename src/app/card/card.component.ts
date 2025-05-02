@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 
 interface IPlano {
   infos: IInfos;
@@ -9,18 +9,16 @@ interface IInfos {
   preco: number;
 }
 
-@Component ({
+@Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
   styleUrl: './card.component.scss',
 })
 
 export class CardComponent {
-  // Com any, você está dizendo: "A variável plano pode ser qualquer coisa (objeto, string, número, função...)".
-  plano: IPlano = {
-    infos: {
-      tipo:  'Simples',
-      preco: 100,
-    }
+  buttonClicked(valueEmited: object) {
+    console.log("Componente pai pode reagir:", valueEmited);
   }
+  @Input('planTypeAlias') planType: string = '';
+  @Input({ required: true, alias: 'planPriceAlias' }) planPrice: number = 0;
 }
