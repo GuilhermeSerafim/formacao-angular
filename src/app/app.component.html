@@ -1,7 +1,14 @@
 <div class="container">
     <app-card [planTypeAlias]="cardPlanType" [planPriceAlias]="cardPlanPrice" />
-    <!-- Sem conchetes estou passando uma string literal -->
-    <app-card planTypeAlias="Medium" [planPriceAlias]="200" />
-    <app-card planTypeAlias="Hard" [planPriceAlias]="300" />
-    <app-card planTypeAlias="Insane" [planPriceAlias]="400    " />
+    <td>
+        <mat-form-field>
+            <mat-label>Digite o plano</mat-label>
+            <input
+                matInput 
+                #meuInputVar
+                type="text"
+                (keyup)="handlePlanType(meuInputVar.value)"
+            />
+        </mat-form-field>
+    </td>
 </div>

@@ -10,4 +10,7 @@ export class AppComponent {
   // Imagine que isso é a chamada de uma API externa
   cardPlanType = 'Simples';
   cardPlanPrice = 100;
+  handlePlanType(arg0: string) {
+    this.cardPlanType = arg0;
+  }
 }
