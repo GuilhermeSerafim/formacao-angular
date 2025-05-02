@@ -16,9 +16,23 @@ interface IInfos {
 })
 
 export class CardComponent {
-  buttonClicked(valueEmited: object) {
-    console.log("Componente pai pode reagir:", valueEmited);
-  }
-  @Input('planTypeAlias') planType: string = '';
   @Input({ required: true, alias: 'planPriceAlias' }) planPrice: number = 0;
+
+  // Set
+  private _planType: string = '';
+  @Input() set planType(value: string) {
+    this._planType = value.toUpperCase();
+  }
+
+  // Get
+  get planType(): string {
+    return this._planType;
+  }
+
+
+  buttonClicked(valueEmited: object) {
+    console.log("Set value...")
+    this._planType = 'Value123';
+    console.log("Get value:", this._planType);
+  }
 }
