@@ -5,20 +5,17 @@ import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
-import { ButtonComponent } from './components/button/button.component';
-import { CardComponent } from './components/card/card.component';
-
+import { ComponentsModule } from './components/components.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    ButtonComponent,
-    CardComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
     MatButtonModule,
-    MatInputModule
+    MatInputModule,
+    ComponentsModule
   ],
   providers: [
     provideAnimationsAsync()
