@@ -6,12 +6,14 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { ButtonComponent } from './components/button/button.component';
+import { CardComponent } from './components/card/card.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ButtonComponent,
+    CardComponent,
   ],
   imports: [
     BrowserModule,
