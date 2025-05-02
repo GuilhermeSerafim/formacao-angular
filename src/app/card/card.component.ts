@@ -1,13 +1,7 @@
 import { Component, Input, ViewEncapsulation } from '@angular/core';
 
-interface IPlano {
-  infos: IInfos;
-}
-
-interface IInfos {
-  tipo: string;
-  preco: number;
-}
+// Caso a lógica seja mais complexa, você consegue resolver em uma função externa
+const handlePlanType = (value: string): string => value.toUpperCase(); 
 
 @Component({
   selector: 'app-card',
@@ -17,7 +11,7 @@ interface IInfos {
 
 export class CardComponent {
   @Input({ required: true, alias: 'planPriceAlias' }) planPrice: number = 0;
-  @Input({ alias: "planType", transform: (value: string) => value.toUpperCase()}) planType: string = '';
+  @Input({ alias: "planType", transform: (value: string) => handlePlanType(value)}) planType: string = '';
 
 
   buttonClicked(valueEmited: object) {
