@@ -3,6 +3,10 @@ interface IPlano {
   tipo: 'Simples' | 'Premium' | 'Avançado'; // restringe valores possíveis
   preco: number;
 }
+interface IPessoa {
+  nome?: string,
+  idade: number,
+}
 
 @Component({
   selector: 'app-root',
@@ -12,7 +16,7 @@ interface IPlano {
 export class AppComponent {
   title = 'prj-angular';
   name: string = "Nome Inicial";
-  
+
   planoSimples: IPlano = {
     preco: 100,
     tipo: "Simples"
@@ -30,13 +34,41 @@ export class AppComponent {
   onCardButtonClicked() {
     console.log("Simulando chamada HTTP")
   }
-  
+
   handleInputChange(e: any) {
     // Posso usar o valor para fazer n coisas, mas atribuição não é pra fazer se vc já fizer o two way data binding
     console.log(e)
     // this.name = e; -> Não precisa, o [(ngModel)]="name" já faz isso (two way daya binding)
   }
   toogleButton() {
-  this.minhaProp = !this.minhaProp;
+    this.minhaProp = !this.minhaProp;
+  }
+
+  pessoa: IPessoa = {
+    idade: 12,
+    nome: ""
+  }
+
+  // Todos esses valores são true
+  isTrue() {
+    // return {}
+    // return []
+    // return true
+    // return "teste"
+    // return 1
+    return this.pessoa.idade
+
+  }
+  // Todos esses valores são false
+  isFalse() {
+    // return false
+    // return 0
+    // return ''
+    // return ""
+    // return null
+    // return undefined
+    // return -0
+    // return NaN
+    return this.pessoa.nome
   }
 }

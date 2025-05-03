@@ -12,7 +12,5 @@
 <!-- Diretiva NgIf -->
  <!-- Apenas uma diretiva estrutural para um elemento HTMl -->
   <h1>Booleans + Diretivas If</h1>
- <div style="background-color: aqua; margin-top: 50px" *ngIf="false">Não mostra no DOM</div>
- <div style="background-color: aqua; margin-top: 50px" *ngIf="true">Mostra no DOM</div>
- <div style="background-color: aqua; margin-top: 50px" *ngIf="minhaProp">Mostra no DOM - DINAMICO</div>
- <button (click)="toogleButton()">Toogle Button</button>
+ <div style="background-color: blue; margin-top: 50px" *ngIf="isTrue()">Mostra no DOM - DINAMICO</div>
+ <div style="background-color: red; margin-top: 50px" *ngIf="isFalse()">Mostra no DOM - DINAMICO</div>
