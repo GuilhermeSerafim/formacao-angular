@@ -19,7 +19,7 @@
  </ng-template> -->
 
 <!-- Outra forma de fazer - Com 2 templates diferentes!  -->
-<ng-container *ngIf="prop; then meuTemplate; else outroTemplate">
+<!-- <ng-container *ngIf="prop; then meuTemplate; else outroTemplate">
 </ng-container>
 <ng-template #meuTemplate>
     <div style="background-color: yellow; margin-top: 50px">template then!</div>
@@ -27,4 +27,15 @@
 <ng-template #outroTemplate>
     <div style="background-color: brown; margin-top: 50px">template else!</div>
 </ng-template>
-<button (click)="toggleDiv()">MUDANDO RENDERIZAMENTO</button>
+<button (click)="toggleDiv()">MUDANDO RENDERIZAMENTO</button> -->
+
+<!-- OUTRO CENÁRIO -->
+<!-- O Angular remove completamente quando cai no false (e não tem else) -->
+<!-- Temos outro comportamento, apenas de esconder, e não remover, porém saiba que ele vai "pesar" no DOM -->
+
+<!-- display none - Não ocupa espaçamento no DOM -->
+ <div id="minha-div" style="display: none;">Sou uma div escondida</div>
+<!-- visibility hidden - Ocupa espaçamento no DOM -->
+ <div id="minha-div2" style="visibility: hidden;">Sou uma div escondida</div>
+
+ <!-- Você pode acessar o elemento com document.getElementById('minha-div').textContent -->
