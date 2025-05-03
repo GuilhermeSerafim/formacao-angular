@@ -2,11 +2,17 @@
 <div class="list" *ngIf="true">
     <div 
         class="item" 
-        *ngFor="let person of listPeople; 
-        let i = index"
+        *ngFor="
+            let person of listPeople; 
+            let i = index;
+            let isLast = last;
+            let isFirst = first;
+        "
         [class.item--odd]="!(i%2 == 0)"
     >
         <p class="item__name">{{i + 1}} - {{person.name}}</p>
         <p class="item__age">{{person.age}}</p>
+        <p *ngIf="isFirst">PRIMEIRO ELEMENTO</p>
+        <p *ngIf="isLast">ULTIMO ELEMENTO</p>
     </div>
 </div>
