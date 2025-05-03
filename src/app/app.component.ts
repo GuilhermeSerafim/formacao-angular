@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'prj-angular';
+  personSelectedIndex: number = -1;
   listPeople = [
     {
       name: 'Felipe Freitas',
@@ -25,5 +26,8 @@ export class AppComponent {
       age: '20 anos'
     },
   ];
+  selectPerson(i: number) {
+    this.personSelectedIndex = i;
+  }
 
 }
