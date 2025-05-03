@@ -1,26 +1,6 @@
 <div class="list">
-    <div class="item item--odd">
-        <p class="item__name">Felipe Freitas</p>
-        <p class="item__age">26 anos</p>
-        
+    <div class="item" *ngFor="let person of listPessoas">
+        <p class="item__name">{{person.name}}</p>
+        <p class="item__age">{{person.age}}</p>
     </div>
-    <div class="item item--highlighted">
-        <p class="item__name">Jake Paul</p>
-        <p class="item__age">34 anos</p>
-        
-    </div>
-    <div class="item item--odd">
-        <p class="item__name">Mike Tyson</p>
-        <p class="item__age">55 anos</p>
-        
-    </div>
-    <div class="item">
-        <p class="item__name">Noir Walk</p>
-        <p class="item__age">20 anos</p>
-        
-    </div>
-</div>
-
-<div *ngFor="let item of listPessoas">
-    {{item}}
 </div>
