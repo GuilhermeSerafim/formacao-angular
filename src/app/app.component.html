@@ -12,5 +12,7 @@
 <!-- Diretiva NgIf -->
  <!-- Apenas uma diretiva estrutural para um elemento HTMl -->
   <h1>Booleans + Diretivas If</h1>
- <div style="background-color: blue; margin-top: 50px" *ngIf="isTrue()">Mostra no DOM - DINAMICO</div>
- <div style="background-color: red; margin-top: 50px" *ngIf="isFalse()">Mostra no DOM - DINAMICO</div>
+ <div style="background-color: blue; margin-top: 50px" *ngIf="false; else meuTemplate">Mostra no DOM - DINAMICO</div>
+ <ng-template #meuTemplate>
+ <div style="background-color: green; margin-top: 50px">Renderizamento o condicional em false</div>
+ </ng-template>
