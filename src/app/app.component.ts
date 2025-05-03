@@ -12,7 +12,7 @@ interface IPlano {
 export class AppComponent {
   title = 'prj-angular';
   name: string = "Nome Inicial";
-
+  
   planoSimples: IPlano = {
     preco: 100,
     tipo: "Simples"
@@ -25,13 +25,18 @@ export class AppComponent {
     preco: 400,
     tipo: "Avançado"
   }
+  // Simulando expressão para valor dinamico
+  minhaProp: boolean = Date.now() > 0;
   onCardButtonClicked() {
     console.log("Simulando chamada HTTP")
   }
-
+  
   handleInputChange(e: any) {
     // Posso usar o valor para fazer n coisas, mas atribuição não é pra fazer se vc já fizer o two way data binding
     console.log(e)
     // this.name = e; -> Não precisa, o [(ngModel)]="name" já faz isso (two way daya binding)
+  }
+  toogleButton() {
+  this.minhaProp = !this.minhaProp;
   }
 }
