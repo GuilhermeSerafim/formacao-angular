@@ -49,26 +49,33 @@ export class AppComponent {
     nome: ""
   }
 
-  // Todos esses valores são true
-  isTrue() {
-    // return {}
-    // return []
-    // return true
-    // return "teste"
-    // return 1
-    return this.pessoa.idade
+//   O tipo **any** em TypeScript significa: "qualquer tipo".
+// Ele desativa a verificação de tipos do TypeScript, permitindo que a variável aceite qualquer valor: string, number, object, array, etc.
+  carro: any = {
+  cor: "vermelho"
+  }
 
-  }
-  // Todos esses valores são false
-  isFalse() {
-    // return false
-    // return 0
-    // return ''
-    // return ""
-    // return null
-    // return undefined
-    // return -0
-    // return NaN
-    return this.pessoa.nome
-  }
+// Todos esses valores são true
+isTrue() {
+  // return {}
+  // return []
+  // return true
+  // return "teste"
+  // return 1
+  return this.pessoa.idade
+
+}
+// Todos esses valores são false
+isFalse() {
+  // return false
+  // return 0
+  // return ''
+  // return ""
+  // return null
+  // return undefined
+  // return -0
+  // return NaN
+  // return this.pessoa.nome
+  return this.carro.volante?.modelo
+}
 }
