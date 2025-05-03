@@ -1,41 +1,26 @@
-<!-- Two Way Data Binding
-<div class="container">
-    <input type="text" [(ngModel)]="name" (ngModelChange)="handleInputChange($event)">
-    <h1>Nome digitado: {{name}}</h1>
-</div> -->
+<div class="list">
+    <div class="item item--odd">
+        <p class="item__name">Felipe Freitas</p>
+        <p class="item__age">26 anos</p>
+        
+    </div>
+    <div class="item item--highlighted">
+        <p class="item__name">Jake Paul</p>
+        <p class="item__age">34 anos</p>
+        
+    </div>
+    <div class="item item--odd">
+        <p class="item__name">Mike Tyson</p>
+        <p class="item__age">55 anos</p>
+        
+    </div>
+    <div class="item">
+        <p class="item__name">Noir Walk</p>
+        <p class="item__age">20 anos</p>
+        
+    </div>
+</div>
 
-<!-- 
-    [ngModel]="name" -> Input
-    (ngModelChange)="handleInputChange($event)" -> Output
--->
-
-<!-- Diretiva NgIf -->
-<!-- Apenas uma diretiva estrutural para um elemento HTMl -->
-
-<!-- <h1>Booleans + Diretivas If</h1>
- <div style="background-color: blue; margin-top: 50px" *ngIf="prop; else meuTemplate">Mostra no DOM - DINAMICO</div>
- <ng-template #meuTemplate>
- <div style="background-color: green; margin-top: 50px">Renderizamento o condicional em false</div>
- </ng-template> -->
-
-<!-- Outra forma de fazer - Com 2 templates diferentes!  -->
-<!-- <ng-container *ngIf="prop; then meuTemplate; else outroTemplate">
-</ng-container>
-<ng-template #meuTemplate>
-    <div style="background-color: yellow; margin-top: 50px">template then!</div>
-</ng-template>
-<ng-template #outroTemplate>
-    <div style="background-color: brown; margin-top: 50px">template else!</div>
-</ng-template>
-<button (click)="toggleDiv()">MUDANDO RENDERIZAMENTO</button> -->
-
-<!-- OUTRO CENÁRIO -->
-<!-- O Angular remove completamente quando cai no false (e não tem else) -->
-<!-- Temos outro comportamento, apenas de esconder, e não remover, porém saiba que ele vai "pesar" no DOM -->
-
-<!-- display none - Não ocupa espaçamento no DOM -->
- <div id="minha-div" style="display: none;">Sou uma div escondida</div>
-<!-- visibility hidden - Ocupa espaçamento no DOM -->
- <div id="minha-div2" style="visibility: hidden;">Sou uma div escondida</div>
-
- <!-- Você pode acessar o elemento com document.getElementById('minha-div').textContent -->
+<div *ngFor="let item of listPessoas">
+    {{item}}
+</div>
