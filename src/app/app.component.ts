@@ -14,6 +14,10 @@ interface IPessoa {
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
+  prop = true;
+  toggleDiv() {
+    this.prop = !this.prop;
+  }
   title = 'prj-angular';
-  
+
 }
