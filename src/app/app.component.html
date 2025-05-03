@@ -1,6 +1,12 @@
-<div class="list">
-    <div class="item" *ngFor="let person of listPessoas">
-        <p class="item__name">{{person.name}}</p>
+<!-- Você pode usar o ngif no pai, mas nunca 2 diretivas no mesmo elemento -->
+<div class="list" *ngIf="true">
+    <div 
+        class="item" 
+        *ngFor="let person of listPeople; 
+        let i = index"
+        [class.item--odd]="!(i%2 == 0)"
+    >
+        <p class="item__name">{{i + 1}} - {{person.name}}</p>
         <p class="item__age">{{person.age}}</p>
     </div>
 </div>
