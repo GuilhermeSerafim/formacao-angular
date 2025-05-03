@@ -10,11 +10,21 @@
 -->
 
 <!-- Diretiva NgIf -->
- <!-- Apenas uma diretiva estrutural para um elemento HTMl -->
-  <h1>Booleans + Diretivas If</h1>
+<!-- Apenas uma diretiva estrutural para um elemento HTMl -->
+
+<!-- <h1>Booleans + Diretivas If</h1>
  <div style="background-color: blue; margin-top: 50px" *ngIf="prop; else meuTemplate">Mostra no DOM - DINAMICO</div>
  <ng-template #meuTemplate>
  <div style="background-color: green; margin-top: 50px">Renderizamento o condicional em false</div>
- </ng-template>
+ </ng-template> -->
 
- <button (click)="toggleDiv()">MUDANDO RENDERIZAMENTO</button>
+<!-- Outra forma de fazer - Com 2 templates diferentes!  -->
+<ng-container *ngIf="prop; then meuTemplate; else outroTemplate">
+</ng-container>
+<ng-template #meuTemplate>
+    <div style="background-color: yellow; margin-top: 50px">template then!</div>
+</ng-template>
+<ng-template #outroTemplate>
+    <div style="background-color: brown; margin-top: 50px">template else!</div>
+</ng-template>
+<button (click)="toggleDiv()">MUDANDO RENDERIZAMENTO</button>
