@@ -10,6 +10,9 @@ interface IPlano {
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
+  title = 'prj-angular';
+  name: string = "Nome Inicial";
+
   planoSimples: IPlano = {
     preco: 100,
     tipo: "Simples"
@@ -24,5 +27,11 @@ export class AppComponent {
   }
   onCardButtonClicked() {
     console.log("Simulando chamada HTTP")
+  }
+
+  handleInputChange(e: any) {
+    // Posso usar o valor para fazer n coisas, mas atribuição não é pra fazer se vc já fizer o two way data binding
+    console.log(e)
+    // this.name = e; -> Não precisa, o [(ngModel)]="name" já faz isso (two way daya binding)
   }
 }

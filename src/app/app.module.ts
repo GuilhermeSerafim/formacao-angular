@@ -6,6 +6,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { ComponentsModule } from './components/components.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ComponentsModule } from './components/components.module';
     BrowserModule,
     MatButtonModule,
     MatInputModule,
-    ComponentsModule
+    ComponentsModule,
+    FormsModule
   ],
   providers: [
     provideAnimationsAsync()

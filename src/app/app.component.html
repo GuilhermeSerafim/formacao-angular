@@ -1,4 +1,10 @@
 <div class="container">
-    <app-card (buttonClicked)="onCardButtonClicked()" [cardPlan]="planoSimples.tipo" [cardPrice]="planoSimples.preco" />
-    <app-card (buttonClicked)="onCardButtonClicked()" [cardStyle]="'purple'" [cardPlan]="planoPremium.tipo" [cardPrice]="planoPremium.preco" />
+    <!-- Two Way Data Binding -->
+    <input type="text" [(ngModel)]="name" (ngModelChange)="handleInputChange($event)">
+    <h1>Nome digitado: {{name}}</h1>
 </div>
+
+<!-- 
+    [ngModel]="name" -> Input
+    (ngModelChange)="handleInputChange($event)" -> Output
+-->
