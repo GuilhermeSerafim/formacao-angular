@@ -28,6 +28,13 @@ export class AppComponent {
     },
   ];
 
+  //   Usuário clica em um item (div.item).
+
+  // O método selectPerson() do filho é chamado.
+
+  // Ele emite um evento (onPersonSelectEmitt) com o índice da pessoa (this.personIndex).
+
+  // O AppComponent (pai) escuta esse evento e executa selectedPerson($event) -> por isso é um inteiro
   selectedPerson(i: number) {
     console.log(i);
     this.personSelectedIndex = i;
