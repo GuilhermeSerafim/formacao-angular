@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
+
   title = 'prj-angular';
   personSelectedIndex: number = -1;
   listPeople = [
@@ -26,8 +27,9 @@ export class AppComponent {
       age: '20 anos'
     },
   ];
-  selectPerson(i: number) {
+
+  selectedPerson(i: number) {
+    console.log(i);
     this.personSelectedIndex = i;
   }
-
 }

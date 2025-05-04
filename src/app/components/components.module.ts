@@ -2,13 +2,15 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ButtonComponent } from './button/button.component';
 import { CardComponent } from './card/card.component';
+import { PersonComponent } from './person/person.component';
 
 
 
 @NgModule({
   declarations: [
     ButtonComponent,
-    CardComponent
+    CardComponent,
+    PersonComponent
   ],
   imports: [
     CommonModule
@@ -17,7 +19,8 @@ import { CardComponent } from './card/card.component';
   // Temos que exportar explicitamente para outros módulos conseguirem utilizar 
   exports:[
     CardComponent,
-    ButtonComponent
+    ButtonComponent,
+    PersonComponent
   ]
 
 })

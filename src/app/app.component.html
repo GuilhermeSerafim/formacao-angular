@@ -1,16 +1,21 @@
 <!-- Você pode usar o ngif no pai, mas nunca 2 diretivas no mesmo elemento -->
 <div class="list" *ngIf="true">
-    <div 
-        class="item" 
+    <app-person
         *ngFor="
-            let person of listPeople; 
+            let person of listPeople;
             let i = index;
+            let isFirst = first;
+            let isLast = last;
         "
-        [class.item--odd]="!(i%2 == 0)"
-        (click)="selectPerson(i)"
-        [class.item--highlighted]="personSelectedIndex === i"
-    >
-        <p class="item__name">{{i + 1}} - {{person.name}}</p>
-        <p class="item__age">{{person.age}}</p>
-    </div>
+        [personName]="person.name"
+        [personAge]="person.age"
+        [personIndex]="i"
+        [isFirst]="isFirst"
+        [isLast]="isLast"
+        [isOdd]="i % 2 == 0"
+        [isSelected]="personSelectedIndex === i"
+        (onPersonSelectEmitt)="selectedPerson($event)"
+        [isSelected]="personSelectedIndex === i"
+    />
+    <!-- FINALIZE A PARTE DE EVENTOS... -->
 </div>
