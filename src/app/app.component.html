@@ -1,5 +1,5 @@
 <!-- Você pode usar o ngif no pai, mas nunca 2 diretivas no mesmo elemento -->
-<div class="list" *ngIf="true">
+<!-- <div class="list" *ngIf="true">
     <app-person
         *ngFor="
             let person of listPeople;
@@ -17,4 +17,12 @@
         (onPersonSelectEmitt)="selectedPerson($event)"
         [isSelected]="personSelectedIndex === i"
     />
-</div>
+</div> -->
+
+<h1 [ngStyle]="{
+    'font-size': fontSize + 'px',
+    'color': textColor,
+}">Sou H1!!!</h1>
+
+<button (click)="encriseFontSize()">+A</button>
+<button (click)="toogleFontColor()">{{textColor}}</button>

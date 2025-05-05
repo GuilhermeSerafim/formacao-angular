@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
+
   title = 'prj-angular';
   personSelectedIndex: number = -1;
   listPeople = [
@@ -28,15 +29,25 @@ export class AppComponent {
     },
   ];
 
-  //   Usuário clica em um item (div.item).
-
-  // O método selectPerson() do filho é chamado.
-
-  // Ele emite um evento (onPersonSelectEmitt) com o índice da pessoa (this.personIndex).
-
-  // O AppComponent (pai) escuta esse evento e executa selectedPerson($event) -> por isso é um inteiro
   selectedPerson(i: number) {
-    console.log(i);
     this.personSelectedIndex = i;
   }
+
+  fontSize: number = 15;
+  textColor: 'purple' | 'orange' = 'purple';
+  buttonText: 'Roxo' | 'Laranja' = 'Roxo'
+  encriseFontSize() {
+    this.fontSize += 1;
+  }
+
+  toogleFontColor() {
+    if(this.textColor == "purple") {
+      this.textColor = 'orange'
+      this.buttonText = 'Laranja'
+    } else {
+      this.textColor = 'purple'
+      this.buttonText = 'Roxo'
+    }
+  }
+
 }
