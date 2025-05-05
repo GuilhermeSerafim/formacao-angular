@@ -28,6 +28,7 @@ export class AppComponent {
       age: '20 anos'
     },
   ];
+  stylesH1 = "fontSize: 15px; backgroundColor: red;";
 
   selectedPerson(i: number) {
     this.personSelectedIndex = i;
@@ -38,10 +39,12 @@ export class AppComponent {
   buttonText: 'Roxo' | 'Laranja' = 'Roxo'
   encriseFontSize() {
     this.fontSize += 1;
+    // Forma mais verbosa, portanto, se você for usar um objeto, não use, neste caso, se for manipular o mesmo!
+    this.stylesH1 = `fontSize: ${this.fontSize}px; backgroundColor: red;`
   }
 
   toogleFontColor() {
-    if(this.textColor == "purple") {
+    if (this.textColor == "purple") {
       this.textColor = 'orange'
       this.buttonText = 'Laranja'
     } else {

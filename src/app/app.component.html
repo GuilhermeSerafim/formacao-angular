@@ -19,17 +19,8 @@
     />
 </div> -->
 
-<!-- Deprecated soft -->
-<h1 [ngStyle]="{
-    'font-size': fontSize + 'px',
-    'color': textColor,
-}">Sou H1!!!</h1>
-
-<button (click)="encriseFontSize()">+A</button>
-<button (click)="toogleFontColor()">{{textColor}}</button>
-
-<!-- Acho essa forma melhor -->
-<h1 [style.fontSize.px]="fontSize" [style.color]="textColor">Sou H1!!!</h1>
+<h1 [style.fontSize.px]="fontSize" [style.color]="textColor">Moderno</h1>
+<h1 [style]="stylesH1">Moderno com objeto de estilo</h1>
 
 <button (click)="encriseFontSize()">+A</button>
 <button (click)="toogleFontColor()">{{textColor}}</button>
