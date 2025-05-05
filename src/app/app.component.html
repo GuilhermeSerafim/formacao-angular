@@ -1,26 +1,24 @@
-<!-- Você pode usar o ngif no pai, mas nunca 2 diretivas no mesmo elemento -->
-<!-- <div class="list" *ngIf="true">
-    <app-person
-        *ngFor="
-            let person of listPeople;
-            let i = index;
-            let isFirst = first;
-            let isLast = last;
-        "
-        [personName]="person.name"
-        [personAge]="person.age"
-        [personIndex]="i"
-        [isFirst]="isFirst"
-        [isLast]="isLast"
-        [isOdd]="i % 2 == 0"
-        [isSelected]="personSelectedIndex === i"
-        (onPersonSelectEmitt)="selectedPerson($event)"
-        [isSelected]="personSelectedIndex === i"
-    />
-</div> -->
+<h1 [ngClass]="{
+    'is-big is-green': IsGreen,
+    'is-orange': !IsGreen
+}">
+    TESTE
+</h1>
+<button (click)="setToGreen()">Verde</button>
+<button (click)="setToOrange()">Laranja</button>
 
-<h1 [style.fontSize.px]="fontSize" [style.color]="textColor">Moderno</h1>
-<h1 [style]="stylesH1">Moderno com objeto de estilo</h1>
+<!-- Strings -->
+<h1 [ngClass]="'is-big is-green'">Sou um H1 !!!!</h1>
+<h1 [class]="'is-big is-green'">Sou um H1 !!!!</h1>
 
-<button (click)="encriseFontSize()">+A</button>
-<button (click)="toogleFontColor()">{{textColor}}</button>
+<!-- Arrays -->
+<h1 [ngClass]="['is-big', 'is-green']">Sou um H1 !!!!</h1>
+<h1 [class]="[isBig, isGreen]">Sou um H1 !!!!</h1>
+
+<!-- Objetos -->
+<h1 [ngClass]="{ 'is-green': isGreen, 'is-orange': !isGreen }">Sou um H1 !!!!</h1>
+<h1 [class]="{ 'is-green': isGreen, 'is-orange': !isGreen }">Sou um H1 !!!!</h1>
+
+<!-- Diferença -->
+<h1 [ngClass]="{ 'is-big is-green': isGreen, 'is-orange': !isGreen }">Sou um H1 !!!!</h1>
+<h1 [class]="{ 'is-big': isGreen, 'is-green': isGreen, 'is-orange': !isGreen }">Sou um H1 !!!!</h1>
