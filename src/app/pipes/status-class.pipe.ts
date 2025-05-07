@@ -5,13 +5,14 @@ import { Pipe, PipeTransform } from "@angular/core";
 })
 export class StatusClassPipe implements PipeTransform {
     transform(status: number): string {
-        if(status === 1) {
-            return 'active';
-        } else if(status === 2) {
-            return 'partial'
-        }  else {
-            return 'blocked'
+        // Tipando constante com uma chave numeral e um valor string
+        const obj: { [ ket: number ]: string } = {
+            1: 'active',
+            2: 'partial',
+            3: 'blocked',
         }
+
+        return obj[status];
     }
 
 }
