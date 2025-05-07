@@ -22,7 +22,7 @@ export class AppComponent {
   }
 
   getStyle = (status: number) => {
-    console.log("Quantas vezes fui chamado?"); // 12 vezes...
+    console.log("Função metodo: quantas vezes fui chamado?"); // 12 vezes...
     return status === 1 ? 'active' : status === 2 ? 'partial' : 'blocked'
 
   };
