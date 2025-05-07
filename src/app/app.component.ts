@@ -6,14 +6,13 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  setToGreen() {
-    this.IsGreen = true
-  }
-  setToOrange() {
-    this.IsGreen = false
-  }
   title = 'prj-angular';
-  IsGreen = true;
+  text = 'Felipe';
+  obj = {
+    cor: "red",
+    number: 10,
+    name: "Guilherme"
+  }
 }
 
 

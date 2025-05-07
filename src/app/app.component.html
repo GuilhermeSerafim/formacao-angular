@@ -1,24 +1,5 @@
-<h1 [ngClass]="{
-    'is-big is-green': IsGreen,
-    'is-orange': !IsGreen
-}">
-    TESTE
-</h1>
-<button (click)="setToGreen()">Verde</button>
-<button (click)="setToOrange()">Laranja</button>
-
-<!-- Strings -->
-<h1 [ngClass]="'is-big is-green'">Sou um H1 !!!!</h1>
-<h1 [class]="'is-big is-green'">Sou um H1 !!!!</h1>
-
-<!-- Arrays -->
-<h1 [ngClass]="['is-big', 'is-green']">Sou um H1 !!!!</h1>
-<h1 [class]="[isBig, isGreen]">Sou um H1 !!!!</h1>
-
-<!-- Objetos -->
-<h1 [ngClass]="{ 'is-green': isGreen, 'is-orange': !isGreen }">Sou um H1 !!!!</h1>
-<h1 [class]="{ 'is-green': isGreen, 'is-orange': !isGreen }">Sou um H1 !!!!</h1>
-
-<!-- Diferença -->
-<h1 [ngClass]="{ 'is-big is-green': isGreen, 'is-orange': !isGreen }">Sou um H1 !!!!</h1>
-<h1 [class]="{ 'is-big': isGreen, 'is-green': isGreen, 'is-orange': !isGreen }">Sou um H1 !!!!</h1>
+<h1>{{text.toUpperCase()}}</h1>
+<!-- Pipes: https://v17.angular.io/api?type=pipe -->
+<!-- Em resumo: os pipes do Angular tornam a apresentação de dados muito mais expressiva e concisa, mantendo seu componente focado na lógica de negócio. Se precisar de um comportamento de formatação específico, vale a pena criar um pipe customizado! -->
+<h1>{{text | uppercase }}</h1>
+<h1>{{obj | json }}</h1>
