@@ -7,10 +7,13 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { ComponentsModule } from './components/components.module';
 import { FormsModule } from '@angular/forms';
+import { StatusClassPipe } from './pipes/status-class.pipe';
 
 @NgModule({
+  // Pipes declaramos!
   declarations: [
-    AppComponent
+    AppComponent,
+    StatusClassPipe
   ],
   imports: [
     BrowserModule,

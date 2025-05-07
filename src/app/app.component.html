@@ -1,5 +1,10 @@
-<h1>{{text.toUpperCase()}}</h1>
-<!-- Pipes: https://v17.angular.io/api?type=pipe -->
-<!-- Em resumo: os pipes do Angular tornam a apresentação de dados muito mais expressiva e concisa, mantendo seu componente focado na lógica de negócio. Se precisar de um comportamento de formatação específico, vale a pena criar um pipe customizado! -->
-<h1>{{text | uppercase }}</h1>
-<h1>{{obj | json }}</h1>
+<h1>Forma tradicional com metodos</h1>
+<p [class]="getStyle(pessoa1.status)">{{pessoa1.status}}</p>
+<p [class]="getStyle(pessoa2.status)">{{pessoa2.status}}</p>
+<p [class]="getStyle(pessoa3.status)">{{pessoa3.status}}</p>
+
+<h1>Forma com pipes</h1>
+<p [class]="pessoa1.status | statusClass">{{pessoa1.status}}</p>
+<p [class]="pessoa2.status | statusClass">{{pessoa2.status}}</p>
+<p [class]="pessoa3.status | statusClass">{{pessoa3.status}}</p>
+

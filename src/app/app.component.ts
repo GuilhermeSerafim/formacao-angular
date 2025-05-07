@@ -8,11 +8,24 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'prj-angular';
   text = 'Felipe';
-  obj = {
-    cor: "red",
-    number: 10,
+  pessoa1 = {
+    status: 1,
     name: "Guilherme"
   }
+  pessoa2 = {
+    status: 2,
+    name: "Guiler"
+  }
+  pessoa3 = {
+    status: 3,
+    name: "Gui"
+  }
+
+  getStyle = (status: number) => {
+    console.log("Quantas vezes fui chamado?"); // 12 vezes...
+    return status === 1 ? 'active' : status === 2 ? 'partial' : 'blocked'
+
+  };
 }
 
 
