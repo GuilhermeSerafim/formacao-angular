@@ -5,13 +5,15 @@ import { UserDetailsComponent } from './user-details/user-details.component';
 import { FilterComponentsComponent } from './filter-components/filter-components.component';
 import { FormsModule } from '@angular/forms';
 import { MatNativeDateModule } from '@angular/material/core';
+import { UsersListComponent } from './users-list/users-list.component';
 
 
 // Aqui vão ser os componentes da nossa aplicação
 @NgModule({
   declarations: [
     UserDetailsComponent,
-    FilterComponentsComponent
+    FilterComponentsComponent,
+    UsersListComponent,
   ],
   imports: [
     CommonModule,
@@ -21,7 +23,8 @@ import { MatNativeDateModule } from '@angular/material/core';
   ],
   exports: [
     UserDetailsComponent,
-    FilterComponentsComponent
+    FilterComponentsComponent,
+    UsersListComponent,
   ]
 
 })
