@@ -1,6 +1,6 @@
 export interface IStatus {
-    online: boolean;
-    verificado: boolean;
-    assinaturaAtiva: boolean;
-    ultimoAcesso: string;
+  online: boolean;
+  verified: boolean;
+  subscriptionActive: boolean;
+  lastAccess: string;
 }

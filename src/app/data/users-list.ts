@@ -1,119 +1,119 @@
 import { IUser } from "../interfaces/user/user.interface";
 
 export const UsersList: IUser[] = [
-    {
-        nome: "João Silva",
-        email: "joao.silva@example.com",
-        senha: "senha-segura-123",
-        idade: 30,
-        endereco: {
-            rua: "Rua das Flores",
-            numero: 42,
-            cidade: "São Paulo",
-            estado: "SP",
-            pais: "Brasil"
-        },
-        telefone: "11912345678",
-        ativo: true,
-        funcao: "Desenvolvedor",
-        dataCadastro: "2023-08-01T09:00:00.000Z",
-        status: {
-            online: true,
-            verificado: true,
-            assinaturaAtiva: true,
-            ultimoAcesso: "2023-08-02T09:00:00.000Z"
-        }
+  {
+    name: "João Silva",
+    email: "joao.silva@example.com",
+    password: "senha-segura-123",
+    age: 30,
+    address: {
+      street: "Rua das Flores",
+      number: 42,
+      city: "São Paulo",
+      state: "SP",
+      country: "Brasil"
     },
-    {
-        nome: "Maria Fernandes",
-        email: "maria.fernandes@example.com",
-        senha: "Maria123",
-        idade: 25,
-        endereco: {
-            rua: "Avenida do Sol",
-            numero: 100,
-            cidade: "Rio de Janeiro",
-            estado: "RJ",
-            pais: "Brasil"
-        },
-        telefone: "21956789101",
-        ativo: false,
-        funcao: "Designer",
-        dataCadastro: "2023-08-05T09:00:00.000Z",
-        status: {
-            online: false,
-            verificado: false,
-            assinaturaAtiva: false,
-            ultimoAcesso: "2023-08-06T09:00:00.000Z"
-        }
-    },
-    {
-        nome: "Carlos Pereira",
-        email: "carlos.pereira@example.com",
-        senha: "Carlos456",
-        idade: 40,
-        endereco: {
-            rua: "Praça da Liberdade",
-            numero: 5,
-            cidade: "Belo Horizonte",
-            estado: "MG",
-            pais: "Brasil"
-        },
-        telefone: "31911121314",
-        ativo: true,
-        funcao: "Gerente",
-        dataCadastro: "2023-08-10T09:00:00.000Z",
-        status: {
-            online: false,
-            verificado: true,
-            assinaturaAtiva: false,
-            ultimoAcesso: "2023-08-12T09:00:00.000Z"
-        }
-    },
-    {
-        nome: "Ana Sousa",
-        email: "ana.sousa@example.com",
-        senha: "Ana789",
-        idade: 22,
-        endereco: {
-            rua: "Rua das Pedras",
-            numero: 80,
-            cidade: "Porto Alegre",
-            estado: "RS",
-            pais: "Brasil"
-        },
-        telefone: "51915161718",
-        ativo: false,
-        funcao: "Analista",
-        dataCadastro: "2023-08-15T09:00:00.000Z",
-        status: {
-            online: true,
-            verificado: false,
-            assinaturaAtiva: true,
-            ultimoAcesso: "2023-08-18T09:00:00.000Z"
-        }
-    },
-    {
-        nome: "Pedro Mendes",
-        email: "pedro.mendes@example.com",
-        senha: "Pedro012",
-        idade: 35,
-        endereco: {
-            rua: "Boulevard Central",
-            numero: 60,
-            cidade: "Recife",
-            estado: "PE",
-            pais: "Brasil"
-        },
-        telefone: "81919202122",
-        ativo: true,
-        funcao: "Diretor",
-        dataCadastro: "2023-08-20T09:00:00.000Z",
-        status: {
-            online: false,
-            verificado: true,
-            assinaturaAtiva: false,
-            ultimoAcesso: "2023-08-25T09:00:00.000Z"
-        }
+    phone: "11912345678",
+    isActive: true,
+    role: "Desenvolvedor",
+    registrationDate: "2023-08-01T09:00:00.000Z",
+    status: {
+      online: true,
+      verified: true,
+      subscriptionActive: true,
+      lastAccess: "2023-08-02T09:00:00.000Z"
     }
+  },
+  {
+    name: "Maria Fernandes",
+    email: "maria.fernandes@example.com",
+    password: "Maria123",
+    age: 25,
+    address: {
+      street: "Avenida do Sol",
+      number: 100,
+      city: "Rio de Janeiro",
+      state: "RJ",
+      country: "Brasil"
+    },
+    phone: "21956789101",
+    isActive: false,
+    role: "Designer",
+    registrationDate: "2023-08-05T09:00:00.000Z",
+    status: {
+      online: false,
+      verified: false,
+      subscriptionActive: false,
+      lastAccess: "2023-08-06T09:00:00.000Z"
+    }
+  },
+  {
+    name: "Carlos Pereira",
+    email: "carlos.pereira@example.com",
+    password: "Carlos456",
+    age: 40,
+    address: {
+      street: "Praça da Liberdade",
+      number: 5,
+      city: "Belo Horizonte",
+      state: "MG",
+      country: "Brasil"
+    },
+    phone: "31911121314",
+    isActive: true,
+    role: "Gerente",
+    registrationDate: "2023-08-10T09:00:00.000Z",
+    status: {
+      online: false,
+      verified: true,
+      subscriptionActive: false,
+      lastAccess: "2023-08-12T09:00:00.000Z"
+    }
+  },
+  {
+    name: "Ana Sousa",
+    email: "ana.sousa@example.com",
+    password: "Ana789",
+    age: 22,
+    address: {
+      street: "Rua das Pedras",
+      number: 80,
+      city: "Porto Alegre",
+      state: "RS",
+      country: "Brasil"
+    },
+    phone: "51915161718",
+    isActive: false,
+    role: "Analista",
+    registrationDate: "2023-08-15T09:00:00.000Z",
+    status: {
+      online: true,
+      verified: false,
+      subscriptionActive: true,
+      lastAccess: "2023-08-18T09:00:00.000Z"
+    }
+  },
+  {
+    name: "Pedro Mendes",
+    email: "pedro.mendes@example.com",
+    password: "Pedro012",
+    age: 35,
+    address: {
+      street: "Boulevard Central",
+      number: 60,
+      city: "Recife",
+      state: "PE",
+      country: "Brasil"
+    },
+    phone: "81919202122",
+    isActive: true,
+    role: "Diretor",
+    registrationDate: "2023-08-20T09:00:00.000Z",
+    status: {
+      online: false,
+      verified: true,
+      subscriptionActive: false,
+      lastAccess: "2023-08-25T09:00:00.000Z"
+    }
+  }
 ];

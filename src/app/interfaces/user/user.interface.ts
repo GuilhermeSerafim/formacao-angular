@@ -2,14 +2,14 @@ import { IAddress } from "./address.interface"
 import { IStatus } from "./status.interface"
 
 export interface IUser {
-    nome: string;
+    name: string;
     email: string;
-    senha: string;
-    idade: number;
-    endereco: IAddress;
-    telefone: string;
-    ativo: boolean;
-    funcao: string;
-    dataCadastro: string;
+    password: string;
+    age: number;
+    address: IAddress;
+    phone: string;
+    isActive: boolean;
+    role: string;
+    registrationDate: string;
     status: IStatus;
 }
