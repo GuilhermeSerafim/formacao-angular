@@ -6,6 +6,7 @@ import { FilterComponentsComponent } from './filter-components/filter-components
 import { FormsModule } from '@angular/forms';
 import { MatNativeDateModule } from '@angular/material/core';
 import { UsersListComponent } from './users-list/users-list.component';
+import { PipesModule } from '../pipes/pipes.module';
 
 
 // Aqui vão ser os componentes da nossa aplicação
@@ -19,7 +20,8 @@ import { UsersListComponent } from './users-list/users-list.component';
     CommonModule,
     AngularMaterialModule, // Vamos usar os components do material na nossa aplicação
     FormsModule,
-    MatNativeDateModule // Com isso o Angular automaticamente registra um NativeDateAdapter que satisfaz o token DateAdapter e o datepicker volta a funcionar.
+    MatNativeDateModule, // Com isso o Angular automaticamente registra um NativeDateAdapter que satisfaz o token DateAdapter e o datepicker volta a funcionar.
+    PipesModule,
   ],
   exports: [
     UserDetailsComponent,

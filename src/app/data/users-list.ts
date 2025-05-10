@@ -13,7 +13,7 @@ export const UsersList: IUser[] = [
       state: "SP",
       country: "Brasil"
     },
-    phone: "11912345678",
+    phone: "1112345678",
     isActive: true,
     role: "Desenvolvedor",
     registrationDate: "2023-08-01T09:00:00.000Z",
