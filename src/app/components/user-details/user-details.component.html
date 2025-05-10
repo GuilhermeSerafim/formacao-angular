@@ -5,34 +5,38 @@
         </mat-list-item>
         <mat-divider />
         <mat-list-item>
-            <span class="mat-title-medium" bold-weight>Nome: </span><span class="mat-title-small">{{user.name}}</span>
+            <span class="mat-title-medium" bold-weight>Nome: </span><span class="mat-title-small">{{user.name |
+                dashIfEmpty}}</span>
         </mat-list-item>
         <mat-divider />
         <mat-list-item>
-            <span class="mat-title-medium" bold-weight>Email: </span><span class="mat-title-small">{{user.email}}</span>
+            <span class="mat-title-medium" bold-weight>Email: </span><span class="mat-title-small">{{user.email |
+                dashIfEmpty}}</span>
         </mat-list-item>
         <mat-divider />
         <mat-list-item>
-            <span class="mat-title-medium" bold-weight>Telefone: </span><span
-            class="mat-title-small">{{user.phone | phone}}</span>
+            <span class="mat-title-medium" bold-weight>Telefone: </span><span class="mat-title-small">{{user.phone |
+                phone | dashIfEmpty}}</span>
         </mat-list-item>
         <mat-divider />
         <mat-list-item>
-            <span class="mat-title-medium" bold-weight>Endereco: </span><span
-                class="mat-title-small">{{user.address | address }}</span>
+            <span class="mat-title-medium" bold-weight>Endereco: </span><span class="mat-title-small">{{user.address |
+                address | dashIfEmpty}}</span>
         </mat-list-item>
         <mat-divider />
         <mat-list-item>
-            <span class="mat-title-medium" bold-weight>Status: </span><span class="mat-title-small">{{user.isActive | status}}</span>
+            <span class="mat-title-medium" bold-weight>Status: </span><span class="mat-title-small">{{user.isActive |
+                status | dashIfEmpty}}</span>
         </mat-list-item>
         <mat-divider />
         <mat-list-item>
-            <span class="mat-title-medium" bold-weight>Função: </span><span class="mat-title-small">{{user.role}}</span>
+            <span class="mat-title-medium" bold-weight>Função: </span><span class="mat-title-small">{{user.role |
+                dashIfEmpty}}</span>
         </mat-list-item>
         <mat-divider />
         <mat-list-item>
             <span class="mat-title-medium" bold-weight>Data de Cadastro: </span><span
-                class="mat-title-small">{{user.registrationDate | date:'dd/MM/yyyy'}}</span>
+                class="mat-title-small">{{user.registrationDate | date:'dd/MM/yyyy' | dashIfEmpty}}</span>
         </mat-list-item>
         <mat-divider />
     </mat-list>
