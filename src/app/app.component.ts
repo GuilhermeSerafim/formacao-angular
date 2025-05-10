@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { UsersList } from './data/users-list';
+import { IUser } from './interfaces/user/user.interface';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +9,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'prj-angular';
+  userSelected: IUser = UsersList[0];
 }
 
 
