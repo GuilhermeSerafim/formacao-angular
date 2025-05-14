@@ -4,7 +4,9 @@
             <app-filter-components/>
         </div>
         <div class="left-container-main">
-            <app-users-list/>
+            <app-users-list
+                (userSelected)="userSelected = $event"
+            />
         </div>
     </div>
     <div class="right-container">
