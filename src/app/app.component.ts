@@ -9,7 +9,10 @@ import { IUser } from './interfaces/user/user.interface';
 })
 export class AppComponent {
   title = 'prj-angular';
-  userSelected: IUser = UsersList[0];
+  userSelected: IUser = {} as IUser;
+  onUserSelected(user: IUser) {
+    this.userSelected = user;
+  }
 }
 
 
