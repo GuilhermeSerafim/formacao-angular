@@ -94,6 +94,29 @@ export const UsersList: IUser[] = [
     }
   },
   {
+    name: "Ana Sousa Batista",
+    email: "ana.sousa.batista@example.com",
+    password: "Ana789",
+    age: 22,
+    address: {
+      street: "Rua das Pedras",
+      number: 80,
+      city: "Porto Alegre",
+      state: "RS",
+      country: "Brasil"
+    },
+    phone: "51915161718",
+    isActive: true,
+    role: "Analista",
+    registrationDate: "2023-08-15T09:00:00.000Z",
+    status: {
+      online: true,
+      verified: false,
+      subscriptionActive: true,
+      lastAccess: "2023-08-18T09:00:00.000Z"
+    }
+  },
+  {
     name: "Pedro Mendes",
     email: "pedro.mendes@example.com",
     password: "Pedro012",

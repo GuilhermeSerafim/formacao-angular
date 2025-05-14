@@ -40,7 +40,8 @@ export class AppComponent implements OnInit {
 
     // Boa prática - É melhor pegarmos o parametro do que puxar mais uma vez a varíavel externa
     filteredList = this.filteredUsersListByName(filterOptions.name, usersList);
-    filteredList = this.filteredUsersListByStatus(filterOptions.status, usersList);
+    // Construindo cascata
+    filteredList = this.filteredUsersListByStatus(filterOptions.status, filteredList);
 
     return filteredList;
   }
