@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersList } from './data/users-list';
 import { IUser } from './interfaces/user/user.interface';
+import { IFilterOptions } from './interfaces/filter-options';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +14,7 @@ export class AppComponent implements OnInit {
   showUserDetails: boolean = false;
 
   usersList: IUser[] = [];
-  
+
   ngOnInit() {
     // Simulando chamada HTTP (async - life cycle component)
     setTimeout(() => {
@@ -24,6 +25,10 @@ export class AppComponent implements OnInit {
   onUserSelected(user: IUser) {
     this.userSelected = user;
     this.showUserDetails = true;
+  }
+
+  onFilter(e: IFilterOptions) {
+    console.log(e)
   }
 }
 

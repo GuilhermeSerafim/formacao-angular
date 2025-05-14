@@ -1,7 +1,9 @@
 <div class="container">
     <div class="left-container">
         <div class="left-container-top">
-            <app-filter-components />
+            <app-filter-components
+                (onFilter)="onFilter($event)"
+            />
         </div>
         <div class="left-container-main">
             <app-users-list 
