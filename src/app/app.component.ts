@@ -40,6 +40,7 @@ export class AppComponent implements OnInit {
 
     // Boa prática - É melhor pegarmos o parametro do que puxar mais uma vez a varíavel externa
     filteredList = this.filteredUsersListByName(filterOptions.name, usersList);
+    filteredList = this.filteredUsersListByStatus(filterOptions.status, usersList);
 
     return filteredList;
   }
@@ -50,6 +51,14 @@ export class AppComponent implements OnInit {
     if (NAME_NOT_TYPPED) return usersList;
 
     return usersList.filter((user) => user.name.toLowerCase().includes(name.toLocaleLowerCase()));
+  }
+
+  filteredUsersListByStatus(status: boolean | undefined, usersList: IUser[]): IUser[] {
+    const STATUS_NOT_TYPPED = status === undefined;
+
+    if (STATUS_NOT_TYPPED) return usersList;
+
+    return usersList.filter((user) => user.isActive === status);
   }
 }
 
