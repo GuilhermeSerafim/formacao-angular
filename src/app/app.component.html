@@ -1,17 +1,16 @@
 <div class="container">
     <div class="left-container">
         <div class="left-container-top">
-            <app-filter-components/>
+            <app-filter-components />
         </div>
         <div class="left-container-main">
-            <app-users-list
-                (userSelected)="onUserSelected($event)"
-            />
+            <app-users-list (userSelected)="onUserSelected($event)" />
         </div>
     </div>
     <div class="right-container">
-        <app-user-details
-            [user]="userSelected"
-        />
+        @if(showUserDetails) {
+        <app-user-details [user]="userSelected" />
+        }
+
     </div>
 </div>
