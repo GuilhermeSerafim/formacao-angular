@@ -14,13 +14,11 @@ export class AppComponent implements OnInit {
 
   usersList: IUser[] = [];
   
-  // Assim que o comp carrega, ele é carregado
   ngOnInit() {
     // Simulando chamada HTTP (async - life cycle component)
     setTimeout(() => {
-      // Pegando 'response'
       this.usersList = UsersList;
-    }, 3000);  // 3 sec
+    }, 1);
   }
 
   onUserSelected(user: IUser) {

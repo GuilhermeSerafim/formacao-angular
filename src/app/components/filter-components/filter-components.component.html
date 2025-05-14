@@ -1,17 +1,25 @@
 <div class="filter">
-    <form action="" class="form">
+    <div class="form">
         <div class="form__name">
             <mat-form-field class="example-full-width">
                 <mat-label>Nome</mat-label>
-                <input matInput placeholder="Digite seu nome">
+                <input [(ngModel)]="filterOptions.name" matInput placeholder="Digite seu nome">
             </mat-form-field>
         </div>
         <div class="form__date-picker">
             <mat-form-field>
                 <mat-label>Data de cadastro</mat-label>
                 <mat-date-range-input [rangePicker]="picker">
-                    <input matStartDate placeholder="Data inicial">
-                    <input matEndDate placeholder="Data final">
+                    <input
+                        [(ngModel)]="filterOptions.startDate" 
+                        matStartDate
+                        placeholder="Data inicial"
+                    >
+                    <input
+                        matEndDate 
+                        [(ngModel)]="filterOptions.endDate" 
+                        placeholder="Data final"
+                    >
                 </mat-date-range-input>
                  <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
                 <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
@@ -21,15 +29,16 @@
         <div class="form__status">
             <mat-form-field>
                 <mat-label>Favorite food</mat-label>
-                <mat-select>
-                    @for (food of foods; track food) {
-                    <mat-option [value]="food.value">{{food.viewValue}}</mat-option>
+                <!-- O valor do selected está sendo enviado para o obj filterOptions -->
+                <mat-select [(ngModel)]="filterOptions.status">
+                    @for (status of statusList; track status) {
+                    <mat-option [value]="status.value">{{status.description}}</mat-option>
                     }
                 </mat-select>
             </mat-form-field>
         </div>
         <div class="form__button">
-            <button mat-raised-button color="primary    ">Basic</button>
+            <button mat-raised-button color="primary" (click)="onFilter()">Basic</button>
         </div>
-    </form>
+    </div>
 </div>
