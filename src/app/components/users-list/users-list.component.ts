@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { IUser } from '../../interfaces/user/user.interface';
 import { UsersList } from '../../data/users-list';
 
@@ -9,11 +9,10 @@ import { UsersList } from '../../data/users-list';
 })
 export class UsersListComponent {
   @Output('userSelected') userSelectedEmmit = new EventEmitter<IUser>();
-
+  // Não é uma boa prática realizar chamadas HTTP no componente filho
+  @Input({ required: true }) usersList: IUser[] = [];
+  displayedColumns: string[] = ['name', 'registrationDate', 'status'];
   onUserSelected(user: IUser) {
-    console.log(user);
     this.userSelectedEmmit.emit(user);
   }
-  displayedColumns: string[] = ['name', 'registrationDate', 'status'];
-  usersList: IUser[] = UsersList;
 }
