@@ -9,6 +9,8 @@ import { FilhoComponent } from './filho/filho.component';
 export class AppComponent implements OnInit, AfterViewInit {
   title = 'prj-angular';
   @ViewChild('meuInput') meuInputEl!: ElementRef<HTMLInputElement>;
+  @ViewChild('meuInput2', { static: true }) meuInput2El!: ElementRef<HTMLInputElement>;
+  @ViewChild('meuInput3', { static: true }) meuInput3El!: ElementRef<HTMLInputElement>;
 
   // • Primeiro o Angular instancia a classe do componente, faz a injeção de dependências e inicializa propriedades padrão.
   // • Aqui ainda não existem dados de entrada (inputs) nem o template renderizado.
@@ -19,7 +21,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   // • É chamado logo após o Angular ter atribuído os valores de todos os @Input() e executado a primeira detecção de mudanças.
   // • Use-o para inicializar lógica que dependa de propriedades configuradas pelo pai.
   ngOnInit(): void {
-    console.log("oninit")
+    console.log("oninit static:", this.meuInput2El, "oninit sem static: ", this.meuInputEl, "\noninit com static, mas com binding no elemento html: ", this.meuInput3El)
   }
 
   // • Só é disparado depois que o Angular renderizou o template e criou todas as views filhas(e variáveis de referência como @ViewChild).
