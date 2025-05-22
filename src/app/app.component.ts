@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,19 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'prj-angular';
-  clicou(_t6: HTMLInputElement) {
-    console.log(_t6.value);
-    _t6.value = 'Atualizado'
+  @ViewChild('meuInput') // Acessando template variable 
+  meuInputEl!: ElementRef<HTMLInputElement>;
+  updateInputText() {
+    this.meuInputEl.nativeElement.value = 'Texto atualizado!'
   }
-}
-
-const funcaoPai = () => {
-  let pai = 'pai';
-  const funcaoFilha = () => {
-    let filha = 'filha';
-    const funcaoNeto = () => {
-      pai = 'vó';
-    }
+  focus() {
+    this.meuInputEl.nativeElement.focus();
   }
 }
 
