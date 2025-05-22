@@ -6,6 +6,7 @@ import { AfterViewInit, Component, ElementRef, QueryList, ViewChildren } from '@
   styleUrl: './app.component.scss',
 })
 export class AppComponent implements AfterViewInit {
+
   title = 'prj-angular';
   buttonList = [
     'Botão 1',
@@ -25,6 +26,10 @@ export class AppComponent implements AfterViewInit {
   }
 
   resetButtons = () => this.buttonsEl.forEach(btnEl => btnEl.nativeElement.style.backgroundColor = '#f2f2f2');
+
+  first() {
+    console.log(this.buttonsEl.get(0));
+  }
 }
 
 
