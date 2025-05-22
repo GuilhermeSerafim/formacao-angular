@@ -18,6 +18,8 @@ export class AppComponent implements AfterViewInit {
 
   ngAfterViewInit() {
     this.buttonsEl.toArray()[0].nativeElement.style.backgroundColor = "blue";
+    // Sempre que houver uma alteração, mostrará no console
+    this.buttonsEl.changes.subscribe((result) => console.log(result));
   }
 
   changeColor(e: MouseEvent) {
@@ -28,9 +30,13 @@ export class AppComponent implements AfterViewInit {
   resetButtons = () => this.buttonsEl.forEach(btnEl => btnEl.nativeElement.style.backgroundColor = '#f2f2f2');
 
   first() {
-    console.log("Resgatando elemento por classe",
-      this.buttonsEl.find(btnEl => btnEl.nativeElement.className === "btn-0"));
+    console.log("");
   }
+  deletar() {
+    this.buttonList.shift();
+  }
+
+
 }
 
 
