@@ -15,15 +15,15 @@ export class AppComponent implements AfterViewInit {
 
   @ViewChildren('meuButton') buttonsEl!: QueryList<ElementRef<HTMLButtonElement>>;
 
-  ngAfterViewInit(): void {
-    console.log(this.buttonsEl)
+  ngAfterViewInit() {
+    this.buttonsEl.toArray()[0].nativeElement.style.backgroundColor = "blue";
   }
 
   changeColor(e: MouseEvent) {
     const btnElement = e.target as HTMLButtonElement;
     btnElement.style.backgroundColor = "orange";
   }
-  
+
   resetButtons = () => this.buttonsEl.forEach(btnEl => btnEl.nativeElement.style.backgroundColor = '#f2f2f2');
 }
 

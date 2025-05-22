@@ -1,7 +1,5 @@
 <!-- Template Variable # -->
-<div class="container">
-    @for (btn of buttonList; track $index) {
-        <button #meuButton (click)="changeColor($event)">{{btn}}</button>
-    }
-    <button (click)="resetButtons()">Resetar</button>
-</div>
+@for (btn of buttonList; track $index) {
+<button #meuButton (click)="changeColor($event)">{{btn}}</button>
+}
+<button (click)="resetButtons()">Resetar</button>
