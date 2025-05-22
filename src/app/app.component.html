@@ -1,21 +1,8 @@
+<!-- Template Variable # -->
 <div class="container">
-    <div class="left-container">
-        <div class="left-container-top">
-            <app-filter-components
-                (onFilter)="onFilter($event)"
-            />
-        </div>
-        <div class="left-container-main">
-            <app-users-list 
-                (userSelected)="onUserSelected($event)" 
-                [usersList]="usersListFiltered"
-            />
-        </div>
-    </div>
-    <div class="right-container">
-        @if(showUserDetails) {
-        <app-user-details [user]="userSelected" />
-        }
-
-    </div>
+    <input type="text" #meuInput>
+    <input type="text" #meuInput2>
+    @if(true) {
+    <input type="text" #meuInput3>
+    }
 </div>
