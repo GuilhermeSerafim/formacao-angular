@@ -1,6 +1,32 @@
 <!-- Template Variable # -->
 <div class="container">
-    <input type="text" [style.backgroundColor]="'white'" #meuInput ngModel />
-    <p>Valor: {{meuInput.value}}</p>
-    <button (click)="clicou(meuInput)">Atualizar</button>
+    <!-- Escopo pai -->
+    @if(true){
+    <div class="pai">
+        <input type="text" #inputPai ngModel />
+        <!-- {{inputFilho.value}} -> !ERRO - NÃO ESTÁ NO ESCOPO-->
+         <!-- Escopo filho -->
+        @if(true){
+        <div class="filho">
+            <input type="text" #inputFilho>
+            Filho: {{inputPai.value}}
+        </div>
+        }
+    </div>
+    }
+</div>
+
+<div class="container2">
+    <!-- O contexto/escopo é criado pelo control flow blocks -->
+    @if(true){
+    <div class="pai">
+        <input type="text" #inputPai ngModel />
+        <!-- Agora irá renderizar, pois ambos templates estão no mesmo escopo -->
+        {{inputFilho.value}} 
+        <div class="filho">
+            <input type="text" #inputFilho ngModel>
+            Filho: {{inputPai.value}}
+        </div>
+    </div>
+    }
 </div>
