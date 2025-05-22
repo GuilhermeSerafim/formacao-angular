@@ -8,7 +8,7 @@ import { FilhoComponent } from './filho/filho.component';
 })
 export class AppComponent {
   title = 'prj-angular';
-  // Quando pegamos componente, declaramos diretamente
+  // É mais recomendável utilizar o @input e @output para deixar melhor documentado, dificilemnte vc vai utilizar isto
   @ViewChild(FilhoComponent) filhoCompRef!: FilhoComponent;
   hello() {
     this.filhoCompRef.dizerOi();
