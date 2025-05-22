@@ -1,8 +1,7 @@
 <!-- Template Variable # -->
 <div class="container">
-    <input type="text" #meuInput>
-    <input type="text" #meuInput2>
-    @if(true) {
-    <input type="text" #meuInput3>
+    @for (btn of buttonList; track $index) {
+        <button #meuButton (click)="changeColor($event)">{{btn}}</button>
     }
+    <button (click)="resetButtons()">Resetar</button>
 </div>
