@@ -28,7 +28,8 @@ export class AppComponent implements AfterViewInit {
   resetButtons = () => this.buttonsEl.forEach(btnEl => btnEl.nativeElement.style.backgroundColor = '#f2f2f2');
 
   first() {
-    console.log(this.buttonsEl.get(0));
+    console.log("Resgatando elemento por classe",
+      this.buttonsEl.find(btnEl => btnEl.nativeElement.className === "btn-0"));
   }
 }
 
