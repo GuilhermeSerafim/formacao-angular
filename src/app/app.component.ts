@@ -1,4 +1,5 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
+import { FilhoComponent } from './filho/filho.component';
 
 @Component({
   selector: 'app-root',
@@ -7,17 +8,11 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 })
 export class AppComponent {
   title = 'prj-angular';
-  @ViewChild('meuInput') // Acessando template variable 
-  meuInputEl!: ElementRef<HTMLInputElement>;
-  @ViewChild('minhaDiv') minhaDivEl!: ElementRef<HTMLDivElement>;
-  updateInputText() {
-    this.meuInputEl.nativeElement.value = 'Texto atualizado!'
-  }
-  focus() {
-    this.meuInputEl.nativeElement.focus();
-  }
-  toggleDiv() {
-    this.minhaDivEl.nativeElement.textContent = 'Conteúdo atualizado!'
+  // Quando pegamos componente, declaramos diretamente
+  @ViewChild('filhoComp') filhoCompRef!: FilhoComponent;
+  hello() {
+    this.filhoCompRef.dizerOi();
+    this.filhoCompRef.message = 'Oi atualizado';
   }
 }
 

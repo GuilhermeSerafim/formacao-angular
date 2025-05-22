@@ -1,9 +1,6 @@
 <!-- Template Variable # -->
 <div class="container">
-    <input type="text" #meuInput>
-    <button (click)="updateInputText()">Atualizar</button>
-    <button (click)="focus()">Focar</button>
-    <div #minhaDiv>Conteúdo inicial</div>
-
-    <button (click)="toggleDiv()">Mudar</button>
+    <app-filho #filhoComp/>
+    <app-filho #filhoComp2/>
+    <button (click)="hello()">Hello</button>
 </div>
