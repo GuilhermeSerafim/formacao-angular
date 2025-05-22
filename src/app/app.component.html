@@ -1,0 +1,12 @@
+<!-- Template Variable # -->
+<div class="container">
+
+    <input type="text" [style.backgroundColor]="'red'" #meuInput ngModel />
+    <input type="text" [style.backgroundColor]="'blue'" #meuInput2 [(ngModel)]="binding" />
+    <p>Valor atualizado com ngModel: {{meuInput.value}}</p>
+    <p>Valor atualizado com two way data binding: {{binding}}</p>
+    
+    <input type="text" [style.backgroundColor]="'green'" #meuInput3 />
+    <button (click)="changeDetection()">Atualizar</button>
+    <p>Valor atualizado com detectChanges: {{meuInput3.value}}</p>
+</div>
