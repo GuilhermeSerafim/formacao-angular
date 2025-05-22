@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,14 +7,19 @@ import { ChangeDetectorRef, Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'prj-angular';
-  binding: string = "Guiler";
+  clicou(_t6: HTMLInputElement) {
+    console.log(_t6.value);
+    _t6.value = 'Atualizado'
+  }
+}
 
-  constructor(
-    private _cdRef: ChangeDetectorRef
-  ) { }
-
-  changeDetection() {
-    this._cdRef.detectChanges();
+const funcaoPai = () => {
+  let pai = 'pai';
+  const funcaoFilha = () => {
+    let filha = 'filha';
+    const funcaoNeto = () => {
+      pai = 'vó';
+    }
   }
 }
 
