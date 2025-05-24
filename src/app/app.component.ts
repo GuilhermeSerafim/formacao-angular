@@ -5,38 +5,9 @@ import { AfterViewInit, Component, ElementRef, QueryList, ViewChildren } from '@
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent implements AfterViewInit {
+export class AppComponent {
 
   title = 'prj-angular';
-  buttonList = [
-    'Botão 1',
-    'Botão 2',
-    'Botão 3',
-  ]
-
-  @ViewChildren('meuButton') buttonsEl!: QueryList<ElementRef<HTMLButtonElement>>;
-
-  ngAfterViewInit() {
-    this.buttonsEl.toArray()[0].nativeElement.style.backgroundColor = "blue";
-    // Sempre que houver uma alteração, mostrará no console
-    this.buttonsEl.changes.subscribe((result) => console.log(result));
-  }
-
-  changeColor(e: MouseEvent) {
-    const btnElement = e.target as HTMLButtonElement;
-    btnElement.style.backgroundColor = "orange";
-  }
-
-  resetButtons = () => this.buttonsEl.forEach(btnEl => btnEl.nativeElement.style.backgroundColor = '#f2f2f2');
-
-  first() {
-    console.log("");
-  }
-  deletar() {
-    this.buttonList.shift();
-  }
-
-
 }
 
 

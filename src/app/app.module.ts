@@ -4,12 +4,12 @@ import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
-import { FilhoComponent } from './filho/filho.component';
+import { SemDiretivaComponent } from './sem-diretiva/sem-diretiva.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FilhoComponent,
+    SemDiretivaComponent,
   ],
   imports: [
     BrowserModule,
