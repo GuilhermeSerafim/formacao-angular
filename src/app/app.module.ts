@@ -5,11 +5,15 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { SemDiretivaComponent } from './sem-diretiva/sem-diretiva.component';
+import { ComDiretivaComponent } from './com-diretiva/com-diretiva.component';
+import { HighlightDirective } from './directives/highlight.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     SemDiretivaComponent,
+    ComDiretivaComponent,
+    HighlightDirective // Declaramos aqui, pois queremos usar no ComDiretivaComponent, portanto, mesmo módulo
   ],
   imports: [
     BrowserModule,
