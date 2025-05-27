@@ -12,8 +12,9 @@ export class AppComponent implements AfterViewInit, OnInit {
   ngOnInit(): void {
     console.log(this._elRef.nativeElement.children[1]); // Outra forma
     const divEl = this._elRef.nativeElement.querySelector('#minha-outra-div') as HTMLDivElement; // Acesso as propriedades no ts com + facilidade
-    divEl.style.backgroundColor = 'green'
-    divEl.textContent = 'Outra div'
+    divEl.style.backgroundColor = 'green';
+    divEl.textContent = 'Outra div';
+    divEl.addEventListener('click', () => console.log('Cliquei na div!'))
   }
   ngAfterViewInit(): void {
     this.divEl.nativeElement.style.backgroundColor = 'orange';
