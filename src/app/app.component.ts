@@ -8,6 +8,7 @@ import { AfterViewInit, Component, ElementRef, QueryList, ViewChildren } from '@
 export class AppComponent {
 
   title = 'prj-angular';
+  textColor: string = 'purple';
 }
 
 

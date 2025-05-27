@@ -9,6 +9,8 @@ import { ComDiretivaComponent } from './com-diretiva/com-diretiva.component';
 import { HighlightDirective } from './directives/highlight.directive';
 import { DisabledDirective } from './directives/disabled.directive';
 import { StyleDirective } from './directives/style.directive';
+import { ListenerDirective } from './directives/listener.directive';
+import { InputBackgroundDirective } from './directives/input-background.directive';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { StyleDirective } from './directives/style.directive';
     ComDiretivaComponent,
     HighlightDirective,
     DisabledDirective,
-    StyleDirective // Declaramos aqui, pois queremos usar no ComDiretivaComponent, portanto, mesmo módulo
+    StyleDirective,
+    ListenerDirective,
+    InputBackgroundDirective // Declaramos aqui, pois queremos usar no ComDiretivaComponent, portanto, mesmo módulo
   ],
   imports: [
     BrowserModule,

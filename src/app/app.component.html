@@ -1,13 +1,10 @@
-<!-- Passar o mouse e colocar o background, ti|rar e tira o bg -->
-<!-- <app-sem-diretiva></app-sem-diretiva>
- <app-com-diretiva/>
-
- <br/>
- <br/>
- <button appDisabled>Meu botão</button> -->
-
-<p style="background-color: blue;color: white;">Atributo style padrão</p>
-<p [attr.style]="'background-color: blue;color: white;'">Attr Binding</p>
-<p [style]="'background-color: blue;color: white;'">Prop binding</p>
-<p [style]="{backgroundColor: 'blue',color: 'white'}">Prop binding obj</p>
-<p appStyle>Diretiva</p>
+<input 
+    type="text"
+    appInputBackground="yellow"
+    aliasTextColor="purple"
+/>
+<input 
+    type="text"
+    appInputBackground="black"
+    [aliasTextColor]="textColor"
+/>
