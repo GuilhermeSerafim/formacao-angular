@@ -1,19 +1,29 @@
-import { AfterViewInit, Component, ElementRef, QueryList, ViewChild, ViewChildren } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent implements AfterViewInit {
+export class AppComponent implements AfterViewInit, OnInit {
   title = 'prj-angular';
   @ViewChild('minhaDiv') divEl!: ElementRef<HTMLDivElement>;
-  
+  constructor(private readonly _elRef: ElementRef) { }
+  ngOnInit(): void {
+    console.log(this._elRef.nativeElement.children[1]); // Outra forma
+    const divEl = this._elRef.nativeElement.querySelector('#minha-outra-div') as HTMLDivElement; // Acesso as propriedades no ts com + facilidade
+    divEl.style.backgroundColor = 'green'
+    divEl.textContent = 'Outra div'
+  }
   ngAfterViewInit(): void {
-     this.divEl.nativeElement.style.backgroundColor = 'orange';
-     this.divEl.nativeElement.textContent = 'Sou uma div';
-     this.divEl.nativeElement.classList.add('minha-classe');
+    this.divEl.nativeElement.style.backgroundColor = 'orange';
+    this.divEl.nativeElement.textContent = 'Sou uma div';
+    this.divEl.nativeElement.classList.add('minha-classe');
   }
 }
 
 
+/* 
+  A diferença do document para o Element Ref, é que o document é para toda a aplicação, enquanto o ElementRef é apenas para o componente
+  -> document é do navegador, não do Javascript, e o ElementRef é do Angular!
+*/
