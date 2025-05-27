@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FilhoComponent } from './filho.component';
+import { SemDiretivaComponent } from './sem-diretiva.component';
 
-describe('FilhoComponent', () => {
-  let component: FilhoComponent;
-  let fixture: ComponentFixture<FilhoComponent>;
+describe('SemDiretivaComponent', () => {
+  let component: SemDiretivaComponent;
+  let fixture: ComponentFixture<SemDiretivaComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [FilhoComponent]
+      declarations: [SemDiretivaComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(FilhoComponent);
+    fixture = TestBed.createComponent(SemDiretivaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

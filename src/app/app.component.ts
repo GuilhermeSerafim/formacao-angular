@@ -1,35 +1,13 @@
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { FilhoComponent } from './filho/filho.component';
+import { AfterViewInit, Component, ElementRef, QueryList, ViewChildren } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent implements OnInit, AfterViewInit {
+export class AppComponent {
+
   title = 'prj-angular';
-  @ViewChild('meuInput') meuInputEl!: ElementRef<HTMLInputElement>;
-  @ViewChild('meuInput2', { static: true }) meuInput2El!: ElementRef<HTMLInputElement>;
-  @ViewChild('meuInput3', { static: true }) meuInput3El!: ElementRef<HTMLInputElement>;
-
-  // • Primeiro o Angular instancia a classe do componente, faz a injeção de dependências e inicializa propriedades padrão.
-  // • Aqui ainda não existem dados de entrada (inputs) nem o template renderizado.
-  constructor() {
-    console.log("constructor")
-  }
-
-  // • É chamado logo após o Angular ter atribuído os valores de todos os @Input() e executado a primeira detecção de mudanças.
-  // • Use-o para inicializar lógica que dependa de propriedades configuradas pelo pai.
-  ngOnInit(): void {
-    console.log("oninit static:", this.meuInput2El, "oninit sem static: ", this.meuInputEl, "\noninit com static, mas com binding no elemento html: ", this.meuInput3El)
-  }
-
-  // • Só é disparado depois que o Angular renderizou o template e criou todas as views filhas(e variáveis de referência como @ViewChild).
-  // • Aqui já dá para acessar com segurança o this.meuInputEl.nativeElement e, por exemplo, dar foco no input.
-  ngAfterViewInit(): void {
-    console.log("afterview")
-    this.meuInputEl.nativeElement.focus();
-  }
 }
 
 

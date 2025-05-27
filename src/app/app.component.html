@@ -1,8 +1,13 @@
-<!-- Template Variable # -->
-<div class="container">
-    <input type="text" #meuInput>
-    <input type="text" #meuInput2>
-    @if(true) {
-    <input type="text" #meuInput3>
-    }
-</div>
+<!-- Passar o mouse e colocar o background, ti|rar e tira o bg -->
+<!-- <app-sem-diretiva></app-sem-diretiva>
+ <app-com-diretiva/>
+
+ <br/>
+ <br/>
+ <button appDisabled>Meu botão</button> -->
+
+<p style="background-color: blue;color: white;">Atributo style padrão</p>
+<p [attr.style]="'background-color: blue;color: white;'">Attr Binding</p>
+<p [style]="'background-color: blue;color: white;'">Prop binding</p>
+<p [style]="{backgroundColor: 'blue',color: 'white'}">Prop binding obj</p>
+<p appStyle>Diretiva</p>

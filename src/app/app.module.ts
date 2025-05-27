@@ -4,12 +4,20 @@ import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
-import { FilhoComponent } from './filho/filho.component';
+import { SemDiretivaComponent } from './sem-diretiva/sem-diretiva.component';
+import { ComDiretivaComponent } from './com-diretiva/com-diretiva.component';
+import { HighlightDirective } from './directives/highlight.directive';
+import { DisabledDirective } from './directives/disabled.directive';
+import { StyleDirective } from './directives/style.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FilhoComponent,
+    SemDiretivaComponent,
+    ComDiretivaComponent,
+    HighlightDirective,
+    DisabledDirective,
+    StyleDirective // Declaramos aqui, pois queremos usar no ComDiretivaComponent, portanto, mesmo módulo
   ],
   imports: [
     BrowserModule,
