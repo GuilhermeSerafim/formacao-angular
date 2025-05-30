@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, ElementRef, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
+import { TesteService } from './services/teste.service';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +9,12 @@ import { AfterViewInit, Component, ElementRef, OnInit, QueryList, ViewChild, Vie
 export class AppComponent implements AfterViewInit, OnInit {
   title = 'prj-angular';
   @ViewChild('minhaDiv') divEl!: ElementRef<HTMLDivElement>;
-  constructor(private readonly _elRef: ElementRef) { }
+
+  constructor(
+    private readonly _elRef: ElementRef,
+    private readonly _testeService: TesteService
+  ) { }
+  
   ngOnInit(): void {
     // console.log(this._elRef.nativeElement.children[1]); // Outra forma
     // const divEl = this._elRef.nativeElement.querySelector('#minha-outra-div') as HTMLDivElement; // Acesso as propriedades no ts com + facilidade
@@ -32,6 +38,7 @@ export class AppComponent implements AfterViewInit, OnInit {
     // Inclusão dele no nosso template
     // parentNode.appendChild(childNode); - parentNode -> Nosso componente
     // this._elRef.nativeElement.appendChild(newDiv);
+    this._testeService.create(this._elRef);
   }
 }
 
