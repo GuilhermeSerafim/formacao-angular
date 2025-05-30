@@ -10,28 +10,28 @@ export class AppComponent implements AfterViewInit, OnInit {
   @ViewChild('minhaDiv') divEl!: ElementRef<HTMLDivElement>;
   constructor(private readonly _elRef: ElementRef) { }
   ngOnInit(): void {
-    console.log(this._elRef.nativeElement.children[1]); // Outra forma
-    const divEl = this._elRef.nativeElement.querySelector('#minha-outra-div') as HTMLDivElement; // Acesso as propriedades no ts com + facilidade
-    divEl.style.backgroundColor = 'green';
-    divEl.textContent = 'Outra div';
-    divEl.addEventListener('click', () => console.log('Cliquei na div!'))
+    // console.log(this._elRef.nativeElement.children[1]); // Outra forma
+    // const divEl = this._elRef.nativeElement.querySelector('#minha-outra-div') as HTMLDivElement; // Acesso as propriedades no ts com + facilidade
+    // divEl.style.backgroundColor = 'green';
+    // divEl.textContent = 'Outra div';
+    // divEl.addEventListener('click', () => console.log('Cliquei na div!'))
   }
 
   ngAfterViewInit(): void {
-    this.divEl.nativeElement.style.backgroundColor = 'orange';
-    this.divEl.nativeElement.textContent = 'Sou uma div';
-    this.divEl.nativeElement.classList.add('minha-classe');
+    // this.divEl.nativeElement.style.backgroundColor = 'orange';
+    // this.divEl.nativeElement.textContent = 'Sou uma div';
+    // this.divEl.nativeElement.classList.add('minha-classe');
   }
 
   createElement() {
     // Criação do elemento no contexto global -> Document
-    const newDiv = document.createElement('div');
-    newDiv.textContent = "Im new div";
-    newDiv.classList.add('bg-red');
+    // const newDiv = document.createElement('div');
+    // newDiv.textContent = "Im new div";
+    // newDiv.classList.add('bg-red');
 
     // Inclusão dele no nosso template
     // parentNode.appendChild(childNode); - parentNode -> Nosso componente
-    this._elRef.nativeElement.appendChild(newDiv);
+    // this._elRef.nativeElement.appendChild(newDiv);
   }
 }
 

@@ -11,6 +11,7 @@ import { DisabledDirective } from './directives/disabled.directive';
 import { StyleDirective } from './directives/style.directive';
 import { ListenerDirective } from './directives/listener.directive';
 import { InputBackgroundDirective } from './directives/input-background.directive';
+import { FocusSecondInputDirective } from './directives/focus-second-input.directive';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { InputBackgroundDirective } from './directives/input-background.directiv
     DisabledDirective,
     StyleDirective,
     ListenerDirective,
-    InputBackgroundDirective // Declaramos aqui, pois queremos usar no ComDiretivaComponent, portanto, mesmo módulo
+    InputBackgroundDirective,
+    FocusSecondInputDirective // Declaramos aqui, pois queremos usar no ComDiretivaComponent, portanto, mesmo módulo
   ],
   imports: [
     BrowserModule,
