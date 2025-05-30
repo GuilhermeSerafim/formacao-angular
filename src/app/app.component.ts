@@ -16,10 +16,22 @@ export class AppComponent implements AfterViewInit, OnInit {
     divEl.textContent = 'Outra div';
     divEl.addEventListener('click', () => console.log('Cliquei na div!'))
   }
+
   ngAfterViewInit(): void {
     this.divEl.nativeElement.style.backgroundColor = 'orange';
     this.divEl.nativeElement.textContent = 'Sou uma div';
     this.divEl.nativeElement.classList.add('minha-classe');
+  }
+
+  createElement() {
+    // Criação do elemento no contexto global -> Document
+    const newDiv = document.createElement('div');
+    newDiv.textContent = "Im new div";
+    newDiv.classList.add('bg-red');
+
+    // Inclusão dele no nosso template
+    // parentNode.appendChild(childNode); - parentNode -> Nosso componente
+    this._elRef.nativeElement.appendChild(newDiv);
   }
 }
 
