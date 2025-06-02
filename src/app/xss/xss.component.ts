@@ -23,9 +23,10 @@ export class XssComponent {
   createElementCorrect(inputText: string) {
     const divEl = this._renderer2.createElement('div');
     const text = this._renderer2.createText(inputText);
-    // inserindo texto dentro da divEl
+    // Escopo do componente (ng_hash), diferente do document, que cria globalmente - global não irá aplicar os estilos do xss.component.css...
     this._renderer2.appendChild(divEl, text);
-    // inserindo divEl dentro do nosso template pelo ElementRef
+    this._renderer2.setStyle(divEl, 'color', 'yellow');
+    this._renderer2.addClass(divEl, "bg-purple")
     this._renderer2.appendChild(this._elRef.nativeElement, divEl);
   } 
 
