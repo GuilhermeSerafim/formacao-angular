@@ -7,3 +7,10 @@
     flex-direction: column;
     background-color: aqua;
 }
+
+// Não irá funcionar, pois a div está em um contexto global, não do componente
+.bg-red {
+    color: red;
+    background-color: red;
+    margin-top: 20px;
+}
