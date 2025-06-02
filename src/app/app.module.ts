@@ -13,6 +13,7 @@ import { ListenerDirective } from './directives/listener.directive';
 import { InputBackgroundDirective } from './directives/input-background.directive';
 import { FocusSecondInputDirective } from './directives/focus-second-input.directive';
 import { CreateDivDirective } from './directives/create-div.directive';
+import { XssComponent } from './xss/xss.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { CreateDivDirective } from './directives/create-div.directive';
     ListenerDirective,
     InputBackgroundDirective,
     FocusSecondInputDirective,
-    CreateDivDirective // Declaramos aqui, pois queremos usar no ComDiretivaComponent, portanto, mesmo módulo
+    CreateDivDirective,
+    XssComponent // Declaramos aqui, pois queremos usar no ComDiretivaComponent, portanto, mesmo módulo
   ],
   imports: [
     BrowserModule,

@@ -38,7 +38,7 @@ export class AppComponent implements AfterViewInit, OnInit {
     // Inclusão dele no nosso template
     // parentNode.appendChild(childNode); - parentNode -> Nosso componente
     // this._elRef.nativeElement.appendChild(newDiv);
-    this._testeService.create(this._elRef);
+    // this._testeService.create(this._elRef);
   }
 }
 
