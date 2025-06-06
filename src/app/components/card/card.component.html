@@ -5,14 +5,29 @@
         <p>{{textRightCard}}</p>
     </div>
     <div class="card__content">
-        @for(row of cardRows; track $index ){
-        <div class="card__content-item">
-            <p>{{row.chave}}</p>
-            <p>{{row.valor}}</p>
-            @if(row.line) {
-            }
+        @for(row of cardRows; track $index; let i = $index){
+        @if(row.bgGrayLine) {
+        <div
+            class="card__content-summary"
+            [class.card__summary-first-item]="i === firstSummaryIndex"
+            [class.card__summary-last-item]="i === lastSummaryIndex"
+        >
+            <div class="card__content-item">
+                <p>{{row.textLeft}}</p>
+                <p>{{row.textRight}}</p>
+            </div>
         </div>
+        }@else {
+        <div class="card__content-item" [style]="">
+            <p>{{row.textLeft}}</p>
+            <p>{{row.textRight}}</p>
+        </div>
+        }
+        @if(row.line) {
         <div class="card__content-line"></div>
         }
+
+        }
+        <!-- Como vou lidar com partes exclusivas - como o footer cinza do saldo disponível? -->
     </div>
 </div>

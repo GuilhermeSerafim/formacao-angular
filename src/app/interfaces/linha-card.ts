@@ -1,5 +1,6 @@
 export interface LinhaCard {
-  chave: string;
-  valor: string;
+  textLeft: string;
+  textRight: string;
   line?: boolean;
+  bgGrayLine?: boolean;
 }

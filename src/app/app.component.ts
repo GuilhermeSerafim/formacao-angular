@@ -10,10 +10,12 @@ export class AppComponent {
   title = 'prj-angular';
 
   itensSaldosDisponiveisMockado: LinhaCard[] = [
-    { chave: 'Conta Corrente', valor: 'R$ 200,00', line: true },
-    { chave: 'Conta Corrente Saldo Vinculados', valor: 'R$ 300,00', line: true },
-    { chave: 'Conta Poupança Saldo Vinculados', valor: 'R$ 400,00', line: true },
-    { chave: 'Investimentos com Baixa Automática', valor: 'R$ 500,00', line: true },
-    { chave: 'Investimentos sem Baixa Automática', valor: 'R$ 500,00', line: true }
+    { textLeft: 'Conta Corrente', textRight: 'R$ 200,00', line: true },
+    { textLeft: 'Conta Corrente Saldo Vinculados', textRight: 'R$ 300,00', line: true },
+    { textLeft: 'Conta Poupança Saldo Vinculados', textRight: 'R$ 400,00', line: true },
+    { textLeft: 'Investimentos com Baixa Automática', textRight: 'R$ 500,00', line: true },
+    { textLeft: 'Investimentos sem Baixa Automática', textRight: 'R$ 500,00', line: true },
+    { textLeft: 'Investimentos sem Baixa Automática', textRight: 'R$ 1000,00', bgGrayLine: true },
+    { textLeft: 'LIVRE PARA MOVIMENTAÇÃO', textRight: 'R$ 1000,00', bgGrayLine: true }
   ]
 }
