@@ -1,0 +1,18 @@
+<div class="card">
+    <div [style.backgroundColor]="colorTitleCard" class="card__header">
+        <img [src]="srcCard" [alt]="altCard">
+        <h1>{{titleCard}}</h1>
+        <p>{{textRightCard}}</p>
+    </div>
+    <div class="card__content">
+        @for(row of cardRows; track $index ){
+        <div class="card__content-item">
+            <p>{{row.chave}}</p>
+            <p>{{row.valor}}</p>
+            @if(row.line) {
+            }
+        </div>
+        <div class="card__content-line"></div>
+        }
+    </div>
+</div>

@@ -1,16 +1,13 @@
 .container {
-    display: flex;
-    flex-direction: column;
-}
-.container2 {
-    display: flex;
-    flex-direction: column;
-    background-color: aqua;
-}
+    width: 100%;
+    height: 100%;
+    padding: 10px;
 
-// Não irá funcionar, pois a div está em um contexto global, não do componente
-.bg-red {
-    color: red;
-    background-color: red;
-    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+
+    .item {
+        width: 50%;
+        padding: 10px;
+    }
 }
