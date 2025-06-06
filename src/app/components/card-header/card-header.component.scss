@@ -1,0 +1,23 @@
+.card__header {
+    padding: 15px;
+
+    display: flex;
+    align-items: center !important;
+
+    p,
+    h1 {
+        margin-bottom: -5px;
+        font-size: 20px;
+    }
+
+    h1 {
+        font-weight: bold;
+        margin-right: auto;
+    }
+
+
+    img {
+        width: 40px;
+        margin-right: 10px;
+    }
+}

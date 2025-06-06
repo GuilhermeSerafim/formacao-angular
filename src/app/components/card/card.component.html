@@ -1,9 +1,9 @@
 <div class="card">
-    <div [style.backgroundColor]="colorTitleCard" class="card__header">
-        <img [src]="srcCard" [alt]="altCard">
-        <h1>{{titleCard}}</h1>
-        <p>{{textRightCard}}</p>
-    </div>
+    <app-card-header
+        colorTitle="#e98132"
+        title="Saldos Disponíveis"
+        src="icons/icon-hand.png"
+    />
     <div class="card__content">
         @for(row of cardRows; track $index; let i = $index){
         @if(row.bgGrayLine) {
