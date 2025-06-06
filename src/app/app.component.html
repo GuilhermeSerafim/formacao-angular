@@ -2,9 +2,16 @@
     <div class="item">
         <app-card
             [rows]="itensSaldosDisponiveisMockado" 
-            title="Saldos Disponíveis" 
-            src="icons/icon-hand.png" 
-            textRight="R$ 100,00"
+        >
+        <p>Conteúdo acima do Header</p>
+        <app-card-header
+        colorTitle="#e98132" 
+        title="Saldos Disponíveis" 
+        src="icons/icon-hand.png" 
+        textRight="R$ 100,00"
         />
-    </div>
+        <app-card-content [rows]="itensSaldosDisponiveisMockado" />
+        <p>Conteúdo abaixo do Header</p>
+    </app-card>
+</div>
 </div>
