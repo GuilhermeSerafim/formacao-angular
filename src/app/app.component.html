@@ -1,12 +1,10 @@
-<!-- <div #minhaDiv></div>
-<div id="minha-outra-div"></div>
--->
-<!-- Na diretiva, para acessar elementos filhos, usamos element ref -> Nivel um pouco mais complexo -->
-<!-- <div appFocusSecondInput>
-    <input type="text" placeholder="input 1">
-    <input type="text" placeholder="input 2">
-    <input type="text" placeholder="input 3">
-</div> -->
-<!-- <button (click)="createElement()">Create element</button>
-<button appCreateDiv>Create element with directive</button> -->
-<app-xss/>
+<div class="container">
+    <div class="item">
+        <app-card 
+            [rows]="itensSaldosDisponiveisMockado" 
+            title="Saldos Disponíveis" 
+            src="icons/icon-hand.png" 
+            textRight="R$ 100,00"
+        />
+    </div>
+</div>
