@@ -7,5 +7,4 @@ import { LinhaCard } from '../../interfaces/linha-card';
   styleUrl: './card.component.scss'
 })
 export class CardComponent {
-  @Input({ required: true, alias: "rows" }) cardRows: LinhaCard[] = [];
 }
