@@ -1,33 +1,4 @@
 <div class="card">
-    <app-card-header
-        colorTitle="#e98132"
-        title="Saldos Disponíveis"
-        src="icons/icon-hand.png"
-    />
-    <div class="card__content">
-        @for(row of cardRows; track $index; let i = $index){
-        @if(row.bgGrayLine) {
-        <div
-            class="card__content-summary"
-            [class.card__summary-first-item]="i === firstSummaryIndex"
-            [class.card__summary-last-item]="i === lastSummaryIndex"
-        >
-            <div class="card__content-item">
-                <p>{{row.textLeft}}</p>
-                <p>{{row.textRight}}</p>
-            </div>
-        </div>
-        }@else {
-        <div class="card__content-item" [style]="">
-            <p>{{row.textLeft}}</p>
-            <p>{{row.textRight}}</p>
-        </div>
-        }
-        @if(row.line) {
-        <div class="card__content-line"></div>
-        }
-
-        }
-        <!-- Como vou lidar com partes exclusivas - como o footer cinza do saldo disponível? -->
-    </div>
+    <app-card-header colorTitle="#e98132" title="Saldos Disponíveis" src="icons/icon-hand.png" textRight="R$ 100,00" />
+    <app-card-content [rows]="cardRows" />
 </div>

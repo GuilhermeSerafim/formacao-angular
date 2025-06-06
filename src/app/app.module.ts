@@ -6,11 +6,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { CardComponent } from './components/card/card.component';
 import { CardHeaderComponent } from './components/card-header/card-header.component';
+import { CardContentComponent } from './components/card-content/card-content.component';
 @NgModule({
   declarations: [
     AppComponent,
     CardComponent,
     CardHeaderComponent,
+    CardContentComponent,
   ],
   imports: [
     BrowserModule,

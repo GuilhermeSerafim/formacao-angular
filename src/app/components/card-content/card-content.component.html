@@ -1,0 +1,11 @@
+<div class="card__content">
+    @for(row of cardRows; track $index;){
+    <div class="card__content-item" [style]="">
+        <p>{{row.textLeft}}</p>
+        <p>{{row.textRight}}</p>
+    </div>
+    @if(row.line) {
+        <div class="card__content-line"></div>
+    }
+    }
+</div>

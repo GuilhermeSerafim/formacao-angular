@@ -14,8 +14,6 @@ export class AppComponent {
     { textLeft: 'Conta Corrente Saldo Vinculados', textRight: 'R$ 300,00', line: true },
     { textLeft: 'Conta Poupança Saldo Vinculados', textRight: 'R$ 400,00', line: true },
     { textLeft: 'Investimentos com Baixa Automática', textRight: 'R$ 500,00', line: true },
-    { textLeft: 'Investimentos sem Baixa Automática', textRight: 'R$ 500,00', line: true },
-    { textLeft: 'Investimentos sem Baixa Automática', textRight: 'R$ 1000,00', bgGrayLine: true },
-    { textLeft: 'LIVRE PARA MOVIMENTAÇÃO', textRight: 'R$ 1000,00', bgGrayLine: true }
+    { textLeft: 'Investimentos sem Baixa Automática', textRight: 'R$ 500,00', line: false },
   ]
 }
