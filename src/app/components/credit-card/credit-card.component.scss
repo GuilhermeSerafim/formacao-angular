@@ -1,0 +1,11 @@
+.credit-card__content-item {
+    font-size: 16px;
+    align-items: center;
+    display: flex;
+    align-items: center;
+    padding: 35px 35px 0 35px;
+
+    p:nth-of-type(1) {
+        margin-right: auto;
+    }
+}
