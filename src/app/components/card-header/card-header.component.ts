@@ -6,7 +6,7 @@ import { Component, Input } from '@angular/core';
   styleUrl: './card-header.component.scss'
 })
 export class CardHeaderComponent {
-  @Input({required: true, alias: "colorTitle"}) colorTitleCard: string = "";
+  @Input({ alias: "colorTitle"}) colorTitleCard: string = "#e98132";
   @Input({required: true, alias: "title"}) titleCard: string = "";
   @Input({required: true, alias: "src"}) srcCard: string = "";
   @Input({required: false, alias: "alt"}) altCard: string = "";
