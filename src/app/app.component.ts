@@ -1,5 +1,4 @@
 import { AfterViewInit, Component, ElementRef, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
-import { LinhaCard } from './interfaces/linha-card';
 
 @Component({
   selector: 'app-root',
