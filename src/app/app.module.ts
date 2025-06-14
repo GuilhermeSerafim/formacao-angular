@@ -5,22 +5,12 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { CardComponent } from './components/card/card.component';
-import { CardHeaderComponent } from './components/card-header/card-header.component';
-import { CardContentComponent } from './components/card-content/card-content.component';
-import { BalanceCardComponent } from './components/balance-card/balance-card.component';
-import { CreditCardComponent } from './components/credit-card/credit-card.component';
-import { DebitCardComponent } from './components/debit-card/debit-card.component';
-import { ClientInfosCardComponent } from './components/client-infos-card/client-infos-card.component';
+import { CardTextTitleDirective } from './directives/card-text-title.directive';
 @NgModule({
   declarations: [
     AppComponent,
     CardComponent,
-    CardHeaderComponent,
-    CardContentComponent,
-    BalanceCardComponent,
-    CreditCardComponent,
-    DebitCardComponent,
-    ClientInfosCardComponent,
+    CardTextTitleDirective,
   ],
   imports: [
     BrowserModule,

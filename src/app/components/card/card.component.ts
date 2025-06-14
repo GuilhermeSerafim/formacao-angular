@@ -1,5 +1,4 @@
-import { Component, Input } from '@angular/core';
-import { LinhaCard } from '../../interfaces/linha-card';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-card',
@@ -7,4 +6,5 @@ import { LinhaCard } from '../../interfaces/linha-card';
   styleUrl: './card.component.scss'
 })
 export class CardComponent {
+
 }
