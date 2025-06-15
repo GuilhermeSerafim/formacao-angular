@@ -5,9 +5,9 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { CardComponent } from './components/card/card.component';
-import { CardTextTitleDirective } from './directives/card-text-title.directive';
-import { CardHeaderDirective } from './components/card/directives/card-header.directive';
-import { CardContentDirective } from './components/card/directives/card-content.directive';
+import { CardTextTitleDirective } from './components/card/directives/texts/card-text-title.directive';
+import { CardHeaderDirective } from './components/card/directives/base/card-header.directive';
+import { CardContentDirective } from './components/card/directives/base/card-content.directive';
 
 @NgModule({
   declarations: [
@@ -27,4 +27,4 @@ import { CardContentDirective } from './components/card/directives/card-content.
   ],
   bootstrap: [AppComponent]
 })
-  export class AppModule { }
+export class AppModule { }
