@@ -1,0 +1,43 @@
+.ca-c-card {
+    // Curso Angular - componente
+    max-width: 400px;
+
+    &__header {
+        padding: 50px;
+        height: 40%;
+        background-color: #ffad36;
+        display: block;
+    }
+
+    &__content {
+        padding: 50px;
+        height: 60%;
+        background-color: #ff5916;
+        display: block;
+    }
+
+    // O Material coloca estilos em h1,h2,h3, por isso o important...
+    &__main-text {
+        font-size: 30px !important;
+        font-weight: 500 !important;
+    }
+
+    &__sub-text {
+        font-size: 18px !important;
+        font-weight: 300 !important;
+        letter-spacing: 3px !important;
+    }
+
+    &__description-text {
+        font-size: 20px;
+        font-weight: 300;
+    }
+
+    &__small-image {
+        width: 100px;
+    }
+
+    &__large-image {
+        width: 150px;
+    }    
+}
