@@ -8,6 +8,8 @@ import { CardComponent } from './components/card/card.component';
 import { CardTextTitleDirective } from './components/card/directives/texts/card-text-title.directive';
 import { CardHeaderDirective } from './components/card/directives/base/card-header.directive';
 import { CardContentDirective } from './components/card/directives/base/card-content.directive';
+import { CardDescriptionTextDirective } from './components/card/directives/texts/card-description-text.directive';
+import { CardMainTextDirective } from './components/card/directives/texts/card-main-text.directive';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,8 @@ import { CardContentDirective } from './components/card/directives/base/card-con
     CardTextTitleDirective,
     CardHeaderDirective,
     CardContentDirective,
+    CardDescriptionTextDirective,
+    CardMainTextDirective
   ],
   imports: [
     BrowserModule,

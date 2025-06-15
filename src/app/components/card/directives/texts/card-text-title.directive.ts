@@ -2,10 +2,6 @@ import { Directive, HostBinding, Input } from '@angular/core';
 
 @Directive({
   selector: 'app-card-text-title, [appCardTextTitle]',
-  host: { "class": 'meu-texto' },
+  host: { "class": 'ca-c-card__sub-text' },
 })
-export class CardTextTitleDirective {
-  @Input()
-  @HostBinding('style.color') color: string = '';
-
-}
+export class CardTextTitleDirective { }
