@@ -12,6 +12,7 @@ import { CardDescriptionTextDirective } from './components/card/directives/texts
 import { CardMainTextDirective } from './components/card/directives/texts/card-main-text.directive';
 import { CardSmallImageDirective } from './components/card/directives/images/card-small-image.directive';
 import { CardLargeImageDirective } from './components/card/directives/images/card-large-image.directive';
+import { MeuTextoDirective } from './components/card/directives/text/meu-texto.directive';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { CardLargeImageDirective } from './components/card/directives/images/car
     CardDescriptionTextDirective,
     CardMainTextDirective,
     CardSmallImageDirective,
-    CardLargeImageDirective
+    CardLargeImageDirective,
+    MeuTextoDirective
   ],
   imports: [
     BrowserModule,
