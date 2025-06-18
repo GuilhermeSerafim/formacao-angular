@@ -11,6 +11,9 @@ import { BalanceCardComponent } from './components/balance-card/balance-card.com
 import { CreditCardComponent } from './components/credit-card/credit-card.component';
 import { DebitCardComponent } from './components/debit-card/debit-card.component';
 import { ClientInfosCardComponent } from './components/client-infos-card/client-infos-card.component';
+import { CardItemComponent } from './components/card-item/card-item.component';
+import { CardLineComponent } from './components/card-line/card-line.component';
+import { CardTitleComponent } from './components/card-title/card-title.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,6 +24,9 @@ import { ClientInfosCardComponent } from './components/client-infos-card/client-
     CreditCardComponent,
     DebitCardComponent,
     ClientInfosCardComponent,
+    CardItemComponent,
+    CardLineComponent,
+    CardTitleComponent
   ],
   imports: [
     BrowserModule,
