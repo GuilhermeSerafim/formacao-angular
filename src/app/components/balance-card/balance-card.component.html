@@ -1,12 +1,11 @@
-<div class="ca-c-card">
-    <div class="ca-c-card__header balance-card__header">
+<app-card>
+    <app-card-header [style.display]="'flex'">
+        <!-- Precisa aplicar a card balance-card__header ainda! -->
         <app-card-title title="Saldos Disponíveis" icon="icon-hand.png"></app-card-title>
-        <p [style.marginBottom]="'-3px'">
-            R$ 100,00
-        </p>
-    </div>
-    <div class="ca-c-card__content">
-        <app-card-item text="Conta Corrente" value="R$ 200,00"></app-card-item>
+        <p>R$ 100,00</p>
+    </app-card-header>
+    <app-card-content>
+         <app-card-item text="Conta Corrente" value="R$ 200,00"></app-card-item>
 
         <app-card-line></app-card-line>
 
@@ -30,6 +29,6 @@
             <app-card-item text="SALDO TOTAL" value="R$ 1000,00"></app-card-item>
 
             <app-card-item text="LIVRE PARA MOVIMENTAÇÃO" value="R$ 1000,00"></app-card-item>
-        </div>
-    </div>
-</div>
+        </div>  
+    </app-card-content>
+</app-card>
