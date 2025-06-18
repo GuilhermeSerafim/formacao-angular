@@ -5,6 +5,10 @@
     background-color: white;
 
     &__header {
+        h1 {
+            margin-bottom: -3px;
+        }
+
         padding: 15px;
         background-color: rgb(233, 129, 50);
 
