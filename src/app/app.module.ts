@@ -15,6 +15,7 @@ import { CardTitleComponent } from './components/card-title/card-title.component
 import { CardHeaderDirective } from './components/card/directives/card-header.directive';
 import { CardContentDirective } from './components/card/directives/card-content.directive';
 import { CardTitleTextDirective } from './components/card/directives/texts/card-title-text.directive';
+import { CardDescriptionTextDirective } from './components/card/directives/texts/card-description-text.directive';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +29,8 @@ import { CardTitleTextDirective } from './components/card/directives/texts/card-
     CardTitleComponent,
     CardHeaderDirective,
     CardContentDirective,
-    CardTitleTextDirective
+    CardTitleTextDirective,
+    CardDescriptionTextDirective
   ],
   imports: [
     BrowserModule,
