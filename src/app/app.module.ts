@@ -14,6 +14,7 @@ import { CardLineComponent } from './components/card-line/card-line.component';
 import { CardTitleComponent } from './components/card-title/card-title.component';
 import { CardHeaderDirective } from './components/card/directives/card-header.directive';
 import { CardContentDirective } from './components/card/directives/card-content.directive';
+import { CardTitleTextDirective } from './components/card/directives/texts/card-title-text.directive';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +27,8 @@ import { CardContentDirective } from './components/card/directives/card-content.
     CardLineComponent,
     CardTitleComponent,
     CardHeaderDirective,
-    CardContentDirective
+    CardContentDirective,
+    CardTitleTextDirective
   ],
   imports: [
     BrowserModule,
