@@ -10,11 +10,19 @@
         }
 
         padding: 15px;
-        background-color: rgb(233, 129, 50);
+        background-color: rgb(233, 129, 50);    
         display: block;
         margin-right: auto;
+
+        &[color="blue"] {
+            background-color: #32e9da;
+        }
+
+        &[color="red"] {
+            background-color: red;
+        }
     }
-    
+
     &__content {
         display: block;
         padding: 15px;

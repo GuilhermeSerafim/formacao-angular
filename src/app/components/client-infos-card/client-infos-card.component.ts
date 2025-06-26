@@ -13,4 +13,5 @@ export class ClientInfosCardComponent {
     { textLeft: 'Renda Mensal', textRight: 'R$ -1000,00', line: true },
     { textLeft: 'Nacionalidade', textRight: 'Brasileiro' },
   ]
+  blueDinamyc: string = "#32e9daF";
 }
