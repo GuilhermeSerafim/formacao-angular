@@ -1,3 +1,19 @@
-<!-- Na projeção de conteúdo, quando queremos executar uma lógica de acordo com uma condicional
- Não irá funcionar, ele irá executar independentemente, nesta seção vamos entender como resolver este problema
- Está seção já estamos avançados, vamos mexer com ng container e ng template... -->
+<div>
+    Div:
+    <app-meu-comp />
+</div>
+
+<!-- Apenas o conteúdo dentro do ng container vai aparecer no dom final -->
+<ng-container>
+    Container:
+    <app-meu-comp />
+</ng-container>
+
+<!-- 
+    O que faz no DOM: não aparece de jeito nenhum no DOM por padrão — ele define um blueprint (TemplateRef) que só é instanciado quando você o “carrega” via alguma diretiva ou API (por exemplo, *ngIf, *ngFor, <ng-template [ngTemplateOutlet]>, ou programaticamente com ViewContainerRef).
+    Quando usar: sempre que você quiser atrasar ou condicionar a criação do conteúdo, ou reutilizar o mesmo bloco de marcação em vários lugares.
+ -->
+<ng-template>
+    Template:
+    <app-meu-comp />
+</ng-template>
