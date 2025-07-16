@@ -2,7 +2,7 @@ import { AfterViewInit, Component, ElementRef, OnInit, QueryList, ViewChild, Vie
 
 @Component({
   selector: 'app-root',
-  templateUrl: './ng-template-outlet/ex3.html',
+  templateUrl: './ng-if/ng-if.html',
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
