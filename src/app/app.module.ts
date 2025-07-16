@@ -5,10 +5,12 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { MeuCompComponent } from './components/meu-comp/meu-comp.component';
+import { CardComponent } from './components/card/card.component';
 @NgModule({
   declarations: [
     AppComponent,
-    MeuCompComponent
+    MeuCompComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,

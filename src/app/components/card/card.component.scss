@@ -1,0 +1,19 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    width: 200px;
+
+    &__header {
+        background-color: rgb(78, 3, 78);
+        height: 20%;
+    }
+    &__content {
+        background-color: rgb(196, 177, 196);
+        height: 60%;
+    }
+    &__footer {
+        background-color: rgb(156, 33, 156);
+        height: 20%;
+    }
+}
