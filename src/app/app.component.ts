@@ -7,5 +7,5 @@ import { AfterViewInit, Component, ElementRef, OnInit, QueryList, ViewChild, Vie
 })
 export class AppComponent {
   title = 'prj-angular';
-  conditional: boolean = true;
+  conditional: boolean = false;
 }

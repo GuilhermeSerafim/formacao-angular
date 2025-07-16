@@ -1,18 +1,15 @@
 Ex2:
 
 <br />
-@if(conditional) {
-<ng-container [ngTemplateOutlet]="meuComp">
-    Container <br />
-</ng-container>
-}
 
 @if(conditional){
 <ng-container [ngTemplateOutlet]="meuComp">
     Container<br />
 </ng-container>
 } @else {
-    <ng-container [ngTemplateOutlet]="template1"></ng-container>
+<ng-container [ngTemplateOutlet]="template1"></ng-container>
+<br />
+<ng-container [ngTemplateOutlet]="template2"></ng-container>
 }
 
 <ng-template #template1>Template: 1</ng-template>
