@@ -2,10 +2,10 @@ import { AfterViewInit, Component, ElementRef, OnInit, QueryList, ViewChild, Vie
 
 @Component({
   selector: 'app-root',
-  templateUrl: './ng-template-outlet/ex2.html',
+  templateUrl: './ng-template-outlet/ex3.html',
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
   title = 'prj-angular';
-  conditional: boolean = false;
+  conditional: boolean = true;
 }
