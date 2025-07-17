@@ -1,3 +1,8 @@
 <div class="card">
-    <ng-container *ngTemplateOutlet="conditional ? templateContent : null"></ng-container>
+    <ng-container *ngIf="conditional; else elseTemplate">
+        <!-- Uma observação é que o template meuComp vai ser inicializado somente se atender o condition, isso é o ideal -->
+         <!-- Ou seja, qualquer lógica interna do componenete não será disparada, a menos que eu carregue de fato componente, quem resolve isso pra gente, é o ng template -->
+        <ng-container *ngTemplateOutlet=" templateContent"></ng-container>
+    </ng-container>
+    <ng-template #elseTemplate>Nenhum conteúdo a ser projetado</ng-template>
 </div>

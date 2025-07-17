@@ -7,7 +7,7 @@ import { AfterContentInit, Component, ContentChild, OnInit, TemplateRef } from '
 })
 export class CardTemplateContentComponent implements OnInit, AfterContentInit {
   @ContentChild('meuTemplate') templateContent!: TemplateRef<any>;
-  conditional = true;
+  conditional = false;
   // ngOnInit(): é chamado assim que o componente é inicializado, antes do conteúdo filho ser projetado.
   // ngAfterContentInit(): é chamado depois que o conteúdo externo (projetado com ng-content ou @ContentChild) é completamente carregado e disponível no componente.
   ngOnInit(): void {
