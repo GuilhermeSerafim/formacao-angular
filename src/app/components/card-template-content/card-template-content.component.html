@@ -1,8 +1,22 @@
 <div class="card">
+    <h1>Ex1:</h1>
     <ng-container *ngIf="conditional; else elseTemplate">
         <!-- Uma observação é que o template meuComp vai ser inicializado somente se atender o condition, isso é o ideal -->
-         <!-- Ou seja, qualquer lógica interna do componenete não será disparada, a menos que eu carregue de fato componente, quem resolve isso pra gente, é o ng template -->
+        <!-- Ou seja, qualquer lógica interna do componenete não será disparada, a menos que eu carregue de fato componente, quem resolve isso pra gente, é o ng template -->
         <ng-container *ngTemplateOutlet=" templateContent"></ng-container>
     </ng-container>
     <ng-template #elseTemplate>Nenhum conteúdo a ser projetado</ng-template>
+    <br />
+    <br />
+    <h1>Ex2:</h1>
+    <!-- Forma mais sucinta -> Não podemos utilizar 2 diretivas estruturais no Angular -->
+    <ng-container *ngIf="conditional else elseTemplate" [ngTemplateOutlet]="templateContent"></ng-container>
+    <br />
+    <br />
+
+
+    <h1>Ex3:</h1>
+    <!-- Forma mais sucinta -> Não podemos utilizar 2 diretivas estruturais no Angular -->
+    <ng-container [ngTemplateOutlet]="conditional ? templateContent : elseTemplate"></ng-container>
+
 </div>
