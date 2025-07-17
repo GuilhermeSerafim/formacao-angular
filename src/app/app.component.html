@@ -10,7 +10,8 @@
     <p>Sou o Footer</p>
 </ng-template>
 
-<app-card 
-    [header]="headerTeamplate"
-    [content]="contentTemplate"
-></app-card>
+<app-card-template-content>
+    <ng-template #meuTemplate>
+        <app-meu-comp/>
+    </ng-template>
+</app-card-template-content>
