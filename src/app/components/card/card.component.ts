@@ -8,5 +8,5 @@ import { Component, Input, TemplateRef } from '@angular/core';
 export class CardComponent {
   @Input({ required: true }) header!: TemplateRef<any>;
   @Input({ required: true }) content!: TemplateRef<any>;
-  @Input({ required: true }) footer!: TemplateRef<any>;
+  @Input() footer?: TemplateRef<any>;
 }           

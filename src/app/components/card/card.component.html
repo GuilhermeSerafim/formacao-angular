@@ -8,6 +8,10 @@
     </div>
 
     <div class="card__footer">
-        <ng-container *ngTemplateOutlet="footer"></ng-container>
+        @if(footer) {
+            <ng-container *ngTemplateOutlet="footer"></ng-container>
+        } @else {
+            Sou o Footer Default
+        }
     </div>
 </div>
