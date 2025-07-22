@@ -6,5 +6,8 @@ import { AfterViewInit, Component, ElementRef, OnInit, QueryList, ViewChild, Vie
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'prj-angular';
+  pessoa = {
+    nome: 'Felipe',
+    idade: 26,
+  }
 }
