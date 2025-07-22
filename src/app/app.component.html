@@ -1,3 +1,7 @@
-{{ pessoa.nome | uppercase}}
+{{ pessoa.nome | uppercase }}
 <!-- Pipe não afeta valor do objeto, apenas a visualização dele -->
 {{ pessoa.nome }}
+
+<br />
+
+{{ pessoa | json | uppercase }}
