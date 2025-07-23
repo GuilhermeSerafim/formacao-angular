@@ -1,2 +1,9 @@
-<p>Nome do usuário: {{ user.nome | trucante : 2 }}<br /></p>
-<p>Status do usuário: {{ user.status | userStatus }}</p>
+{{ "upPercase" | uppercase }} <br/>
+{{ "LowerCase" | lowercase }} <br/>
+{{ "guilheRme serafim " | titlecase }} <br/>
+{{ "Olá Mundo" | slice : 0 : 3 }} <br/>
+{{ "Olá Mundo" | slice : 4 }} <br/>
+{{ [1, 2, 3, 4, 5, 6] | slice : 0 : 3 }} <br/>
+<p *ngFor="let n of [1, 2, 3, 4, 5, 6] | slice : 1 : 4">
+  {{ n }}
+</p>
