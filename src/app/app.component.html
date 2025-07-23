@@ -1,7 +1,3 @@
-{{ pessoa.nome | uppercase }}
-<!-- Pipe não afeta valor do objeto, apenas a visualização dele -->
-{{ pessoa.nome }}
-
-<br />
-
-{{ pessoa | json | uppercase }}
+Status do usuário: <b>{{ pessoa.status | userStatus }} </b> <br />
+Status do usuário: <b>{{ 2 | userStatus }} </b> <br />
+Status do usuário: <b>{{ 120310230230 | userStatus }} </b>

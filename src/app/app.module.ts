@@ -4,10 +4,12 @@ import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
+import { UserStatusPipe } from './pipes/user-status.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
+    UserStatusPipe,
   ],
   imports: [
     BrowserModule,

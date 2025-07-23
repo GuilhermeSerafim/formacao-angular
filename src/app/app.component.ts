@@ -9,5 +9,6 @@ export class AppComponent {
   pessoa = {
     nome: 'Felipe',
     idade: 26,
+    status: 1,
   }
 }
