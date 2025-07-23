@@ -5,8 +5,9 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class TrucantePipe implements PipeTransform {
   transform(str: string, maxLength: number): string {
+    const VALUE_LESS_THAN_MAX_LENGTH = str.length <= maxLength;
     if(!str) return '';
-    else if (str.length > maxLength) return str.substring(0, maxLength) + '...';
+    else if (VALUE_LESS_THAN_MAX_LENGTH) return str.substring(0, maxLength) + '...';
     else return str;
   }
 }
