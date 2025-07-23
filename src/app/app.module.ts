@@ -5,11 +5,13 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { UserStatusPipe } from './pipes/user-status.pipe';
+import { TrucantePipe } from './pipes/trucante.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserStatusPipe,
+    TrucantePipe,
   ],
   imports: [
     BrowserModule,
