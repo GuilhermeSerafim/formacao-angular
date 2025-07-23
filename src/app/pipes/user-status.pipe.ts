@@ -1,12 +1,13 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import { UserStatusEnum } from '../app.component';
 
 @Pipe({
   name: 'userStatus',
 })
 export class UserStatusPipe implements PipeTransform {
   transform(status: number): string {
-    if (status == 1) return 'Ativo';
-    else if (status == 2) return 'Inativo';
+    if (status == UserStatusEnum.ATIVO) return 'Ativo';
+    else if (status == UserStatusEnum.INATIVO) return 'Inativo';
     else return 'Inválido';
   }
 }
