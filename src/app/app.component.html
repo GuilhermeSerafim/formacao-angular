@@ -7,4 +7,11 @@
 <p>Data convertida para a região:</p>
 <p>{{ minhaData | date : "full" }}</p>
 <p>Data convertida para Greenwich</p>
-<p>{{ minhaData | date : "full" : '+0000' }}</p>
+<p>{{ minhaData | date : "full" : "+0000" }}</p>
+<!-- O date pipe só pega a data em milisegundos e não realiza conversão alguma -->
+<p>
+  {{ 1697922000000 | date : "full" }}
+</p>
+<p>
+  {{ 1697922000000 | date : "full" : "+0000" }}
+</p>

@@ -26,5 +26,7 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     console.log('Data convertida para região', new Date(this.minhaData));
     console.log('Data UTC-0', new Date(this.minhaData).toUTCString());
+    // A conversão regional, foi feita no new Date e não no date pipe
+    console.log('Timestamp:', new Date(this.minhaData).getTime());
   }
 }
