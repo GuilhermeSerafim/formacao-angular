@@ -1,9 +1,8 @@
-{{ "upPercase" | uppercase }} <br/>
-{{ "LowerCase" | lowercase }} <br/>
-{{ "guilheRme serafim " | titlecase }} <br/>
-{{ "Olá Mundo" | slice : 0 : 3 }} <br/>
-{{ "Olá Mundo" | slice : 4 }} <br/>
-{{ [1, 2, 3, 4, 5, 6] | slice : 0 : 3 }} <br/>
-<p *ngFor="let n of [1, 2, 3, 4, 5, 6] | slice : 1 : 4">
-  {{ n }}
-</p>
+<h1>Formato ISO8601:</h1>
+<!-- Perceba que o JS com Date(suadataZ) diminuiu 3 horas, pois a região dele está se deslocando -3 a partir de Greenwich, fuso horário mundial -->
+<!-- Veja mais em https://promilitares.com.br/concursos-militares/conteudo/fusos-horarios-no-mundo-e-no-brasil -->
+<!-- Ou seja, quando você coloca um Z no final, você está pedindo para o JS converter sua data, para sua região local -->
+<p>Data convertida para a região:</p>
+<p>{{ minhaData | date : "full" }}</p>
+<p>Data não convertida para a região:</p>
+<p>{{ minhaData2 | date : "full" }}</p>
