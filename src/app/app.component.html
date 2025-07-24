@@ -16,4 +16,7 @@
 <p>
   {{ 1697922000000 | date : "full" : "+0000" }}
 </p>
-<p>Data obj convertida para região {{minhaDataObj | date : 'full'}}</p>
+<p>Data obj convertida para região {{ minhaDataObj | date : "full" }}</p>
+<p>
+  Data obj convertida da região local para Greenwich {{ minhaDataObj | date : "full" : "+0000" }}
+</p>
