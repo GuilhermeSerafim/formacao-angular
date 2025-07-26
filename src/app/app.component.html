@@ -1,6 +1,7 @@
-<h1>Formatações</h1>
+<h1>Formatações personalizadas</h1>
 
-Curto: {{ "2023-10-21T21:00:00.000Z" | date : "short" }} <br/>
-Médio: {{ "2023-10-21T21:00:00.000Z" | date : "medium" }} <br/>
-Longo: {{ "2023-10-21T21:00:00.000Z" | date : "long" }} <br/>
-Completo: {{ "2023-10-21T21:00:00.000Z" | date : "full" }} <br/>
+{{"2023-10-21T21:00:00.000Z" | date : "'Hoje é' EEEE 'dia' dd 'de' MMMM 'de' YYYY"}}<br/>
+{{"2023-10-21T21:00:00.000Z" | date : "'Hoje é' EEEE 'dia' dd 'de' MMMM 'de' YYYY 'às' HH':'ss"}}<br/>
+{{"2023-10-21T21:00:00.000Z" | date : "'Hoje é' EEEE 'dia' dd 'de' MMMM 'de' YYYY 'às' HH':'ss zzzz"}}<br/>
+{{"2023-10-21T21:00:00.000Z" | date : "'Hoje é' EEEE 'dia' dd 'de' MMMM 'de' YYYY 'às' HH':'ss OOOO"}}<br/>
+{{"2023-10-21T21:00:00.000Z" | date : "'Data:' yy'/'MM'/'YYYY 'Hora:' HH':'mm"}}
