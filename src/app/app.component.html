@@ -1,1 +1,4 @@
-{{ 1200.9 | currency : "BRL" : true : '1.2-2' : 'pt-BR' }} <br />
+{{ 1200.9 | currency : "BRL" : true : "1.2-2" : "pt-BR" }} <br />
+<!-- Como já está configurado no app.module (globalmente), consigo utilizar desta forma:  -->
+{{ 1200.9 | currency : "BRL" }} <br />
+{{ 1200.9 | currency : "USD" : true : undefined : "en-US" }} <br />
