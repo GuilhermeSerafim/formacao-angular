@@ -1,9 +1,5 @@
-<!-- {minIntegerDigits}.{minFractionDigits}-{maxFractionDigits} -->
-{{ 12.3 | number : "3.2-3" : "en-US" }} <br />
-{{ 12.35 | number : "3.2-3" : "en-US" }} <br />
-<!-- Arredonda: caso seja MAIOR que o  {maxFractionDigits} será feito um arredondaemnto nos decimais -->
-{{ 12.349555555555 | number : "3.2-3" : "en-US" }} <br />
-{{ 12.3491 | number : "3.2-3" : "en-US" }} <br />
-{{ 12.34199 | number : "3.2-3" : "en-US" }} <br />
-{{ 12.3 | number : "3.3-3" : "en-US" }} <br />
-{{ 12.5 | number : "0.0-0" : "en-US" }} <br />
+<!-- Não precisamos da segunda configuração, pois configuramos o injection token br, o que reflete na aplicação inteira -->
+{{ 1312312.5 | number }} <br />
+{{ 1312312.5 | number : undefined : "pt-BR" }} <br />
+<!-- Podemos sobrescrever -->
+{{ 1312312.5 | number : undefined : "en-US" }} <br />
