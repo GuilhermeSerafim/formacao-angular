@@ -1,5 +1,2 @@
-<!-- Injection Token - Global -->
-{{ "2023-10-21T21:00:00.000Z" | date }} <br />
-<!-- Sobrescrevendo -->
-{{ "2023-10-21T21:00:00.000Z" | date : "full" }} <br />
-{{ "2023-10-21T21:00:00.000Z" | date : "full" : undefined : "pt-BR" }}
+<!-- minIntegerDigits}.{minFractionDigits}-{maxFractionDigits} -->
+{{ 12.3 | number : "3.0-2" : "en-US" }}
