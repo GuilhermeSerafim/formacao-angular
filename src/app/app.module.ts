@@ -15,7 +15,7 @@ import { DATE_PIPE_DEFAULT_OPTIONS } from '@angular/common';
     provideAnimationsAsync(),
     {
       provide: DATE_PIPE_DEFAULT_OPTIONS,
-      useValue: { dateFormat: 'dd/MM/YYYY' },
+      useValue: { dateFormat: "'Data: 'dd/MM/YYYY", timezone: '+0000' },
     },
   ],
   bootstrap: [AppComponent],
