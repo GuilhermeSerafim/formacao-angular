@@ -1,2 +1,5 @@
-<!-- <app-obs-com-objeto/> -->
-<app-obs-com-array />
+@if(userPromisse | async; as user) {
+<p>Nome: {{ user.name }}</p>
+<p>Username: {{ user.username }}</p>
+<p>E-mail: {{ user.email }}</p>
+}

@@ -1,6 +1,6 @@
-import {
-  Component,
-} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { UsersService } from './services/users.service';
+import { IUserPromisse } from './interfaces/user-promisse';
 
 export enum UserStatusEnum {
   ATIVO = 1,
@@ -12,5 +12,14 @@ export enum UserStatusEnum {
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent  {
+export class AppComponent implements OnInit {
+  
+  userPromisse!: Promise<IUserPromisse>;
+
+  constructor(private readonly _usersServices: UsersService) {}
+
+  ngOnInit(): void {
+    // Alocando a referencia de promisse
+    this.userPromisse = this._usersServices.getUserPromisse();
+  }
 }
