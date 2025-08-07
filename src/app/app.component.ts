@@ -13,7 +13,6 @@ export enum UserStatusEnum {
   styleUrl: './app.component.scss',
 })
 export class AppComponent implements OnInit {
-  
   userPromisse!: Promise<IUserPromisse>;
 
   constructor(private readonly _usersServices: UsersService) {}
@@ -21,5 +20,7 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     // Alocando a referencia de promisse
     this.userPromisse = this._usersServices.getUserPromisse();
+
+    this._usersServices.getUserPromisse().then((data) => console.log(data));
   }
 }
