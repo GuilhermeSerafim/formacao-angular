@@ -18,9 +18,9 @@ export class ObsComObjetoComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     // Guardando a referencia na variavel do tipo Observable
-    // Sempre que a referencia dessa prop mudar, o Async pipe vai fazer unsubscribe na referencia anterior e na nova, o subscribe  
+    // Sempre que a referencia dessa prop mudar, o Async pipe vai fazer unsubscribe na referencia anterior e na nova, o subscribe
     this.user$ = this._usersService.getUserById(2);
-    
+
     this.userSubs = this._usersService
       .getUserById(1)
       .subscribe((userResponse) => (this.user = userResponse));
@@ -28,5 +28,8 @@ export class ObsComObjetoComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.userSubs && this.userSubs.unsubscribe();
+  }
+  onBtnClick(i: number) {
+    this.user$ = this._usersService.getUserById(i);
   }
 }

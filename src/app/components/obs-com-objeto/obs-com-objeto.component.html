@@ -4,10 +4,15 @@
 <p>Username: {{ user.username }}</p>
 <p>Email: {{ user.email }}</p>
 
-
 <h3 [style.color]="'blue'">Subscribe pelo async pipe</h3>
 @if(user$ | async; as meuUser) {
-    <p>Nome: {{meuUser.name}}</p>
-    <p>Username: {{meuUser.username}}</p>
-    <p>Email: {{meuUser.email}}</p>
+<p>Nome: {{ meuUser.name }}</p>
+<p>Username: {{ meuUser.username }}</p>
+<p>Email: {{ meuUser.email }}</p>
 }
+
+<div class="btns">
+  <button (click)="onBtnClick(1)">1</button>
+  <button (click)="onBtnClick(2)">2</button>
+  <button (click)="onBtnClick(3)">3</button>
+</div>
