@@ -9,6 +9,7 @@ import { TrucantePipe } from './pipes/trucante.pipe';
 import { DATE_PIPE_DEFAULT_OPTIONS, registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
 import { ObsComObjetoComponent } from './components/obs-com-objeto/obs-com-objeto.component';
+import { provideHttpClient } from '@angular/common/http';
 
 // Carregando formatações brasileiras no injection token (LOCALE_ID) -> DatePipe, I18nPluralPipe, CurrencyPipe, DecimalPipe and PercentPipe
 registerLocaleData(localePt, 'pt-BR');
@@ -23,6 +24,7 @@ registerLocaleData(localePt, 'pt-BR');
   imports: [BrowserModule, BrowserAnimationsModule, FormsModule],
   providers: [
     provideAnimationsAsync(),
+    provideHttpClient(),
     //	Define o padrão de formatação de datas
     {
       provide: DATE_PIPE_DEFAULT_OPTIONS,
