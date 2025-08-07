@@ -1,5 +1,13 @@
 <h1>Async Pipe Com Objeto</h1>
-<h3>Subscribe manual:</h3>
+<h3 [style.color]="'blue'">Subscribe manual:</h3>
 <p>Nome: {{ user.name }}</p>
 <p>Username: {{ user.username }}</p>
 <p>Email: {{ user.email }}</p>
+
+
+<h3 [style.color]="'blue'">Subscribe pelo async pipe</h3>
+@if(user$ | async; as meuUser) {
+    <p>Nome: {{meuUser.name}}</p>
+    <p>Username: {{meuUser.username}}</p>
+    <p>Email: {{meuUser.email}}</p>
+}
