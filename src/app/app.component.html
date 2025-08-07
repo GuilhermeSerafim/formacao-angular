@@ -3,5 +3,11 @@
 <p>Username: {{ user.username }}</p>
 <p>E-mail: {{ user.email }}</p>
 }@else {
-<p>Carregando</p>
+<!-- Injeta container sem poluir o DOM -->
+<ng-container *ngTemplateOutlet="loadingTemplate"></ng-container>
 }
+
+<!-- Pode utilizar isso em vários else, por exemplo, flexivel e não repete código -->
+<ng-template #loadingTemplate>
+  <p>Carregando...</p>
+</ng-template>
