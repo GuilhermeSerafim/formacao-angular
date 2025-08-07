@@ -10,6 +10,7 @@ import { DATE_PIPE_DEFAULT_OPTIONS, registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
 import { ObsComObjetoComponent } from './components/obs-com-objeto/obs-com-objeto.component';
 import { provideHttpClient } from '@angular/common/http';
+import { ObsComArrayComponent } from './components/obs-com-array/obs-com-array.component';
 
 // Carregando formatações brasileiras no injection token (LOCALE_ID) -> DatePipe, I18nPluralPipe, CurrencyPipe, DecimalPipe and PercentPipe
 registerLocaleData(localePt, 'pt-BR');
@@ -20,6 +21,7 @@ registerLocaleData(localePt, 'pt-BR');
     UserStatusPipe,
     TrucantePipe,
     ObsComObjetoComponent,
+    ObsComArrayComponent,
   ],
   imports: [BrowserModule, BrowserAnimationsModule, FormsModule],
   providers: [
