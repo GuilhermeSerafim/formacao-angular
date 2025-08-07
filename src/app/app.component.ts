@@ -19,10 +19,6 @@ export class AppComponent implements OnInit {
   constructor(private readonly _usersServices: UsersService) {}
 
   ngOnInit(): void {
-    this.userPromise = this._usersServices.getUserPromisse();
-
-    // Convertendo Observable para Promisse | Mais em: https://rxjs.dev/deprecations/to-promise
-    // lastValueFrom -> Pega o último valor emitido de um Observable, ao contrário de firstValueFrom
     this.userByIdPromise = lastValueFrom(
       this._usersServices.getUserByIdPromisse(2)
     );

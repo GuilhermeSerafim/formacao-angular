@@ -21,27 +21,7 @@ export class UsersService {
     return this._http.get<UsersListResponse>(this.url);
   }
 
-  getUserPromisse(): Promise<IUserPromisse> {
-    return new Promise((resolve, reject) => {
-      setTimeout(
-        () =>
-          resolve({
-            id: 1,
-            name: 'Leanne Graham',
-            username: 'Bret',
-            email: 'Sincere@april.biz',
-          }),
-        3000
-      );
-    });
-  }
-
-  // A finalidade desse aqui, é pegando um Observable e transformando em promisse -> Casos do dia a dia
-  // A promisse é chamada e acabou, já o Observable fica rodando, esperando ser desinscrito
   getUserByIdPromisse(userId: number): Observable<IUserPromisse> {
     return this._http.get<IUserPromisse>(this.url + userId);
   }
-
-
-  // + OBS: A semelhança entre Observables e Promises é que ambas as coleções podem produzir valores ao longo tempo, mas a diferença é que Observables podem produzir nenhum ou mais de um valor, enquanto Promises produzem apenas um valor quando resolvido com sucesso.
 }
