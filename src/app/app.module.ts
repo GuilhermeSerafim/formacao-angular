@@ -8,12 +8,18 @@ import { UserStatusPipe } from './pipes/user-status.pipe';
 import { TrucantePipe } from './pipes/trucante.pipe';
 import { DATE_PIPE_DEFAULT_OPTIONS, registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
+import { ObsComObjetoComponent } from './components/obs-com-objeto/obs-com-objeto.component';
 
 // Carregando formatações brasileiras no injection token (LOCALE_ID) -> DatePipe, I18nPluralPipe, CurrencyPipe, DecimalPipe and PercentPipe
 registerLocaleData(localePt, 'pt-BR');
 
 @NgModule({
-  declarations: [AppComponent, UserStatusPipe, TrucantePipe],
+  declarations: [
+    AppComponent,
+    UserStatusPipe,
+    TrucantePipe,
+    ObsComObjetoComponent,
+  ],
   imports: [BrowserModule, BrowserAnimationsModule, FormsModule],
   providers: [
     provideAnimationsAsync(),
