@@ -17,15 +17,18 @@ registerLocaleData(localePt, 'pt-BR');
   imports: [BrowserModule, BrowserAnimationsModule, FormsModule],
   providers: [
     provideAnimationsAsync(),
+    //	Define o padrão de formatação de datas
     {
       provide: DATE_PIPE_DEFAULT_OPTIONS,
       useValue: { dateFormat: "'Data: 'dd/MM/YYYY", timezone: '+0000' },
     },
+    // Define o idioma e localidade do app
     {
       provide: LOCALE_ID,
       useValue: 'pt-BR',
     },
-    {provide: DEFAULT_CURRENCY_CODE, useValue: 'BRL'}
+    // Define a moeda padrão para formatação de valores
+    { provide: DEFAULT_CURRENCY_CODE, useValue: 'BRL' },
   ],
   bootstrap: [AppComponent],
 })
