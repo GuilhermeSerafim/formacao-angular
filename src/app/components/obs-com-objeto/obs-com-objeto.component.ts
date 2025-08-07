@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from '../../services/users.service';
+import { IUserResponse } from '../../interfaces/user-response';
 
 @Component({
   selector: 'app-obs-com-objeto',
@@ -7,9 +8,12 @@ import { UsersService } from '../../services/users.service';
   styleUrl: './obs-com-objeto.component.scss',
 })
 export class ObsComObjetoComponent implements OnInit {
+  user: IUserResponse = {} as IUserResponse;
   constructor(private readonly _usersService: UsersService) {}
   ngOnInit(): void {
     // Observable não faz nada até alguém se inscrever nele.
-    this._usersService.getUserById(1).subscribe(data => console.log(data));
+    this._usersService
+      .getUserById(1)
+      .subscribe((userResponse) => (this.user = userResponse));
   }
 }
