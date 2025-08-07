@@ -1,1 +1,11 @@
-<app-obs-com-objeto/>
+@if(userByIdPromise | async; as user) {
+<p>Nome: {{ user.name }}</p>
+<p>Username: {{ user.username }}</p>
+<p>E-mail: {{ user.email }}</p>
+}@else {
+<ng-container *ngTemplateOutlet="loadingTemplate"></ng-container>
+}
+
+<ng-template #loadingTemplate>
+  <p>Carregando...</p>
+</ng-template>
