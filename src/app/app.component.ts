@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UsersService } from './services/users.service';
 import { IUserPromisse } from './interfaces/user-promisse';
 import { lastValueFrom } from 'rxjs';
+import { UsersListResponse } from './types/user-list-response.type';
 
 export enum UserStatusEnum {
   ATIVO = 1,
@@ -14,13 +15,10 @@ export enum UserStatusEnum {
   styleUrl: './app.component.scss',
 })
 export class AppComponent implements OnInit {
-  userPromise!: Promise<IUserPromisse>;
-  userByIdPromise!: Promise<IUserPromisse>;
+  users!: UsersListResponse;
   constructor(private readonly _usersServices: UsersService) {}
 
   ngOnInit(): void {
-    this.userByIdPromise = lastValueFrom(
-      this._usersServices.getUserByIdPromisse(2)
-    );
+    this._usersServices.getUsers().subscribe((data) => (this.users = data));
   }
 }

@@ -1,11 +1,12 @@
-@if(userByIdPromise | async; as user) {
-<p>Nome: {{ user.name }}</p>
-<p>Username: {{ user.username }}</p>
-<p>E-mail: {{ user.email }}</p>
-}@else {
-<ng-container *ngTemplateOutlet="loadingTemplate"></ng-container>
-}
+@for(user of users; track $index){
+    <p>Nome: {{user.name}}</p>
+    <p>Username: {{user.username}}</p>
+    <p>Email: {{user.email}}</p>
 
-<ng-template #loadingTemplate>
-  <p>Carregando...</p>
-</ng-template>
+    <!-- O primeiro é mais eficiente, pois o pipe puro só vai ser chamado se o valor mudar -->
+    <p>Website: {{user.website | userWebSite}}</p>
+    <!-- A função vai se comportar que nem um pipe impuro, então se caso o componente atualizar, a função vai ser disparada mais vezes
+     O que é pessimo para perfomance -->
+    <p>Website: {{getUserWebSite()}}</p>
+    <hr>
+ }
