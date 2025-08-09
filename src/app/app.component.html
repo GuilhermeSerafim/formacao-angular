@@ -1,11 +1,7 @@
-@if(userByIdPromise | async; as user) {
+@for(user of users; track $index; let i = $index) {
 <p>Nome: {{ user.name }}</p>
-<p>Username: {{ user.username }}</p>
-<p>E-mail: {{ user.email }}</p>
-}@else {
-<ng-container *ngTemplateOutlet="loadingTemplate"></ng-container>
+<p>Status: {{ user.status | status }}</p>
+<button (click)="inactiveUser(i)">Inativar usuário</button>
 }
-
-<ng-template #loadingTemplate>
-  <p>Carregando...</p>
-</ng-template>
+<br>
+<button (click)="addUser()">Adicionar</button>
