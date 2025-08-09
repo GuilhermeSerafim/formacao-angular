@@ -1,12 +1,7 @@
-@for(user of users; track $index){
-    <p>Nome: {{user.name}}</p>
-    <p>Username: {{user.username}}</p>
-    <p>Email: {{user.email}}</p>
-
-    <!-- O primeiro é mais eficiente, pois o pipe puro só vai ser chamado se o valor mudar -->
-    <p>Website: {{user.website | userWebSite}}</p>
-    <!-- A função vai se comportar que nem um pipe impuro, então se caso o componente atualizar, a função vai ser disparada mais vezes
-     O que é pessimo para perfomance -->
-    <p>Website: {{getUserWebSite()}}</p>
-    <hr>
- }
+@for(user of users; track $index; let i = $index) {
+<p>Nome: {{ user.name }}</p>
+<p>Status: {{ user.status | status }}</p>
+<button (click)="inactiveUser(i)">Inativar usuário</button>
+}
+<br>
+<button (click)="addUser()">Adicionar</button>
