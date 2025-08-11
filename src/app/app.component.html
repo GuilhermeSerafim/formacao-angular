@@ -32,8 +32,7 @@
         </tr>
       </thead>
       <tbody>
-        @for (user of ((users$ | async) ?? []) | filtroNome:filtro; track
-        $index) {
+        @for (user of users$ | async | filtroNome:filtro; track $index) {
         <tr>
           <td class="operations__table-cell">{{ user.customerName }}</td>
           <td class="operations__table-cell">
@@ -51,12 +50,10 @@
             {{ user.operationDate | date : "shortDate" }}
           </td>
           <td class="operations__table-cell">
-            {{ user.operationDate | date : 'HH:mm a' }}
+            {{ user.operationDate | date : "HH:mm a" }}
           </td>
           <td class="operations__table-cell">
-            {{
-              user.operationValue | currency
-            }}
+            {{ user.operationValue | currency }}
           </td>
           <td class="operations__table-cell">
             {{ user.operationRisk | percent : "1.0-2" }}
