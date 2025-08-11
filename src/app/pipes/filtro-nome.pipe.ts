@@ -6,7 +6,10 @@ import { IUser } from '../interfaces/user';
 })
 export class FiltroNomePipe implements PipeTransform {
   transform(users: IUser[] | null = [], filtro: string = ''): IUser[] {
-    if (!users) return [];
+    if (!users) {
+      console.log('Users nulo');
+      return [];
+    };
     if (!filtro) return users;
     return users.filter((u) =>
       u.customerName.toLowerCase().includes(filtro.toLowerCase())
