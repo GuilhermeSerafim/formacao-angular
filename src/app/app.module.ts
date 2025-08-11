@@ -27,7 +27,7 @@ registerLocaleData(localePt, 'pt-BR');
     ObsComArrayComponent,
     StatusPipe,
     UserStatusImagePipe,
-    FiltroNomePipe,
+    FiltroNomePipe
   ],
   imports: [BrowserModule, BrowserAnimationsModule, FormsModule],
   providers: [
@@ -36,10 +36,15 @@ registerLocaleData(localePt, 'pt-BR');
     //	Define o padrão de formatação de datas
     {
       provide: DATE_PIPE_DEFAULT_OPTIONS,
-      useValue: { dateFormat: 'shortDate' },
+      useValue: { dateFormat: "shortDate" },
+    },
+    // Define o idioma e localidade do app
+    {
+      provide: LOCALE_ID,
+      useValue: 'pt-BR',
     },
     // Define a moeda padrão para formatação de valores
-    { provide: DEFAULT_CURRENCY_CODE, useValue: "' 'BRL" },
+    { provide: DEFAULT_CURRENCY_CODE, useValue: 'BRL' },
   ],
   bootstrap: [AppComponent],
 })

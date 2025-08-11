@@ -27,6 +27,7 @@ export class UsersService {
   }
 
   getAllUsers(): Observable<IUser[]> {
-    return this._http.get<IUser[]>(this.url);
+    // return this._http.get<IUser[]>(this.url);
+    throw new Error('Testando erro')
   }
 }
