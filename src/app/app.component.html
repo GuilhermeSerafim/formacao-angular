@@ -48,14 +48,14 @@
             </p>
           </td>
           <td class="operations__table-cell">
-            {{ user.operationDate | date : "shortDate" : "" : "pt-BR" }}
+            {{ user.operationDate | date : "shortDate" }}
           </td>
           <td class="operations__table-cell">
             {{ user.operationDate | date : "shortTime" }}
           </td>
           <td class="operations__table-cell">
             {{
-              user.operationValue | currency : "BRL" : true : "1.2-2" : "pt-BR"
+              user.operationValue | currency
             }}
           </td>
           <td class="operations__table-cell">
