@@ -51,7 +51,7 @@
             {{ user.operationDate | date : "shortDate" }}
           </td>
           <td class="operations__table-cell">
-            {{ user.operationDate | date : "shortTime" }}
+            {{ user.operationDate | date : 'HH:mm a' }}
           </td>
           <td class="operations__table-cell">
             {{
