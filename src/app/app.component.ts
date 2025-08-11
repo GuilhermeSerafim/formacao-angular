@@ -18,7 +18,7 @@ export class AppComponent {
   users = [
     {
       name: 'Felipe',
-      status: 1,
+      status: 3,
     },
     {
       name: 'Laura',
@@ -43,16 +43,5 @@ export class AppComponent {
       name: 'Marcos',
       status: 1,
     });
-  }
-
-  // Dá pra fazer com função, mas ela chama toda vez que o componente muda (como um pipe impuro), o que diminui drasticamente a perfomance da aplicação
-  getUserStatus(userStatus: number): string {
-    console.log('getUserStatus');
-    const status: {[key:string]: string} = {
-      1: 'Ativo',
-      2: 'Inativo'
-    };
-
-    return status[userStatus];
   }
 }
