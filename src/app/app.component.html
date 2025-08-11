@@ -32,6 +32,7 @@
         </tr>
       </thead>
       <tbody>
+        @if(users$ | async; as users) {
         @for(user of users | filtroNome : filtro; track $index) {
         <tr>
           <td class="operations__table-cell">{{ user.customerName }}</td>
@@ -62,7 +63,9 @@
           </td>
         </tr>
         }
+        }
       </tbody>
+      
     </table>
   </div>
 </div>
