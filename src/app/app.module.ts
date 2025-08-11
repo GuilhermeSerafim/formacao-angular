@@ -13,6 +13,7 @@ import { provideHttpClient } from '@angular/common/http';
 import { ObsComArrayComponent } from './components/obs-com-array/obs-com-array.component';
 import { StatusPipe } from './pipes/status.pipe';
 import { UserStatusImagePipe } from './pipes/user-status-image.pipe';
+import { FiltroNomePipe } from './pipes/filtro-nome.pipe';
 
 // Carregando formatações brasileiras no injection token (LOCALE_ID) -> DatePipe, I18nPluralPipe, CurrencyPipe, DecimalPipe and PercentPipe
 registerLocaleData(localePt, 'pt-BR');
@@ -26,6 +27,7 @@ registerLocaleData(localePt, 'pt-BR');
     ObsComArrayComponent,
     StatusPipe,
     UserStatusImagePipe,
+    FiltroNomePipe,
   ],
   imports: [BrowserModule, BrowserAnimationsModule, FormsModule],
   providers: [

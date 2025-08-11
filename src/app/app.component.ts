@@ -16,10 +16,12 @@ export enum UserStatusEnum {
   styleUrl: './app.component.scss',
 })
 export class AppComponent implements OnInit {
-  users$!: Observable<IUser[]>; // Async pipe vai escrever e desinscrevers
+  users: IUser[] = [];
+  filtro: string = '';
   constructor(private readonly _userService: UsersService) {}
   ngOnInit(): void {
-    // Alocando Observable
-    this.users$ = this._userService.getAllUsers();
+    this._userService
+      .getAllUsers()
+      .subscribe((usersResponse) => (this.users = usersResponse));
   }
 }

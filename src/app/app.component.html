@@ -4,6 +4,7 @@
       class="operations__filter-input"
       type="text"
       placeholder="Filtrar por Nome"
+      [(ngModel)]="filtro"
     />
   </div>
   <div class="operations__table">
@@ -31,13 +32,12 @@
         </tr>
       </thead>
       <tbody>
-        <!-- O Async Pipe dá um subscribe aqui e unsubscribe -->
-        @for(user of users$ | async; track $index) {
+        @for(user of users | filtroNome : filtro; track $index) {
         <tr>
           <td class="operations__table-cell">{{ user.customerName }}</td>
           <td class="operations__table-cell">
             <p class="operations__status">
-              {{ user.customerStatus | status}}
+              {{ user.customerStatus | status }}
               <img
                 [src]="user.customerStatus | userStatusImage"
                 class="operations__icon"
@@ -58,7 +58,7 @@
             }}
           </td>
           <td class="operations__table-cell">
-            {{ user.operationRisk | percent : '1.0-2'}}
+            {{ user.operationRisk | percent : "1.0-2" }}
           </td>
         </tr>
         }
