@@ -4,12 +4,13 @@ import { Observable } from 'rxjs';
 import { IUserResponse } from '../interfaces/user-response';
 import { UsersListResponse } from '../types/user-list-response.type';
 import { IUserPromisse } from '../interfaces/user-promisse';
+import { IUser } from '../interfaces/user';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UsersService {
-  url = 'https://jsonplaceholder.typicode.com/users/';
+  url = 'http://localhost:3000/users';
 
   constructor(private readonly _http: HttpClient) {}
 
@@ -23,5 +24,9 @@ export class UsersService {
 
   getUserByIdPromisse(userId: number): Observable<IUserPromisse> {
     return this._http.get<IUserPromisse>(this.url + userId);
+  }
+
+  getAllUsers(): Observable<IUser[]> {
+    return this._http.get<IUser[]>(this.url);
   }
 }

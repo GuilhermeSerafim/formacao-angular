@@ -12,6 +12,8 @@ import { ObsComObjetoComponent } from './components/obs-com-objeto/obs-com-objet
 import { provideHttpClient } from '@angular/common/http';
 import { ObsComArrayComponent } from './components/obs-com-array/obs-com-array.component';
 import { StatusPipe } from './pipes/status.pipe';
+import { UserStatusImagePipe } from './pipes/user-status-image.pipe';
+import { FiltroNomePipe } from './pipes/filtro-nome.pipe';
 
 // Carregando formatações brasileiras no injection token (LOCALE_ID) -> DatePipe, I18nPluralPipe, CurrencyPipe, DecimalPipe and PercentPipe
 registerLocaleData(localePt, 'pt-BR');
@@ -24,6 +26,8 @@ registerLocaleData(localePt, 'pt-BR');
     ObsComObjetoComponent,
     ObsComArrayComponent,
     StatusPipe,
+    UserStatusImagePipe,
+    FiltroNomePipe,
   ],
   imports: [BrowserModule, BrowserAnimationsModule, FormsModule],
   providers: [
@@ -32,15 +36,10 @@ registerLocaleData(localePt, 'pt-BR');
     //	Define o padrão de formatação de datas
     {
       provide: DATE_PIPE_DEFAULT_OPTIONS,
-      useValue: { dateFormat: "'Data: 'dd/MM/YYYY", timezone: '+0000' },
-    },
-    // Define o idioma e localidade do app
-    {
-      provide: LOCALE_ID,
-      useValue: 'pt-BR',
+      useValue: { dateFormat: 'shortDate' },
     },
     // Define a moeda padrão para formatação de valores
-    { provide: DEFAULT_CURRENCY_CODE, useValue: 'BRL' },
+    { provide: DEFAULT_CURRENCY_CODE, useValue: "' 'BRL" },
   ],
   bootstrap: [AppComponent],
 })
