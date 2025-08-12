@@ -29,4 +29,4 @@ Fique à vontade para acompanhar minha evolução ou contribuir com sugestões!
 
 ---
 
-📫 Dúvidas? Ideias? Me chama!
+📫 Dúvidas? Ideias? [Me chama!](mailto:guilerstudies@gmail.com)
