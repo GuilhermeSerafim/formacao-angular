@@ -1,16 +1,5 @@
-import {
-  AfterViewChecked,
-  AfterViewInit,
-  Component,
-  OnInit,
-  ViewChild,
-} from '@angular/core';
+import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { NgModel } from '@angular/forms';
-
-export enum UserStatusEnum {
-  ATIVO = 1,
-  INATIVO = 2,
-}
 
 @Component({
   selector: 'app-root',
@@ -18,16 +7,20 @@ export enum UserStatusEnum {
   styleUrl: './app.component.scss',
 })
 export class AppComponent implements AfterViewInit {
-  @ViewChild('meuInputFormControl') inputEl!: NgModel;
+  // É mais fácil validar o input pela instância do form control
+  @ViewChild('meuInputFormControl') inputFormControl!: NgModel;
+  @ViewChild('meuInput') inputEl!: ElementRef<HTMLInputElement>;
 
   ngAfterViewInit(): void {
-    console.log(this.inputEl);
+    console.log('Instância do Form Control:' + this.inputFormControl);
+    console.log('Instância do Input:' + this.inputEl);
   }
+
   send() {
-    if (this.inputEl.valid && this.inputEl.touched) {
+    if (this.inputFormControl.valid && this.inputFormControl.touched) {
       console.log('Enviado com sucesso');
     } else {
-      console.log('Inválido')
+      console.log('Inválido');
     }
   }
 }
