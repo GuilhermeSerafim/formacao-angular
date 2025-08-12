@@ -10,5 +10,11 @@ export enum UserStatusEnum {
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent  {
+export class AppComponent {
+  onChange(e: string) {
+    console.log(e);
+    // Manipulando `e` depois atribuindo ao binding
+    this.binding = e;
+  }
+  binding: any;
 }

@@ -1,0 +1,6 @@
+<!-- Nesse primeiro exemplo, utilizamos 'ngModel' apenas para assinar o método -->
+<input ngModel (ngModelChange)="onChange($event)">
+<!-- Usando somente o @input -->
+<input [ngModel]="'Juninho'">
+<!-- Binding, mas sem manipução do event -->
+<input [(ngModel)]="binding">
