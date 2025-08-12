@@ -7,8 +7,11 @@ Nome:
   minlength="5"
 />
 @if(meuInputFormControl.invalid && meuInputFormControl.touched) {
+@if(inputFormControl.hasError('required')) {
 <p [style.color]="'red'">O campo nome é obrigatório</p>
-}
+}@else if (inputFormControl.hasError('minlength')) {
+<p [style.color]="'red'">O campo nome deve ter pelo menos 5 caracteres</p>
+} }
 
 <!-- Estado atualizado automaticamente -->
 <p>Válido: {{ meuInputFormControl.valid }}</p>
