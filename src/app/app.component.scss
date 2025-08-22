@@ -1,7 +1,8 @@
-.valid {
+// O mesmo elemento tem que ter essas 2 classes
+.ng-valid.ng-touched{
   border-color: green;
 }
 
-.invalid {
-    border-color: red;
+.ng-invalid.ng-touched {
+  border-color: red;
 }

@@ -5,10 +5,6 @@ Nome:
   #meuInputFormControl="ngModel"
   required
   minlength="5"
-  [ngClass]="{
-    valid: meuInputFormControl.valid && meuInputFormControl.touched,
-    invalid: meuInputFormControl.invalid && meuInputFormControl.touched
-  }"
 />
 @if(meuInputFormControl.invalid && meuInputFormControl.touched) {
 @if(inputFormControl.hasError('required')) {
