@@ -22,4 +22,6 @@ export class SelectComponent {
       description: 'Espanhola',
     },
   ];
+
+  nationalitySelected: number | undefined;
 }

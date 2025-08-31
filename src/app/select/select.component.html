@@ -7,7 +7,7 @@
   <option value="volvo">Audi</option>
 </select> -->
 
-<label for="nationalities">Selecione uma nacionalidade: </label>
+<!-- <label for="nationalities">Selecione uma nacionalidade: </label>
 <select
   name="nationalities"
   id="nationalities"
@@ -19,8 +19,22 @@
   @for(nationality of nationalities; track $index; let i = $index) {
   <option [value]="nationality.id">{{ nationality.description }}</option>
   }
-</select>
+</select> -->
 
+<label for="nationalities">Selecione uma nacionalidade: </label>
+<select
+  name="nationalities"
+  id="nationalities"
+  [(ngModel)]="nationalitySelected"
+  #meuSelectFormControl="ngModel"
+  required
+>
+  <option value=""></option>
+  @for(nationality of nationalities; track $index; let i = $index ) {
+  <option [value]="nationality.id">{{ nationality.description }}</option>
+  }
+</select>
+<p>Nacionalidade Selecionada: {{ nationalitySelected }}</p>
 <h2>Estado do select:</h2>
 <p>Válido: {{ meuSelectFormControl.valid }}</p>
 <p>Tocado: {{ meuSelectFormControl.touched }}</p>
