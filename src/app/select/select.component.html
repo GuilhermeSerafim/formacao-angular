@@ -1,0 +1,12 @@
+<label for="cars">Selecione um carro: </label>
+<select name="cars" id="cars" ngModel #meuSelectFormControl="ngModel" required>
+  <option value="" selected></option>
+  <option value="volvo">Volvo</option>
+  <option value="volvo">Saab</option>
+  <option value="volvo">Fiat</option>
+  <option value="volvo">Audi</option>
+</select>
+<h3>Estado do select:</h3>
+<p>Válido: {{ meuSelectFormControl.valid }}</p>
+<p>Tocado: {{ meuSelectFormControl.touched }}</p>
+<p>Sujo: {{ meuSelectFormControl.dirty }}</p>
