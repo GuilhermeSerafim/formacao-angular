@@ -1,5 +1,5 @@
 <!-- for e id precisam ter o mesmo nome -->
-<input
+<!-- <input
   type="checkbox"
   id="isActive"
   name="isActive"
@@ -7,7 +7,19 @@
   #checkboxFormControl="ngModel"
   required
 />
+<label for="isActive">Ativo</label> -->
+
+<input
+  type="checkbox"
+  id="isActive"
+  name="isActive"
+  [ngModel]="isActive"
+  (ngModelChange)="onChange($event)"
+  #checkboxFormControl="ngModel"
+  required
+/>
 <label for="isActive">Ativo</label>
+
 
 <p>Usuário Ativo: {{ isActive }}</p>
 <p>Válido : {{checkboxFormControl.valid}}</p>

@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class CheckboxComponent {
   isActive: boolean = false;
+  onChange(e: boolean) {
+    console.log(e);
+    this.isActive = e;
+  }
 }
