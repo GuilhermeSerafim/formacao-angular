@@ -1,0 +1,12 @@
+<!-- Pra cada grupo de radion button que você tiver, você vai ter uma propriedade no seu componente -->
+
+<input type="radio" id="html" name="group1" value="html" [(ngModel)]="radioSelection" />
+<label for="html">HTML</label>
+
+<input type="radio" id="css" name="group1" value="css" [(ngModel)]="radioSelection"  />
+<label for="css">CSS</label>
+
+<input type="radio" id="javascript" name="group1" value="javascript" javascript [(ngModel)]="radioSelection"  />
+<label for="javascript">Javascript</label>
+
+<p>Radio selecionado: {{radioSelection}}</p>
