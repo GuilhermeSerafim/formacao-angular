@@ -9,7 +9,7 @@
 />
 <label for="isActive">Ativo</label> -->
 
-<input
+<!-- <input
   type="checkbox"
   id="isActive"
   name="isActive"
@@ -18,10 +18,23 @@
   #checkboxFormControl="ngModel"
   required
 />
-<label for="isActive">Ativo</label>
+<label for="isActive">Ativo</label> -->
 
+<form #f="ngForm">
+  <input
+    type="checkbox"
+    id="isActive"
+    name="isActive"
+    [ngModel]="isActive"
+    (ngModelChange)="onChange($event)"
+    #checkboxFormControl="ngModel"
+    required
+  />
+  <label for="isActive">Ativo</label>
+  <button [disabled]="f.invalid">Enviar</button>
+</form>
 
 <p>Usuário Ativo: {{ isActive }}</p>
-<p>Válido : {{checkboxFormControl.valid}}</p>
-<p>Válido : {{checkboxFormControl.touched}}</p>
-<p>Válido : {{checkboxFormControl.dirty}}</p>
+<p>Válido : {{ checkboxFormControl.valid }}</p>
+<p>Válido : {{ checkboxFormControl.touched }}</p>
+<p>Válido : {{ checkboxFormControl.dirty }}</p>
