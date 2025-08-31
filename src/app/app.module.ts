@@ -7,6 +7,8 @@ import { FormsModule } from '@angular/forms';
 import { DATE_PIPE_DEFAULT_OPTIONS, registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
 import { provideHttpClient } from '@angular/common/http';
+import { TextareaComponent } from './textarea/textarea.component';
+import { InputTextComponent } from './input-text/input-text.component';
 
 // Carregando formatações brasileiras no injection token (LOCALE_ID) -> DatePipe, I18nPluralPipe, CurrencyPipe, DecimalPipe and PercentPipe
 registerLocaleData(localePt, 'pt-BR');
@@ -14,6 +16,8 @@ registerLocaleData(localePt, 'pt-BR');
 @NgModule({
   declarations: [
     AppComponent,
+    TextareaComponent,
+    InputTextComponent
   ],
   imports: [BrowserModule, BrowserAnimationsModule, FormsModule],
   providers: [
