@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class RadioButtonComponent {
   radioSelection: string = 'html';
+
+  onChange(selection: string) {
+    console.log(selection);
+    this.radioSelection = selection;
+  }
 }
