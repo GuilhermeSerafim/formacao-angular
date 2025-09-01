@@ -9,6 +9,8 @@ import localePt from '@angular/common/locales/pt';
 import { provideHttpClient } from '@angular/common/http';
 import { TextareaComponent } from './textarea/textarea.component';
 import { InputTextComponent } from './input-text/input-text.component';
+import { SelectComponent } from './select/select.component';
+import { RadioButtonComponent } from './radio-button/radio-button.component';
 
 // Carregando formatações brasileiras no injection token (LOCALE_ID) -> DatePipe, I18nPluralPipe, CurrencyPipe, DecimalPipe and PercentPipe
 registerLocaleData(localePt, 'pt-BR');
@@ -17,7 +19,9 @@ registerLocaleData(localePt, 'pt-BR');
   declarations: [
     AppComponent,
     TextareaComponent,
-    InputTextComponent
+    InputTextComponent,
+    SelectComponent,
+    RadioButtonComponent
   ],
   imports: [BrowserModule, BrowserAnimationsModule, FormsModule],
   providers: [
