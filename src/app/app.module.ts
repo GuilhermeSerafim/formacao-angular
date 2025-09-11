@@ -13,6 +13,7 @@ import { MatRippleModule } from '@angular/material/core';
 // ⬇️ Escolha UMA das duas opções de animação:
 // 1) Módulo tradicional
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormComponent } from './form/form.component';
 // 2) OU (alternativa mais leve em projetos recentes)
 // import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
@@ -21,6 +22,7 @@ registerLocaleData(localePt, 'pt-BR');
 @NgModule({
   declarations: [
     AppComponent,
+    FormComponent,
     // ... seus componentes
   ],
   imports: [
