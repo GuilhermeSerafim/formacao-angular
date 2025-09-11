@@ -1,22 +1,17 @@
-<!-- Alocando instancia do ngForm em um template variable -->
-
-<!--
-    change = valida enquanto digita.
-    blur = valida ao sair do campo.
-    submit = valida só no envio do formulário.
--->
+<!-- Multicasting significa que um único Observable é compartilhado entre vários "observadores" (subscribers). -->
 <form
   #meuForm="ngForm"
   (ngSubmit)="onSubmit(meuForm)"
   [ngFormOptions]="{ updateOn: 'blur' }"
 >
-  <!-- A sincronização neste input só vai acontecer quando eu enviar o formulário -->
+<!-- O NgModelOption acaba sobrescrevendo o NgFormOptions (para este elemento apenas) -->
   <input
     type="text"
     name="nome"
     [(ngModel)]="text"
     required
-    [ngModelOptions]="{ updateOn: 'submit' }"
+    [ngModelOptions]="{ updateOn: 'change' }"
+    #meuInput="ngModel"
   />
   <br />
   <textarea name="descricao" [(ngModel)]="textarea"></textarea>
@@ -48,6 +43,5 @@
   <br />
 
   <button>Enviar</button>
-  <!-- Trocamos para button o type, para ele não evniar -->
   <button type="button" (click)="onReset(meuForm)">Limpar</button>
 </form>
