@@ -10,7 +10,14 @@
   (ngSubmit)="onSubmit(meuForm)"
   [ngFormOptions]="{ updateOn: 'blur' }"
 >
-  <input type="text" name="nome" [(ngModel)]="text" required />
+  <!-- A sincronização neste input só vai acontecer quando eu enviar o formulário -->
+  <input
+    type="text"
+    name="nome"
+    [(ngModel)]="text"
+    required
+    [ngModelOptions]="{ updateOn: 'submit' }"
+  />
   <br />
   <textarea name="descricao" [(ngModel)]="textarea"></textarea>
   <br />
