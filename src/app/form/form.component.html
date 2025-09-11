@@ -1,9 +1,5 @@
 <!-- Alocando instancia do ngForm em um template variable -->
-<form #meuForm="ngForm">
-    <!-- O name serve como tracking pro ngForm -->
-  <input ngModel="teste" type="text" required name="nome" />
-  <input ngModel type="text" required name="email" />
-  <p>Válido {{ meuForm.valid }}</p>
-  <p>Tocado {{ meuForm.touched }}</p>
-  <p>Sujo {{ meuForm.dirty }}</p>
+<form #meuForm="ngForm" (ngSubmit)="onSubmit(meuForm)">
+    <input type="text" name="nome" [(ngModel)]="text">
+    <button>Click</button>
 </form>
