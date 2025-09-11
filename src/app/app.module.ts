@@ -18,6 +18,8 @@ import { NgModelGroupComponent } from './ng-model-group/ng-model-group.component
 import { FormUserComponent } from './form-user/form-user.component';
 import { MainFormComponent } from './main-form/main-form.component';
 import { FormProfessionComponent } from './form-profession/form-profession.component';
+import { CustomValidatorFormEx1Component } from './custom-validators/synchronous/ex1/custom-validator-form-ex1/custom-validator-form-ex1.component';
+import { InvalidTextValidatorDirective } from './directives/invalid-text-validator.directive';
 // 2) OU (alternativa mais leve em projetos recentes)
 // import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
@@ -31,6 +33,8 @@ registerLocaleData(localePt, 'pt-BR');
     FormUserComponent,
     MainFormComponent,
     FormProfessionComponent,
+    CustomValidatorFormEx1Component,
+    InvalidTextValidatorDirective,
     // ... seus componentes
   ],
   imports: [
