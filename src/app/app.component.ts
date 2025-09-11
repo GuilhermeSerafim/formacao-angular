@@ -6,21 +6,6 @@ import { NgModel } from '@angular/forms';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent implements AfterViewInit {
-  // É mais fácil validar o input pela instância do form control
-  @ViewChild('meuInputFormControl') inputFormControl!: NgModel;
-  @ViewChild('meuInput') inputEl!: ElementRef<HTMLInputElement>;
+export class AppComponent {
 
-  ngAfterViewInit(): void {
-    console.log('Instância do Form Control:' + this.inputFormControl);
-    console.log('Instância do Input:' + this.inputEl);
-  }
-
-  send() {
-    if (this.inputFormControl.valid && this.inputFormControl.touched) {
-      console.log('Enviado com sucesso');
-    } else {
-      console.log('Inválido');
-    }
-  }
 }
