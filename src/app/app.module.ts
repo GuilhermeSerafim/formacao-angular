@@ -15,6 +15,9 @@ import { MatRippleModule } from '@angular/material/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormComponent } from './form/form.component';
 import { NgModelGroupComponent } from './ng-model-group/ng-model-group.component';
+import { FormUserComponent } from './form-user/form-user.component';
+import { MainFormComponent } from './main-form/main-form.component';
+import { FormProfessionComponent } from './form-profession/form-profession.component';
 // 2) OU (alternativa mais leve em projetos recentes)
 // import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
@@ -25,6 +28,9 @@ registerLocaleData(localePt, 'pt-BR');
     AppComponent,
     FormComponent,
     NgModelGroupComponent,
+    FormUserComponent,
+    MainFormComponent,
+    FormProfessionComponent,
     // ... seus componentes
   ],
   imports: [

@@ -1,0 +1,6 @@
+<form #meuForm="ngForm" (ngSubmit)="onSubmit(meuForm)">
+    <app-form-user/>
+    <app-form-profession/>
+    <br/>
+    <button [disabled]="meuForm.invalid">Enviar</button>
+</form>
