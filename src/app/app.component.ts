@@ -1,5 +1,4 @@
-import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
-import { NgModel } from '@angular/forms';
+import { Component } from "@angular/core";
 
 @Component({
   selector: 'app-root',
