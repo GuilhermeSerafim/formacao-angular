@@ -7,7 +7,7 @@ import localePt from '@angular/common/locales/pt';
 
 // Angular Material
 import { MatButtonModule } from '@angular/material/button';
-import { MatCardModule }   from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
 import { MatRippleModule } from '@angular/material/core';
 
 // ⬇️ Escolha UMA das duas opções de animação:
@@ -22,6 +22,9 @@ import { CustomValidatorFormEx1Component } from './custom-validators/synchronous
 import { InvalidTextValidatorDirective } from './directives/invalid-text-validator.directive';
 import { CustomValidatorFormEx2Component } from './custom-validators/synchronous/ex2/custom-validator-form-ex2/custom-validator-form-ex2.component';
 import { DepartmentQuantityValidatorDirective } from './directives/department-quantity-validator.directive';
+import { provideHttpClient } from '@angular/common/http';
+import { UserNameValidatorDirective } from './directives/user-name-validator.directive';
+import { AsyncCustomValidatorFormComponent } from './custom-validators/asynchronous/async-custom-validator-form/async-custom-validator-form.component';
 // 2) OU (alternativa mais leve em projetos recentes)
 // import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
@@ -39,6 +42,8 @@ registerLocaleData(localePt, 'pt-BR');
     InvalidTextValidatorDirective,
     CustomValidatorFormEx2Component,
     DepartmentQuantityValidatorDirective,
+    UserNameValidatorDirective,
+    AsyncCustomValidatorFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,9 +57,9 @@ registerLocaleData(localePt, 'pt-BR');
     // Se preferir a opção async, comente BrowserAnimationsModule acima
     // e descomente a linha abaixo:
     // provideAnimationsAsync(),
-
     { provide: LOCALE_ID, useValue: 'pt-BR' },
     { provide: DEFAULT_CURRENCY_CODE, useValue: 'BRL' },
+    provideHttpClient(),
   ],
   bootstrap: [AppComponent],
 })
