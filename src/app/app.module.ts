@@ -25,6 +25,7 @@ import { DepartmentQuantityValidatorDirective } from './directives/department-qu
 import { provideHttpClient } from '@angular/common/http';
 import { UserNameValidatorDirective } from './directives/user-name-validator.directive';
 import { AsyncCustomValidatorFormComponent } from './custom-validators/asynchronous/async-custom-validator-form/async-custom-validator-form.component';
+import { StandaloneControlFormComponent } from './standalone-control-form/standalone-control-form.component';
 // 2) OU (alternativa mais leve em projetos recentes)
 // import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
@@ -44,6 +45,7 @@ registerLocaleData(localePt, 'pt-BR');
     DepartmentQuantityValidatorDirective,
     UserNameValidatorDirective,
     AsyncCustomValidatorFormComponent,
+    StandaloneControlFormComponent,
   ],
   imports: [
     BrowserModule,
