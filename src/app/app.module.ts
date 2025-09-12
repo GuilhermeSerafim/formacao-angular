@@ -20,6 +20,8 @@ import { MainFormComponent } from './main-form/main-form.component';
 import { FormProfessionComponent } from './form-profession/form-profession.component';
 import { CustomValidatorFormEx1Component } from './custom-validators/synchronous/ex1/custom-validator-form-ex1/custom-validator-form-ex1.component';
 import { InvalidTextValidatorDirective } from './directives/invalid-text-validator.directive';
+import { CustomValidatorFormEx2Component } from './custom-validators/synchronous/ex2/custom-validator-form-ex2/custom-validator-form-ex2.component';
+import { DepartmentQuantityValidatorDirective } from './directives/department-quantity-validator.directive';
 // 2) OU (alternativa mais leve em projetos recentes)
 // import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
@@ -35,7 +37,8 @@ registerLocaleData(localePt, 'pt-BR');
     FormProfessionComponent,
     CustomValidatorFormEx1Component,
     InvalidTextValidatorDirective,
-    // ... seus componentes
+    CustomValidatorFormEx2Component,
+    DepartmentQuantityValidatorDirective,
   ],
   imports: [
     BrowserModule,
