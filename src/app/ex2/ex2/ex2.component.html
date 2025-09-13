@@ -12,7 +12,6 @@
       #emailControl="ngModel"
       appEmailValidator
       required
-      [errorStateMatcher]="matcher"
     />
     <mat-hint>O Email será usado para login.</mat-hint>
     @if(emailControl.hasError("required")){
