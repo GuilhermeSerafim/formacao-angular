@@ -7,20 +7,26 @@ import localePt from '@angular/common/locales/pt';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-import { MatRippleModule } from '@angular/material/core';
+import { ErrorStateMatcher, MatRippleModule } from '@angular/material/core';
 
 import { provideHttpClient } from '@angular/common/http';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
+import { MatInputModule } from '@angular/material/input';
 import { Ex1Component } from './ex1/ex1/ex1.component';
 import { Ex2Component } from './ex2/ex2/ex2.component';
 import { EmailValidatorDirective } from './ex2/email-validator.directive';
+import { CustomErrorStateMatcher } from './ex2/utils/custom-error-state.matcher';
 
 registerLocaleData(localePt, 'pt-BR');
 
 @NgModule({
-  declarations: [AppComponent, Ex1Component, Ex2Component, EmailValidatorDirective],
+  declarations: [
+    AppComponent,
+    Ex1Component,
+    Ex2Component,
+    EmailValidatorDirective,
+  ],
   imports: [
     BrowserModule,
     FormsModule,
@@ -33,6 +39,7 @@ registerLocaleData(localePt, 'pt-BR');
   providers: [
     { provide: LOCALE_ID, useValue: 'pt-BR' },
     { provide: DEFAULT_CURRENCY_CODE, useValue: 'BRL' },
+    { provide: ErrorStateMatcher, useClass: CustomErrorStateMatcher },
     provideHttpClient(),
     provideAnimationsAsync(),
   ],
