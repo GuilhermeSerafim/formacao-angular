@@ -1,0 +1,36 @@
+<form #meuForm="ngForm">
+  <mat-form-field>
+    <mat-label>Email:</mat-label>
+    <!-- Lembre que:
+    O ngModel registra esse campo no formulário do Angular (se ele estiver dentro de uma tag <form> com #meuForm="ngForm").
+     -->
+    <input
+      type="text"
+      name="email"
+      matInput
+      ngModel
+      #emailControl="ngModel"
+      appEmailValidator
+      required
+    />
+    <mat-hint>O Email será usado para login.</mat-hint>
+    @if(emailControl.hasError("required")){
+    <mat-error>O Email é <strong>obrigatório</strong>.</mat-error>
+    } @if (emailControl.hasError('invalidEmail') &&
+    !emailControl.hasError('required')) {
+    <mat-error>O Email está <strong>fora do padrão</strong>.</mat-error>
+    }
+  </mat-form-field>
+  <br /><br />
+  <br /><br />
+  <div>
+    <p>Valid: {{ emailControl.valid }}</p>
+    <p>Touched: {{ emailControl.touched }}</p>
+    <p>Dirty: {{ emailControl.dirty }}</p>
+  </div>
+  <div>
+    <button type="button" [disabled]="meuForm.invalid" (click)="onClick()">
+      Enviar
+    </button>
+  </div>
+</form>
