@@ -6,11 +6,5 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  nome = 'Felipe';
-  onChange(e: string) {
-    console.log(e);
-  }
-  onClick() {
-    console.log(this.nome);
-  }
+
 }

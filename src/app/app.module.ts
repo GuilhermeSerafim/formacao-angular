@@ -13,11 +13,13 @@ import { provideHttpClient } from '@angular/common/http';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import { Ex1Component } from './ex1/ex1/ex1.component';
+import { Ex2Component } from './ex2/ex2/ex2.component';
 
 registerLocaleData(localePt, 'pt-BR');
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, Ex1Component, Ex2Component],
   imports: [
     BrowserModule,
     FormsModule,
