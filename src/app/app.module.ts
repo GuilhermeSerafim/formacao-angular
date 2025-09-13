@@ -15,11 +15,12 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { Ex1Component } from './ex1/ex1/ex1.component';
 import { Ex2Component } from './ex2/ex2/ex2.component';
+import { EmailValidatorDirective } from './ex2/email-validator.directive';
 
 registerLocaleData(localePt, 'pt-BR');
 
 @NgModule({
-  declarations: [AppComponent, Ex1Component, Ex2Component],
+  declarations: [AppComponent, Ex1Component, Ex2Component, EmailValidatorDirective],
   imports: [
     BrowserModule,
     FormsModule,
