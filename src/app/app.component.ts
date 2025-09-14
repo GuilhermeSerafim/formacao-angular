@@ -6,6 +6,7 @@ import { UsersPlaceholderService } from './services/users-placeholder.service';
 import { UsersListResponse } from './types/users-list-response';
 import { GenresListResponse } from './types/genres-list-response';
 import { StateListResponse } from './types/states-list-response';
+import { IUser } from './interfaces/iuser';
 
 @Component({
   selector: 'app-root',
@@ -13,6 +14,9 @@ import { StateListResponse } from './types/states-list-response';
   styleUrl: './app.component.scss',
 })
 export class AppComponent implements OnInit {
+  userSelected: IUser = {} as IUser; // Copy user selected to traceability
+  userSelectedIndex: number | undefined;
+
   usersList: UsersListResponse = [];
   genresList: GenresListResponse = [];
   statesList: StateListResponse = [];
@@ -53,5 +57,13 @@ export class AppComponent implements OnInit {
       .subscribe(
         (genresListResponse) => (this.genresList = genresListResponse)
       );
+  }
+
+  onUserSelected(userIndex: number) {
+    const userFound = this.usersList[userIndex];
+    if (userFound) {
+      this.userSelected = userFound;
+      this.userSelectedIndex = userIndex;
+    }
   }
 }
