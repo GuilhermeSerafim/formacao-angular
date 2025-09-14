@@ -3,6 +3,9 @@ import { UsersService } from './services/users.service';
 import { GenresService } from './services/genres.service';
 import { BrazilianStateService } from './services/brazilian-state.service';
 import { UsersPlaceholderService } from './services/users-placeholder.service';
+import { UsersListResponse } from './types/users-list-response';
+import { GenresListResponse } from './types/genres-list-response';
+import { StateListResponse } from './types/states-list-response';
 
 @Component({
   selector: 'app-root',
@@ -10,9 +13,9 @@ import { UsersPlaceholderService } from './services/users-placeholder.service';
   styleUrl: './app.component.scss',
 })
 export class AppComponent implements OnInit {
-  usersList: any = [];
-  genresList: any = [];
-  statesList: any = [];
+  usersList: UsersListResponse = [];
+  genresList: GenresListResponse = [];
+  statesList: StateListResponse = [];
 
   constructor(
     private readonly _usersService: UsersService,
@@ -25,7 +28,9 @@ export class AppComponent implements OnInit {
     this.getUsers();
     this.getGenres();
     this.getBrazilianState();
-    this._usersPlaceholderService.getUsersPlaceHolder().subscribe(u => console.log(u));
+    this._usersPlaceholderService
+      .getUsersPlaceHolder()
+      .subscribe((u) => console.log(u));
   }
 
   getBrazilianState() {
