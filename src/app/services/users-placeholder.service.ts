@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { UsersPlaceholderListResponse } from '../types/users-placeholder-list-response';
 
 // Verificação se o user já existe através de uma chamada http pro json placeholder
 @Injectable({
@@ -8,7 +9,9 @@ import { Observable } from 'rxjs';
 })
 export class UsersPlaceholderService {
   constructor(private readonly __httpClient: HttpClient) {}
-  getUsersPlaceHolder(): Observable<any> {
-    return this.__httpClient.get('https://jsonplaceholder.typicode.com/users');
+  getUsersPlaceHolder(): Observable<UsersPlaceholderListResponse> {
+    return this.__httpClient.get<UsersPlaceholderListResponse>(
+      'https://jsonplaceholder.typicode.com/users'
+    );
   }
 }
