@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { IUser } from '../interfaces/iuser';
+import { UsersListResponse } from '../types/users-list-response';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UsersService {
-  // Mock
-  private readonly usersList: any = [
+  private readonly usersList: UsersListResponse = [
     {
       name: 'Usuário 1',
       username: 'usuario1',
@@ -53,15 +54,13 @@ export class UsersService {
     },
   ];
 
-  getUsers(): Observable<any> {
-    // return of(this.usersList); // -> Esse of é sincrono
-    // Esse é async:
+  getUsers(): Observable<UsersListResponse> {
     return new Observable((obs) => {
       setTimeout(() => {
         obs.next(this.usersList);
         obs.complete(); // Finaliza ele
       }, 3000);
-    })
+    });
   }
   constructor() {}
 }
