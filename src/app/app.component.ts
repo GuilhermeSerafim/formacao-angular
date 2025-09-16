@@ -63,8 +63,8 @@ export class AppComponent implements OnInit {
     const userFound = this.usersList[userIndex];
     if (userFound) {
       this.userSelectedIndex = userIndex;
-      // structuredClone -> usada para criar uma cópia profunda (deep clone - clona até os filhos) de um objeto ou valor.
-      // Vamos usar isso para rastreamento da propriedade original, caso o user não altere nada para n perder os dados anterior (trace)
+      // Isso significa que ele copia todos os valores do objeto, incluindo objetos aninhados, etc.
+      // Criando novas referências em vez de apenas apontar para os mesmos endereços de memória.
       this.userSelected = structuredClone(userFound);
     }
   }
