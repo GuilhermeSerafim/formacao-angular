@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { GenresListResponse } from '../types/genres-list-response';
 
 @Injectable({
@@ -30,12 +30,13 @@ export class GenresService {
   ];
 
   getGenres(): Observable<GenresListResponse> {
-    return new Observable((obs) => {
-      setTimeout(() => {
-        obs.next(this.genresList);
-        obs.complete();
-      }, 3000);
-    });
+    // return new Observable((obs) => {
+    //   setTimeout(() => {
+    //     obs.next(this.genresList);
+    //     obs.complete();
+    //   }, 1000);
+    // });
+    return of(this.genresList);
   }
   constructor() {}
 }
