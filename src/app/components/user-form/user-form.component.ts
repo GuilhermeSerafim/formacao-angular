@@ -28,21 +28,12 @@ export class UserFormComponent implements OnInit, OnChanges {
   @Input() genresList: GenresListResponse = [];
   @Input() statesList: StateListResponse = [];
   @Input() userSelected: IUser = {} as IUser;
-  // Chamado quando o comp é carregado
   ngOnInit(): void {
-    // Apenas o primeiro console e o genresList (modificamos com of) será mostrado o valor
-    // Pois o nosso Observable é assyncrono (timeout), ofs demais valores não serão mostrados
-    console.log('ngOnInit');
-    console.log('genresList', this.genresList);
-    console.log('statesList', this.statesList);
-    console.log('userSelected', this.userSelected);
   }
 
   // Sempre que os valores do input mudarem
   ngOnChanges(changes: SimpleChanges): void {
-    console.log('ngOnChanges');
-    console.log('genresList', this.genresList);
-    console.log('statesList', this.statesList);
-    console.log('userSelected', this.userSelected);
+    console.log(changes);
+    
   }
 }

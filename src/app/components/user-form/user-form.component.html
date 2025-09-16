@@ -2,17 +2,25 @@
   <mat-card-content>
     <form class="user-form">
       <div class="user-form__row">
-        <div class="user-form__item user-form__item-100">
-          <input style="width: 100%;" />
-        </div>
+        <mat-form-field class="user-form__item user-form__item-100">
+          <mat-label>Favorite food</mat-label>
+          <input
+            matInput
+            required
+            name="nome"
+            [(ngModel)]="userSelected.name"
+            type="text"
+          />
+          <mat-error>O <strong>nome</strong> é obrigatório</mat-error>
+        </mat-form-field>
       </div>
 
       <div class="user-form__row">
         <div class="user-form__item user-form__item-50">
-          <input style="width: 100%;" />
+          <input style="width: 100%" />
         </div>
         <div class="user-form__item user-form__item-50">
-          <input style="width: 100%;" />
+          <input style="width: 100%" />
         </div>
       </div>
     </form>

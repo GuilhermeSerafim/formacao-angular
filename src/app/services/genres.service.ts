@@ -30,13 +30,13 @@ export class GenresService {
   ];
 
   getGenres(): Observable<GenresListResponse> {
-    // return new Observable((obs) => {
-    //   setTimeout(() => {
-    //     obs.next(this.genresList);
-    //     obs.complete();
-    //   }, 1000);
-    // });
-    return of(this.genresList);
+    return new Observable((obs) => {
+      setTimeout(() => {
+        obs.next(this.genresList);
+        obs.complete();
+      }, 1000);
+    });
+    // return of(this.genresList);
   }
   constructor() {}
 }
