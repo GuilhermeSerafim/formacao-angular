@@ -3,7 +3,7 @@
     <form class="user-form">
       <div class="user-form__row">
         <mat-form-field class="user-form__item user-form__item-100">
-          <mat-label>Favorite food</mat-label>
+          <mat-label>Nome</mat-label>
           <input
             matInput
             required
@@ -43,11 +43,12 @@
             required
             matInput
             #emailControl="ngModel"
-            pattern="^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$"
-          />
+            appEmailPatternValidator
+            />
+            <!-- pattern="^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$" -->
           @if (emailControl.hasError('required')) {
           <mat-error>O <strong>E-mail</strong> é obrigatório.</mat-error>
-          }@if (emailControl.hasError('pattern')) {
+          }@if (emailControl.hasError('invalidEmailPattern') && !emailControl.hasError('required')) {
           <mat-error>Formato de <strong>E-mail</strong> inválido</mat-error>
           }
         </mat-form-field>
