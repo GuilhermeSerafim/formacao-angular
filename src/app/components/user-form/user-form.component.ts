@@ -24,13 +24,11 @@ import { IUser } from '../../interfaces/iuser';
   templateUrl: './user-form.component.html',
   styleUrl: './user-form.component.scss',
 })
-export class UserFormComponent implements OnInit, OnChanges {
+export class UserFormComponent implements OnChanges {
   @Input() genresList: GenresListResponse = [];
   @Input() statesList: StateListResponse = [];
   @Input() userSelected: IUser = {} as IUser;
-  ngOnInit(): void {
-  }
-
+  
   // Sempre que os valores do input mudarem
   ngOnChanges(changes: SimpleChanges): void {
     console.log(changes);
