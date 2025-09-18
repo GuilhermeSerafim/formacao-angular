@@ -8,7 +8,7 @@ import { UsersListResponse } from '../../types/users-list-response';
 })
 export class UsersCardListComponent {
   @Input() usersList: UsersListResponse = [];
-  @Output('onUserSelected') onUserSelectedEmitt = new EventEmitter<number>(); 
+  @Output('onUserSelected') onUserSelectedEmitt = new EventEmitter<number>();
 
   onUserSelected(userIndex: number) {
     this.onUserSelectedEmitt.emit(userIndex);

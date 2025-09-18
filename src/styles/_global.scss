@@ -1,18 +1,7 @@
-body {
-    font-family: 'Poppins', sans-serif !important;
-    background-color: darkgrey;
-}
-
-h1,
-h2,
-h3,
-p {
-    font-family: 'Poppins', sans-serif !important;
-}
-
+html, body { height: 100%; padding: 20px; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: darkgray; }
 
 * {
     box-sizing: border-box;
     margin: 0;
-    padding: 0;
 }

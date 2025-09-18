@@ -59,7 +59,7 @@ export class UsersService {
       setTimeout(() => {
         obs.next(this.usersList);
         obs.complete(); // Finaliza ele
-      }, 3000);
+      }, 1000);
     });
   }
   constructor() {}

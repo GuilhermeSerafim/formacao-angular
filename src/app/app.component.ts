@@ -16,54 +16,60 @@ import { IUser } from './interfaces/iuser';
 export class AppComponent implements OnInit {
   userSelected: IUser = {} as IUser; // Copy user selected to traceability
   userSelectedIndex: number | undefined;
-
+  
   usersList: UsersListResponse = [];
   genresList: GenresListResponse = [];
   statesList: StateListResponse = [];
-
+  
   constructor(
     private readonly _usersService: UsersService,
     private readonly _genresService: GenresService,
     private readonly _brazilianStatesService: BrazilianStateService,
     private readonly _usersPlaceholderService: UsersPlaceholderService
   ) {}
-
+  
   ngOnInit(): void {
     this.getUsers();
     this.getGenres();
     this.getBrazilianState();
     this._usersPlaceholderService
-      .getUsersPlaceHolder()
-      .subscribe((u) => console.log(u));
+    .getUsersPlaceHolder()
+    .subscribe((u) => console.log(u));
   }
-
+  
   getBrazilianState() {
     this._brazilianStatesService
-      .getStates()
-      .subscribe(
-        (statesListResponse) => (this.statesList = statesListResponse)
-      );
+    .getStates()
+    .subscribe(
+      (statesListResponse) => (this.statesList = statesListResponse)
+    );
   }
-
+  
   getUsers() {
     this._usersService
-      .getUsers()
-      .subscribe((usersListResponse) => (this.usersList = usersListResponse));
+    .getUsers()
+    .subscribe((usersListResponse) => (this.usersList = usersListResponse));
   }
-
+  
   getGenres() {
     this._genresService
-      .getGenres()
-      .subscribe(
-        (genresListResponse) => (this.genresList = genresListResponse)
-      );
+    .getGenres()
+    .subscribe(
+      (genresListResponse) => (this.genresList = genresListResponse)
+    );
   }
-
+  
   onUserSelected(userIndex: number) {
     const userFound = this.usersList[userIndex];
     if (userFound) {
-      this.userSelected = userFound;
       this.userSelectedIndex = userIndex;
+      // Isso significa que ele copia todos os valores do objeto, incluindo objetos aninhados, etc.
+      // Criando novas referências em vez de apenas apontar para os mesmos endereços de memória.
+      this.userSelected = structuredClone(userFound);
     }
+  }
+
+  showRealUser() {
+    console.log(this.usersList);
   }
 }

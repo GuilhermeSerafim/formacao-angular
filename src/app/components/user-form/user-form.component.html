@@ -1,0 +1,93 @@
+<mat-card>
+  <mat-card-content>
+    <form class="user-form">
+      <div class="user-form__row">
+        <mat-form-field class="user-form__item user-form__item-100">
+          <mat-label>Nome</mat-label>
+          <input
+            matInput
+            required
+            name="nome"
+            [(ngModel)]="userSelected.name"
+            type="text"
+          />
+          <mat-error>O <strong>Nome</strong> é obrigatório</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="user-form__row">
+        <mat-form-field class="user-form__item user-form__item-50">
+          <mat-label>Usuário</mat-label>
+          <input
+            [ngModelOptions]="{ updateOn: 'blur' }"
+            type="text"
+            name="usuario"
+            [(ngModel)]="userSelected.username"
+            required
+            matInput
+            #userNameControl="ngModel"
+            [appCredentialsValidator]="'username'"
+          />
+          <mat-hint
+            >O <strong>usuário</strong> será utilizado para o login.</mat-hint
+          >
+          @if (userNameControl.hasError("required")) {
+          <mat-error>O <strong>Usuário</strong> é obrigatório</mat-error>
+          } @if (userNameControl.hasError('invalidUserName') &&
+          !userNameControl.hasError('required')) {
+          <mat-error
+            >Este <strong>Usuário</strong> já está sendo utilizado.</mat-error
+          >
+          }
+        </mat-form-field>
+        <mat-form-field class="user-form__item user-form__item-50">
+          <mat-label>E-mail:</mat-label>
+          <input
+            [ngModelOptions]="{ updateOn: 'blur' }"
+            [appCredentialsValidator]="'email'"
+            type="text"
+            name="email"
+            [(ngModel)]="userSelected.email"
+            required
+            matInput
+            #emailControl="ngModel"
+            appEmailPatternValidator
+          />
+          <!-- Forma mais direta de se fazer: pattern="^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$" -->
+          @if (emailControl.hasError('required')) {
+          <mat-error>O <strong>E-mail</strong> é obrigatório.</mat-error>
+          }@if (emailControl.hasError('invalidEmailPattern') &&
+          !emailControl.hasError('required')) {
+          <mat-error>Formato de <strong>E-mail</strong> inválido</mat-error>
+          }@if (emailControl.hasError('invalidEmail') &&
+          !emailControl.hasError('required')) {
+          <mat-error
+            >O <strong>E-mail</strong> já esta sendo utilizado</mat-error
+          >
+          }
+        </mat-form-field>
+      </div>
+
+      <div class="user-form__row">
+        <mat-form-field class="user-form__item user-form__item-50">
+          <mat-label>Senha:</mat-label>
+          <input
+            type="password"
+            name="senha"
+            matInput
+            [(ngModel)]="userSelected.password"
+            #passwordControl="ngModel"
+            appPasswordStrengthValidator
+            required
+          />
+          @if(passwordControl.hasError('required')) {
+          <mat-error>A <strong>Senha</strong> é obrigatória.</mat-error>
+          }@if (passwordControl?.hasError('invalidPasswordStrength') &&
+          !passwordControl?.hasError('required')) {
+          <mat-error>Digite uma <strong>Senha</strong> mais forte.</mat-error>
+          }
+        </mat-form-field>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>
