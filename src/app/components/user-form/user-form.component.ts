@@ -38,15 +38,25 @@ export class UserFormComponent implements OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
     const userChanged = changes['userSelected'];
 
+    // Recalcula os validadores ao detectar alteração, garantindo exibição do mat-error
     if (userChanged && this.controls) {
-      this.controls.forEach((c) => {
-        c.control.updateValueAndValidity(); // Recalcula validadores
-        c.control.markAsTouched(); // Marca como "tocado" (mat-error)
-      });
-    }
-
-    if (userChanged) {
+      this.recalculateValidatorFor('senha');
       this.onPasswordChange(this.userSelected.password);
+    }
+  }
+
+  recalculateAllValidators() {
+    this.controls.forEach((c) => {
+      c.control.updateValueAndValidity(); // Recalcula validadores
+      c.control.markAsTouched(); // Marca como "tocado" (mat-error)
+    });
+  }
+
+  recalculateValidatorFor(controlNameParam: string) {
+    const control = this.controls.find((c) => c.name === controlNameParam);
+    if (control) {
+      control.control.updateValueAndValidity();
+      control.control.markAsTouched();
     }
   }
 
