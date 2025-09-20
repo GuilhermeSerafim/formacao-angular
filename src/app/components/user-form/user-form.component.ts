@@ -11,6 +11,7 @@ import { GenresListResponse } from '../../types/genres-list-response';
 import { StateListResponse } from '../../types/states-list-response';
 import { IUser } from '../../interfaces/iuser';
 import { NgModel } from '@angular/forms';
+import { getPasswordStrengthValue } from '../../../utils/get-password-strength-value';
 
 // 📌 Ordem Simplificada dos Hooks
 // constructor → a classe do componente é criada.
@@ -28,26 +29,38 @@ import { NgModel } from '@angular/forms';
   styleUrl: './user-form.component.scss',
 })
 export class UserFormComponent implements OnChanges {
+  passwordStrengthValue = 0;
   @Input() genresList: GenresListResponse = [];
   @Input() statesList: StateListResponse = [];
   @Input() userSelected: IUser = {} as IUser;
   @ViewChildren(NgModel) controls!: QueryList<NgModel>;
 
-  // Força revalidação sempre que o @Input userSelected mudar.
-  // Quando o form é preenchido por binding ([(ngModel)]) e não por digitação,
-  // os controles continuam em estado 'pristine' e 'untouched' (sem interação do usuário).
-  // O Angular Material só exibe <mat-error> quando o controle está inválido E (dirty | touched | form submitted).
-  // Por isso:
-  // 1) updateValueAndValidity() roda os validadores imediatamente com os novos valores,
-  //    inclusive nos campos com updateOn:'blur'.
-  // 2) markAsTouched() tira o controle de 'untouched', liberando a exibição dos erros
-  //    sem exigir blur/digitação.
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes['userSelected'] && this.controls) {
-      this.controls.forEach((c) => {
-        c.control.updateValueAndValidity();
-        c.control.markAsTouched(); // opcional: já mostra o erro visual
-      });
+    const userChanged = changes['userSelected'];
+
+    // Recalcula os validadores ao detectar alteração, garantindo exibição do mat-error
+    if (userChanged && this.controls) {
+      this.recalculateValidatorFor('senha');
+      this.onPasswordChange(this.userSelected.password);
     }
+  }
+
+  recalculateAllValidators() {
+    this.controls.forEach((c) => {
+      c.control.updateValueAndValidity(); // Recalcula validadores
+      c.control.markAsTouched(); // Marca como "tocado" (mat-error)
+    });
+  }
+
+  recalculateValidatorFor(controlNameParam: string) {
+    const control = this.controls.find((c) => c.name === controlNameParam);
+    if (control) {
+      control.control.updateValueAndValidity();
+      control.control.markAsTouched();
+    }
+  }
+
+  onPasswordChange(password: any) {
+    this.passwordStrengthValue = getPasswordStrengthValue(password);
   }
 }
