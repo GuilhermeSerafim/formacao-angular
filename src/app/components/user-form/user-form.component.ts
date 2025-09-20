@@ -36,13 +36,17 @@ export class UserFormComponent implements OnChanges {
   @ViewChildren(NgModel) controls!: QueryList<NgModel>;
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes['userSelected'] && this.controls) {
+    const userChanged = changes['userSelected'];
+
+    if (userChanged && this.controls) {
       this.controls.forEach((c) => {
-        // Recalcular o valor e os validadores do controle (campo do formulário).
-        c.control.updateValueAndValidity();
-        // Marca o campo como "tocado" (touched = true). -> Para o mat-error
-        c.control.markAsTouched();
+        c.control.updateValueAndValidity(); // Recalcula validadores
+        c.control.markAsTouched(); // Marca como "tocado" (mat-error)
       });
+    }
+
+    if (userChanged) {
+      this.onPasswordChange(this.userSelected.password);
     }
   }
 
