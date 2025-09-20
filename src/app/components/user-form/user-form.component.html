@@ -79,6 +79,7 @@
             #passwordControl="ngModel"
             appPasswordStrengthValidator
             required
+            (ngModelChange)="onPasswordChange($event)"
           />
           @if(passwordControl.hasError('required')) {
           <mat-error>A <strong>Senha</strong> é obrigatória.</mat-error>
@@ -86,6 +87,7 @@
           !passwordControl?.hasError('required')) {
           <mat-error>Digite uma <strong>Senha</strong> mais forte.</mat-error>
           }
+          <mat-progress-bar [value]="passwordStrengthValue"></mat-progress-bar>
         </mat-form-field>
       </div>
     </form>
