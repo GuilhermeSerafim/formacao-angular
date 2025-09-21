@@ -231,10 +231,29 @@
                       type="text"
                       [name]="'genrer-' + i"
                       matInput
-                      ngModel
                       required
                       [(ngModel)]="element.genre"
+                      [matAutocomplete]="auto"
                     />
+                    <!-- 
+                      O Angular Material espera que displayWith seja apenas uma referência de função.
+                      Quando passamos "displayFn" diretamente, o contexto do "this" pode se perder
+                      (o Angular chamaria a função "solta", sem saber que ela pertence ao componente).
+
+                      Usar "displayFn.bind(this)" cria uma cópia da função já amarrada ao componente,
+                      garantindo que o "this" dentro de displayFn continue apontando para a instância
+                      do componente. Assim, temos acesso correto às propriedades, como this.genresList.
+                    -->
+                    <mat-autocomplete
+                      #auto="matAutocomplete"
+                      [displayWith]="displayFn.bind(this)"
+                    >
+                      @for (genre of genresList; track $index) {
+                      <mat-option [value]="genre.id">{{
+                        genre.description
+                      }}</mat-option>
+                      }
+                    </mat-autocomplete>
                     <mat-error
                       >O <strong>Gênero</strong> é obrigatório.</mat-error
                     >
@@ -245,7 +264,10 @@
             <ng-container matColumnDef="favorite">
               <th mat-header-cell *matHeaderCellDef>Favorita</th>
               <td mat-cell *matCellDef="let element; let i = index">
-                <mat-checkbox [name]="'isFavorite-' + i" [(ngModel)]="element.isFavorite"></mat-checkbox>
+                <mat-checkbox
+                  [name]="'isFavorite-' + i"
+                  [(ngModel)]="element.isFavorite"
+                ></mat-checkbox>
               </td>
             </ng-container>
 
