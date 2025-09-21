@@ -56,6 +56,7 @@ export class UserFormComponent implements OnChanges, OnInit {
       this.recalculateValidatorFor('senha');
       this.onPasswordChange(this.userSelected.password);
       this.setBirthDateToDatePicker();
+      this.filteredGenresList = this.genresList;
     }
   }
 
