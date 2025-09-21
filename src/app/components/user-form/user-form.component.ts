@@ -36,6 +36,7 @@ export class UserFormComponent implements OnChanges, OnInit {
   minDate: Date | null = null;
   maxDate: Date | null = null;
   dateValue: Date | null = null;
+  displayedColumns: string[] = ['title', 'band', 'genre', 'favorite'];
 
   @Input() genresList: GenresListResponse = [];
   @Input() statesList: StateListResponse = [];
@@ -79,6 +80,8 @@ export class UserFormComponent implements OnChanges, OnInit {
     if (!event.value) return;
     this.userSelected.birthDate = convertDateObjToPtBrDate(event.value);
   }
+
+
 
   private setMinAndMaxDate() {
     this.minDate = new Date(new Date().getFullYear() - 100, 0, 1);
