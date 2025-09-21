@@ -28,12 +28,24 @@ import { getPasswordStrengthValue } from '../../../utils/get-password-strength-v
   templateUrl: './user-form.component.html',
   styleUrl: './user-form.component.scss',
 })
-export class UserFormComponent implements OnChanges {
+export class UserFormComponent implements OnChanges, OnInit {
   passwordStrengthValue = 0;
+  minDate: Date | null = null;
+  maxDate: Date | null = null;
+
   @Input() genresList: GenresListResponse = [];
   @Input() statesList: StateListResponse = [];
   @Input() userSelected: IUser = {} as IUser;
   @ViewChildren(NgModel) controls!: QueryList<NgModel>;
+
+  ngOnInit(): void {
+    this.setMinAndMaxDate();
+  }
+
+  setMinAndMaxDate() {
+    this.minDate = new Date(new Date().getFullYear() - 100, 0, 1);
+    this.maxDate = new Date();
+  }
 
   ngOnChanges(changes: SimpleChanges): void {
     const userChanged = changes['userSelected'];

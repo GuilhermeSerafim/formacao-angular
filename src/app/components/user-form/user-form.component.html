@@ -124,6 +124,30 @@
           </mat-error>
         </mat-form-field>
       </div>
+      <div class="user-form__row">
+        <mat-form-field class="user-form__item user-form__item-50">
+          <mat-label>Data de nascimento</mat-label>
+          <input
+            matInput
+            [matDatepicker]="picker"
+            ngModel
+            [min]="minDate"
+            [max]="maxDate"
+            name="dataNascimento"
+            readonly
+            required
+          />
+          <mat-datepicker-toggle
+            matIconSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+          <mat-hint>dd/mm/aa</mat-hint>
+          <mat-error
+            >A <strong>Data de Nascimento</strong> é obrigatória.</mat-error
+          >
+        </mat-form-field>
+      </div>
     </form>
   </mat-card-content>
 </mat-card>
