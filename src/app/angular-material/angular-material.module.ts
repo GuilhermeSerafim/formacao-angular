@@ -8,6 +8,7 @@ import { provideNativeDateAdapter } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatTableModule } from '@angular/material/table';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @NgModule({
   imports: [
@@ -19,6 +20,7 @@ import { MatTableModule } from '@angular/material/table';
     MatSelectModule,
     MatDividerModule,
     MatTableModule,
+    MatCheckboxModule
   ],
   exports: [
     MatCardModule,
@@ -29,6 +31,7 @@ import { MatTableModule } from '@angular/material/table';
     MatSelectModule,
     MatDividerModule,
     MatTableModule,
+    MatCheckboxModule
   ],
   providers: provideNativeDateAdapter(),
 })
