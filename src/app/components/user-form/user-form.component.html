@@ -234,6 +234,7 @@
                       required
                       [(ngModel)]="element.genre"
                       [matAutocomplete]="auto"
+                      (ngModelChange)="filterGenres($event)"
                     />
                     <!-- 
                       O Angular Material espera que displayWith seja apenas uma referência de função.
@@ -248,7 +249,7 @@
                       #auto="matAutocomplete"
                       [displayWith]="displayFn.bind(this)"
                     >
-                      @for (genre of genresList; track $index) {
+                      @for (genre of filteredGenresList; track $index) {
                       <mat-option [value]="genre.id">{{
                         genre.description
                       }}</mat-option>
