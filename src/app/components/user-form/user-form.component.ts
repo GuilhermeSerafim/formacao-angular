@@ -12,6 +12,7 @@ import { StateListResponse } from '../../types/states-list-response';
 import { IUser } from '../../interfaces/iuser';
 import { NgModel } from '@angular/forms';
 import { getPasswordStrengthValue } from '../../../utils/get-password-strength-value';
+import { convertPtBrDateToDateObj } from '../../../utils/convert-pt-br-date-obj';
 
 // 📌 Ordem Simplificada dos Hooks
 // constructor → a classe do componente é criada.
@@ -32,6 +33,7 @@ export class UserFormComponent implements OnChanges, OnInit {
   passwordStrengthValue = 0;
   minDate: Date | null = null;
   maxDate: Date | null = null;
+  dateValue: Date | null = null;
 
   @Input() genresList: GenresListResponse = [];
   @Input() statesList: StateListResponse = [];
@@ -42,18 +44,13 @@ export class UserFormComponent implements OnChanges, OnInit {
     this.setMinAndMaxDate();
   }
 
-  setMinAndMaxDate() {
-    this.minDate = new Date(new Date().getFullYear() - 100, 0, 1);
-    this.maxDate = new Date();
-  }
-
   ngOnChanges(changes: SimpleChanges): void {
     const userChanged = changes['userSelected'];
 
-    // Recalcula os validadores ao detectar alteração, garantindo exibição do mat-error
     if (userChanged && this.controls) {
       this.recalculateValidatorFor('senha');
       this.onPasswordChange(this.userSelected.password);
+      this.setBirthDateToDatePicker();
     }
   }
 
@@ -74,5 +71,14 @@ export class UserFormComponent implements OnChanges, OnInit {
 
   onPasswordChange(password: any) {
     this.passwordStrengthValue = getPasswordStrengthValue(password);
+  }
+
+  private setMinAndMaxDate() {
+    this.minDate = new Date(new Date().getFullYear() - 100, 0, 1);
+    this.maxDate = new Date();
+  }
+
+  private setBirthDateToDatePicker() {
+    this.dateValue = convertPtBrDateToDateObj(this.userSelected.birthDate);
   }
 }
