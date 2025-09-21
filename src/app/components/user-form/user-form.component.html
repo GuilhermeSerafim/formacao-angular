@@ -141,7 +141,12 @@
             matIconSuffix
             [for]="picker"
           ></mat-datepicker-toggle>
-          <mat-datepicker #picker></mat-datepicker>
+          <mat-datepicker #picker>
+            <mat-datepicker-actions>
+              <button matDatepickerCancel  mat-button color="warn">Cancelar</button>
+              <button matDatepickerApply mat-button color="primary">Confirmar</button>
+            </mat-datepicker-actions>
+          </mat-datepicker>
           <mat-hint>dd/mm/aa</mat-hint>
           <mat-error
             >A <strong>Data de Nascimento</strong> é obrigatória.</mat-error
