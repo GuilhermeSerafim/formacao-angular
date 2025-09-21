@@ -3,6 +3,11 @@ import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { provideNativeDateAdapter } from '@angular/material/core';
+import { MatSelectModule } from '@angular/material/select';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   imports: [
@@ -10,12 +15,21 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     MatFormFieldModule,
     MatInputModule,
     MatProgressBarModule,
+    MatDatepickerModule,
+    MatSelectModule,
+    MatDividerModule,
+    MatTableModule,
   ],
   exports: [
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
     MatProgressBarModule,
+    MatDatepickerModule,
+    MatSelectModule,
+    MatDividerModule,
+    MatTableModule,
   ],
+  providers: provideNativeDateAdapter(),
 })
 export class AngularMaterialModule {}

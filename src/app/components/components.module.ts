@@ -5,6 +5,7 @@ import { UsersCardListComponent } from './users-card-list/users-card-list.compon
 import { DirectivesModule } from '../directives/directives.module';
 import { UserFormComponent } from './user-form/user-form.component';
 import { AngularMaterialModule } from '../angular-material/angular-material.module';
+import { MatButton } from "@angular/material/button";
 
 
 // declarations → coisas que pertencem ao módulo (componentes, pipes, diretivas).
@@ -12,7 +13,7 @@ import { AngularMaterialModule } from '../angular-material/angular-material.modu
 // exports → coisas desse módulo que você quer disponibilizar para outros.
 @NgModule({
   declarations: [UsersCardListComponent, UserFormComponent],
-  imports: [CommonModule, FormsModule, AngularMaterialModule, DirectivesModule],
+  imports: [CommonModule, FormsModule, AngularMaterialModule, DirectivesModule, MatButton],
   // Para usarmos no APPMODULE, temos que exportar...
   exports: [UsersCardListComponent, UserFormComponent],
 })

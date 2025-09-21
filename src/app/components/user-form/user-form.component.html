@@ -124,6 +124,83 @@
           </mat-error>
         </mat-form-field>
       </div>
+      <div class="user-form__row">
+        <mat-form-field class="user-form__item user-form__item-50">
+          <mat-label>Data de nascimento</mat-label>
+          <input
+            matInput
+            [matDatepicker]="picker"
+            [ngModel]="dateValue"
+            [min]="minDate"
+            [max]="maxDate"
+            name="dataNascimento"
+            readonly
+            required
+            (dateChange)="onDateChange($event)"
+          />
+          <mat-datepicker-toggle
+            matIconSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker>
+            <mat-datepicker-actions>
+              <button matDatepickerCancel mat-button color="warn">
+                Cancelar
+              </button>
+              <button matDatepickerApply mat-button color="primary">
+                Confirmar
+              </button>
+            </mat-datepicker-actions>
+          </mat-datepicker>
+          <mat-hint>dd/mm/aa</mat-hint>
+          <mat-error
+            >A <strong>Data de Nascimento</strong> é obrigatória.</mat-error
+          >
+        </mat-form-field>
+        <mat-form-field class="user-form__item user-form__item-50">
+          <mat-label>Estado:</mat-label>
+          <mat-select name="estado" [(ngModel)]="userSelected.state" required>
+            <mat-option>-</mat-option>
+            @for (state of statesList; track $index;) {
+            <mat-option [value]="state.id">{{ state.descricao }}</mat-option>
+            }
+          </mat-select>
+          <mat-error>O <strong>Estado</strong> é obrigatório.</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="user-form__row">
+        <div class="user-form__musics">
+          <mat-divider></mat-divider>
+          <div class="user-form__musics-title">
+            <h5>Minhas músicas:</h5>
+          </div>
+          <table
+            class="user-form__item user-form__item-100"
+            mat-table
+            [dataSource]="userSelected.musics"
+          >
+            <ng-container matColumnDef="title">
+              <th mat-header-cell *matHeaderCellDef>Título</th>
+              <td mat-cell *matCellDef="let element">{{ element.title }}</td>
+            </ng-container>
+            <ng-container matColumnDef="band">
+              <th mat-header-cell *matHeaderCellDef>Banda</th>
+              <td mat-cell *matCellDef="let element">{{ element.band }}</td>
+            </ng-container>
+            <ng-container matColumnDef="genre">
+              <th mat-header-cell *matHeaderCellDef>Gênero</th>
+              <td mat-cell *matCellDef="let element">{{ element.genre }}</td>
+            </ng-container>
+            <ng-container matColumnDef="favorite">
+              <th mat-header-cell *matHeaderCellDef>Favorita</th>
+              <td mat-cell *matCellDef="let element">{{ element.isFavorite }}</td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns "></tr>
+          </table>
+        </div>
+      </div>
     </form>
   </mat-card-content>
 </mat-card>
