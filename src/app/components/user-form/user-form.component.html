@@ -144,14 +144,28 @@
           ></mat-datepicker-toggle>
           <mat-datepicker #picker>
             <mat-datepicker-actions>
-              <button matDatepickerCancel  mat-button color="warn">Cancelar</button>
-              <button matDatepickerApply mat-button color="primary">Confirmar</button>
+              <button matDatepickerCancel mat-button color="warn">
+                Cancelar
+              </button>
+              <button matDatepickerApply mat-button color="primary">
+                Confirmar
+              </button>
             </mat-datepicker-actions>
           </mat-datepicker>
           <mat-hint>dd/mm/aa</mat-hint>
           <mat-error
             >A <strong>Data de Nascimento</strong> é obrigatória.</mat-error
           >
+        </mat-form-field>
+        <mat-form-field class="user-form__item user-form__item-50">
+          <mat-label>Estado:</mat-label>
+          <mat-select name="estado" [(ngModel)]="userSelected.state" required>
+            <mat-option>-</mat-option>
+            @for (state of statesList; track $index;) {
+            <mat-option [value]="state.id">{{ state.descricao }}</mat-option>
+            }
+          </mat-select>
+          <mat-error>O <strong>Estado</strong> é obrigatório.</mat-error>
         </mat-form-field>
       </div>
     </form>
