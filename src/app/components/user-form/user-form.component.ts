@@ -13,6 +13,8 @@ import { IUser } from '../../interfaces/iuser';
 import { NgModel } from '@angular/forms';
 import { getPasswordStrengthValue } from '../../../utils/get-password-strength-value';
 import { convertPtBrDateToDateObj } from '../../../utils/convert-pt-br-date-obj';
+import { MatDatepickerInputEvent } from '@angular/material/datepicker';
+import { convertDateObjToPtBrDate } from '../../../utils/convert-date-obj-to-pt-br-date';
 
 // 📌 Ordem Simplificada dos Hooks
 // constructor → a classe do componente é criada.
@@ -71,6 +73,11 @@ export class UserFormComponent implements OnChanges, OnInit {
 
   onPasswordChange(password: any) {
     this.passwordStrengthValue = getPasswordStrengthValue(password);
+  }
+
+  onDateChange(event: MatDatepickerInputEvent<any, any>) {
+    if (!event.value) return;
+    this.userSelected.birthDate = convertDateObjToPtBrDate(event.value);
   }
 
   private setMinAndMaxDate() {
