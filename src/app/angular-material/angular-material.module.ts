@@ -10,6 +10,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatTableModule } from '@angular/material/table';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   imports: [
@@ -23,6 +24,7 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
     MatTableModule,
     MatCheckboxModule,
     MatAutocompleteModule,
+    MatButtonModule,
   ],
   exports: [
     MatCardModule,
@@ -35,6 +37,7 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
     MatTableModule,
     MatCheckboxModule,
     MatAutocompleteModule,
+    MatButtonModule,
   ],
   providers: provideNativeDateAdapter(),
 })
