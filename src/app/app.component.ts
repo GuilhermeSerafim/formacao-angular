@@ -55,11 +55,19 @@ export class AppComponent implements OnInit {
   }
 
   onFormSubmit() {
-    this.openBeforeAndAfterDialog();
+    if (this.userSelectedIndex === undefined) return;
+    const original = this.usersList[this.userSelectedIndex];
+
+    this.openBeforeAndAfterDialog(original, this.userSelected);
   }
 
-  openBeforeAndAfterDialog() {
+  openBeforeAndAfterDialog(originalUser: IUser, updatedUser: IUser) {
     this.dialog.open(UserBeforeAndAfterDialogComponent, {
+      // O Material joga esse objeto dentro de um injection token
+      data: {
+        originalUser,
+        updatedUser,
+      },
       minWidth: '70%',
     });
   }

@@ -10,9 +10,79 @@
       </div>
     </div>
     <div class="infos__row">
-      <div class="infos__item"><strong>Nome:</strong> Felipe</div>
-      <div class="infos__item"><strong>Nome:</strong> Felipe Alterado</div>
+      <div class="infos__item">
+        <strong>Nome:</strong> {{ data.originalUser.name }}
+      </div>
+      <div class="infos__item">
+        <strong>Nome:</strong> {{ data.updatedUser.name }}
+      </div>
     </div>
+    <div class="infos__row">
+      <div class="infos__item">
+        <strong>Usuário:</strong> {{ data.originalUser.username }}
+      </div>
+      <div class="infos__item">
+        <strong>Usuário:</strong> {{ data.updatedUser.username }}
+      </div>
+    </div>
+    <div class="infos__row">
+      <div class="infos__item">
+        <strong>E-mail:</strong> {{ data.originalUser.email }}
+      </div>
+      <div class="infos__item">
+        <strong>E-mail:</strong> {{ data.updatedUser.email }}
+      </div>
+    </div>
+    <div class="infos__row">
+      <div class="infos__item">
+        <strong>Data de Nascimento:</strong> {{ data.originalUser.birthDate }}
+      </div>
+      <div class="infos__item">
+        <strong>Data de Nascimento:</strong> {{ data.updatedUser.birthDate }}
+      </div>
+    </div>
+    <div class="infos__row">
+      <div class="infos__item">
+        <strong>Estado:</strong> {{ data.originalUser.state }}
+      </div>
+      <div class="infos__item">
+        <strong>EstadoNascimento:</strong> {{ data.updatedUser.state }}
+      </div>
+    </div>
+    @for (originalMusic of data.originalUser.musics; track $index; let i =
+    $index) {
+    <div class="infos__row">
+      <div class="infos__item">
+        <strong>Música {{ i + 1 }} - Título : </strong>
+        {{ originalMusic.title }}
+      </div>
+      <div class="infos__item">
+        <strong>Música {{ i + 1 }} - Título :</strong>
+        {{ data.updatedUser.musics[i].title }}
+      </div>
+    </div>
+    <div class="infos__row">
+      <div class="infos__item">
+        <strong>Música {{ i + 1 }} - Banda: </strong>
+        {{ originalMusic.band }}
+      </div>
+      <div class="infos__item">
+        <strong>Música {{ i + 1 }} - Banda:</strong>
+        {{ data.updatedUser.musics[i].band }}
+      </div>
+    </div>
+    <div class="infos__row">
+      <div class="infos__item">
+        <strong>Música {{ i + 1 }} - Favorita: </strong>
+        {{ originalMusic.isFavorite }}
+      </div>
+      <div class="infos__item">
+        <strong>Música {{ i + 1 }} - Favorita:</strong>
+        {{ data.updatedUser.musics[i].isFavorite }}
+      </div>
+    </div>
+
+    }
   </div>
 </mat-dialog-content>
 <mat-dialog-actions>
