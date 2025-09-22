@@ -85,11 +85,11 @@
     <div class="infos__row">
       <div class="infos__item">
         <strong>Música {{ i + 1 }} - Favorita: </strong>
-        {{ originalMusic.isFavorite }}
+        {{ originalMusic.isFavorite | isFavoriteDescription}}
       </div>
       <div class="infos__item">
         <strong>Música {{ i + 1 }} - Favorita:</strong>
-        {{ data.updatedUser.musics[i].isFavorite }}
+        {{ data.updatedUser.musics[i].isFavorite | isFavoriteDescription}}
       </div>
     </div>
 
