@@ -6,14 +6,24 @@ import { DirectivesModule } from '../directives/directives.module';
 import { UserFormComponent } from './user-form/user-form.component';
 import { AngularMaterialModule } from '../angular-material/angular-material.module';
 import { UserBeforeAndAfterDialogComponent } from './user-before-and-after-dialog/user-before-and-after-dialog.component';
-
+import { PipesModule } from '../pipes/pipes.module';
 
 // declarations → coisas que pertencem ao módulo (componentes, pipes, diretivas).
 // imports → módulos externos que você precisa usar aqui.
 // exports → coisas desse módulo que você quer disponibilizar para outros.
 @NgModule({
-  declarations: [UsersCardListComponent, UserFormComponent, UserBeforeAndAfterDialogComponent],
-  imports: [CommonModule, FormsModule, AngularMaterialModule, DirectivesModule],
+  declarations: [
+    UsersCardListComponent,
+    UserFormComponent,
+    UserBeforeAndAfterDialogComponent,
+  ],
+  imports: [
+    CommonModule,
+    FormsModule,
+    AngularMaterialModule,
+    DirectivesModule,
+    PipesModule,
+  ],
   // Para usarmos no APPMODULE, temos que exportar...
   exports: [UsersCardListComponent, UserFormComponent],
 })

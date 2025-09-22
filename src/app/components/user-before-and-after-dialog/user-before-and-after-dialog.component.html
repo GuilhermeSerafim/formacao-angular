@@ -73,6 +73,16 @@
     </div>
     <div class="infos__row">
       <div class="infos__item">
+        <strong>Música {{ i + 1 }} - Genêro: </strong>
+        {{ originalMusic.genre | genreDescription }}
+      </div>
+      <div class="infos__item">
+        <strong>Música {{ i + 1 }} - Genêro:</strong>
+        {{ data.updatedUser.musics[i].genre | genreDescription}}
+      </div>
+    </div>
+    <div class="infos__row">
+      <div class="infos__item">
         <strong>Música {{ i + 1 }} - Favorita: </strong>
         {{ originalMusic.isFavorite }}
       </div>
