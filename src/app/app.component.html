@@ -3,8 +3,11 @@
   (onUserSelected)="onUserSelected($event)"
 />
 
-<app-user-form
+@if (userSelectedIndex != undefined) {
+  <app-user-form
   [genresList]="genresList"
   [statesList]="statesList"
   [userSelected]="userSelected"
-/>
+  (onFormSubmit)="onFormSubmit()"
+  />
+}

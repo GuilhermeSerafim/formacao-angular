@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { UsersService } from './services/users.service';
 import { GenresService } from './services/genres.service';
 import { BrazilianStateService } from './services/brazilian-state.service';
@@ -7,6 +7,8 @@ import { UsersListResponse } from './types/users-list-response';
 import { GenresListResponse } from './types/genres-list-response';
 import { StateListResponse } from './types/states-list-response';
 import { IUser } from './interfaces/iuser';
+import { MatDialog } from '@angular/material/dialog';
+import { UserBeforeAndAfterDialogComponent } from './components/user-before-and-after-dialog/user-before-and-after-dialog.component';
 
 @Component({
   selector: 'app-root',
@@ -16,49 +18,28 @@ import { IUser } from './interfaces/iuser';
 export class AppComponent implements OnInit {
   userSelected: IUser = {} as IUser; // Copy user selected to traceability
   userSelectedIndex: number | undefined;
-  
+
   usersList: UsersListResponse = [];
   genresList: GenresListResponse = [];
   statesList: StateListResponse = [];
-  
+  private dialog = inject(MatDialog);
+
   constructor(
     private readonly _usersService: UsersService,
     private readonly _genresService: GenresService,
     private readonly _brazilianStatesService: BrazilianStateService,
     private readonly _usersPlaceholderService: UsersPlaceholderService
   ) {}
-  
+
   ngOnInit(): void {
     this.getUsers();
     this.getGenres();
     this.getBrazilianState();
     this._usersPlaceholderService
-    .getUsersPlaceHolder()
-    .subscribe((u) => console.log(u));
+      .getUsersPlaceHolder()
+      .subscribe((u) => console.log(u));
   }
-  
-  getBrazilianState() {
-    this._brazilianStatesService
-    .getStates()
-    .subscribe(
-      (statesListResponse) => (this.statesList = statesListResponse)
-    );
-  }
-  
-  getUsers() {
-    this._usersService
-    .getUsers()
-    .subscribe((usersListResponse) => (this.usersList = usersListResponse));
-  }
-  
-  getGenres() {
-    this._genresService
-    .getGenres()
-    .subscribe(
-      (genresListResponse) => (this.genresList = genresListResponse)
-    );
-  }
-  
+
   onUserSelected(userIndex: number) {
     const userFound = this.usersList[userIndex];
     if (userFound) {
@@ -71,5 +52,60 @@ export class AppComponent implements OnInit {
 
   showRealUser() {
     console.log(this.usersList);
+  }
+
+  onFormSubmit() {
+    if (this.userSelectedIndex === undefined) return;
+    const original = this.usersList[this.userSelectedIndex];
+
+    this.openBeforeAndAfterDialog(
+      original,
+      this.userSelected,
+      this.userSelectedIndex
+    );
+  }
+
+  openBeforeAndAfterDialog(
+    originalUser: IUser,
+    updatedUser: IUser,
+    userSelectedIndex: number
+  ) {
+    const dialogRef = this.dialog.open(UserBeforeAndAfterDialogComponent, {
+      // O Material joga esse objeto dentro de um injection token
+      data: {
+        originalUser,
+        updatedUser,
+      },
+      minWidth: '70%',
+    });
+    dialogRef.afterClosed().subscribe((r) => {
+      if (r) this.confirmUserUpdate(updatedUser, userSelectedIndex);
+    });
+  }
+
+  confirmUserUpdate(updatedUser: IUser, userSelectedIndex: number) {
+    this.usersList[userSelectedIndex] = structuredClone(updatedUser); 
+  }
+
+  private getBrazilianState() {
+    this._brazilianStatesService
+      .getStates()
+      .subscribe(
+        (statesListResponse) => (this.statesList = statesListResponse)
+      );
+  }
+
+  private getUsers() {
+    this._usersService
+      .getUsers()
+      .subscribe((usersListResponse) => (this.usersList = usersListResponse));
+  }
+
+  private getGenres() {
+    this._genresService
+      .getGenres()
+      .subscribe(
+        (genresListResponse) => (this.genresList = genresListResponse)
+      );
   }
 }

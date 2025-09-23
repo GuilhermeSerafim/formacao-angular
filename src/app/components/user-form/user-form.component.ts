@@ -1,8 +1,11 @@
 import {
   Component,
+  ElementRef,
+  EventEmitter,
   Input,
   OnChanges,
   OnInit,
+  Output,
   QueryList,
   SimpleChanges,
   ViewChildren,
@@ -10,11 +13,12 @@ import {
 import { GenresListResponse } from '../../types/genres-list-response';
 import { StateListResponse } from '../../types/states-list-response';
 import { IUser } from '../../interfaces/iuser';
-import { NgModel } from '@angular/forms';
+import { NgForm, NgModel } from '@angular/forms';
 import { getPasswordStrengthValue } from '../../../utils/get-password-strength-value';
 import { convertPtBrDateToDateObj } from '../../../utils/convert-pt-br-date-obj';
 import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 import { convertDateObjToPtBrDate } from '../../../utils/convert-date-obj-to-pt-br-date';
+import { IGenre } from '../../interfaces/igenre';
 
 // 📌 Ordem Simplificada dos Hooks
 // constructor → a classe do componente é criada.
@@ -37,11 +41,16 @@ export class UserFormComponent implements OnChanges, OnInit {
   maxDate: Date | null = null;
   dateValue: Date | null = null;
   displayedColumns: string[] = ['title', 'band', 'genre', 'favorite'];
+  filteredGenresList: GenresListResponse = [];
 
   @Input() genresList: GenresListResponse = [];
   @Input() statesList: StateListResponse = [];
   @Input() userSelected: IUser = {} as IUser;
   @ViewChildren(NgModel) controls!: QueryList<NgModel>;
+
+  @Output('onFormSubmit') onFormSubmitEmitt = new EventEmitter<void>();
+
+  constructor(private readonly _el: ElementRef) {}
 
   ngOnInit(): void {
     this.setMinAndMaxDate();
@@ -54,6 +63,7 @@ export class UserFormComponent implements OnChanges, OnInit {
       this.recalculateValidatorFor('senha');
       this.onPasswordChange(this.userSelected.password);
       this.setBirthDateToDatePicker();
+      this.filteredGenresList = this.genresList;
     }
   }
 
@@ -81,7 +91,43 @@ export class UserFormComponent implements OnChanges, OnInit {
     this.userSelected.birthDate = convertDateObjToPtBrDate(event.value);
   }
 
+  displayFn(genreId: number) {
+    const genreFound = this.genresList.find((genre) => genre.id === genreId);
+    return genreFound ? genreFound.description : '';
+  }
 
+  filterGenres(text: string) {
+    // O autocomplete às vezes envia o ID (número) em vez da descrição.
+    // Se for número, retorna direto para evitar erro no acesso de propriedades.
+    if (typeof text == 'number') return;
+    const searchTerm = text.trim().toLowerCase();
+    this.filteredGenresList = this.genresList.filter((genre) =>
+      genre.description.trim().toLowerCase().includes(searchTerm)
+    );
+  }
+
+  isAnyCheckboxChecked(): boolean {
+    return this.userSelected.musics.some((m) => m.isFavorite);
+  }
+
+  onFormSubmit(form: NgForm) {
+    if (form.invalid) {
+      this.focusOnInvalidControl(form);
+      return;
+    }
+    this.onFormSubmitEmitt.emit();
+  }
+
+  focusOnInvalidControl(form: NgForm) {
+    for (const control of Object.keys(form.controls)) {
+      if (form.controls[control].invalid) {
+        const invalidControl: HTMLElement =
+          this._el.nativeElement.querySelector(`[name=${control}]`);
+        invalidControl.focus();
+        break;
+      }
+    }
+  }
 
   private setMinAndMaxDate() {
     this.minDate = new Date(new Date().getFullYear() - 100, 0, 1);

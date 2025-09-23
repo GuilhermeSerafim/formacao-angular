@@ -1,6 +1,11 @@
 <mat-card>
   <mat-card-content>
-    <form class="user-form" #userForm="ngForm" appPasswordConfirmationValidator>
+    <form
+      class="user-form"
+      #userForm="ngForm"
+      appPasswordConfirmationValidator
+      (ngSubmit)="onFormSubmit(userForm)"
+    >
       <div class="user-form__row">
         <mat-form-field class="user-form__item user-form__item-100">
           <mat-label>Nome</mat-label>
@@ -181,25 +186,111 @@
           >
             <ng-container matColumnDef="title">
               <th mat-header-cell *matHeaderCellDef>Título</th>
-              <td mat-cell *matCellDef="let element">{{ element.title }}</td>
+              <td mat-cell *matCellDef="let element; let i = index">
+                <div class="user-form__row">
+                  <mat-form-field class="user-form__item">
+                    <mat-label>Título</mat-label>
+                    <input
+                      type="text"
+                      [name]="'title-' + i"
+                      matInput
+                      ngModel
+                      required
+                      [(ngModel)]="element.title"
+                    />
+                    <mat-error
+                      >O <strong>Título</strong> é obrigatório.</mat-error
+                    >
+                  </mat-form-field>
+                </div>
+              </td>
             </ng-container>
             <ng-container matColumnDef="band">
               <th mat-header-cell *matHeaderCellDef>Banda</th>
-              <td mat-cell *matCellDef="let element">{{ element.band }}</td>
+              <td mat-cell *matCellDef="let element; let i = index">
+                <div class="user-form__row">
+                  <mat-form-field class="user-form__item">
+                    <mat-label>Banda</mat-label>
+                    <input
+                      type="text"
+                      [name]="'band-' + i"
+                      matInput
+                      ngModel
+                      required
+                      [(ngModel)]="element.band"
+                    />
+                    <mat-error
+                      >A <strong>Banda</strong> é obrigatória.</mat-error
+                    >
+                  </mat-form-field>
+                </div>
+              </td>
             </ng-container>
             <ng-container matColumnDef="genre">
               <th mat-header-cell *matHeaderCellDef>Gênero</th>
-              <td mat-cell *matCellDef="let element">{{ element.genre }}</td>
+              <td mat-cell *matCellDef="let element; let i = index">
+                <div class="user-form__row">
+                  <mat-form-field class="user-form__item">
+                    <mat-label>Gênero</mat-label>
+                    <input
+                      type="text"
+                      [name]="'genrer-' + i"
+                      matInput
+                      required
+                      [(ngModel)]="element.genre"
+                      [matAutocomplete]="auto"
+                      (ngModelChange)="filterGenres($event)"
+                    />
+                    <!-- 
+                      O Angular Material espera que displayWith seja apenas uma referência de função.
+                      Quando passamos "displayFn" diretamente, o contexto do "this" pode se perder
+                      (o Angular chamaria a função "solta", sem saber que ela pertence ao componente).
+
+                      Usar "displayFn.bind(this)" cria uma cópia da função já amarrada ao componente,
+                      garantindo que o "this" dentro de displayFn continue apontando para a instância
+                      do componente. Assim, temos acesso correto às propriedades, como this.genresList.
+                    -->
+                    <mat-autocomplete
+                      #auto="matAutocomplete"
+                      [displayWith]="displayFn.bind(this)"
+                    >
+                      @for (genre of filteredGenresList; track $index) {
+                      <mat-option [value]="genre.id">{{
+                        genre.description
+                      }}</mat-option>
+                      }
+                    </mat-autocomplete>
+                    <mat-error
+                      >O <strong>Gênero</strong> é obrigatório.</mat-error
+                    >
+                  </mat-form-field>
+                </div>
+              </td>
             </ng-container>
             <ng-container matColumnDef="favorite">
               <th mat-header-cell *matHeaderCellDef>Favorita</th>
-              <td mat-cell *matCellDef="let element">{{ element.isFavorite }}</td>
+              <td mat-cell *matCellDef="let element; let i = index">
+                <!-- Lógica de desabilitação: -->
+                <!-- 
+                  Se algum checkbox já estiver marcado (isAnyCheckboxChecked() === true)
+                  E o checkbox atual não for o que já está marcado (!element.isFavorite)
+                  → Então esse checkbox fica desabilitado. 
+                -->
+                <mat-checkbox
+                  [name]="'isFavorite-' + i"
+                  [(ngModel)]="element.isFavorite"
+                  [disabled]="isAnyCheckboxChecked() && !element.isFavorite"
+                ></mat-checkbox>
+              </td>
             </ng-container>
 
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-            <tr mat-row *matRowDef="let row; columns: displayedColumns "></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
           </table>
         </div>
+      </div>
+      <div class="user-form__row user-form__button-container">
+        <button type="submit" mat-flat-button>Salvar</button>
       </div>
     </form>
   </mat-card-content>

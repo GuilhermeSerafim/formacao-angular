@@ -1,0 +1,102 @@
+<h2 mat-dialog-title>Resumo das alterações</h2>
+<mat-dialog-content class="mat-typography">
+  <div class="infos">
+    <div class="infos__row">
+      <div class="infos__item infos__header infos__header--border-top-left">
+        Antes
+      </div>
+      <div class="infos__item infos__header infos__header--border-top-right">
+        Depois
+      </div>
+    </div>
+    <div class="infos__row">
+      <div class="infos__item">
+        <strong>Nome:</strong> {{ data.originalUser.name }}
+      </div>
+      <div class="infos__item">
+        <strong>Nome:</strong> {{ data.updatedUser.name }}
+      </div>
+    </div>
+    <div class="infos__row">
+      <div class="infos__item">
+        <strong>Usuário:</strong> {{ data.originalUser.username }}
+      </div>
+      <div class="infos__item">
+        <strong>Usuário:</strong> {{ data.updatedUser.username }}
+      </div>
+    </div>
+    <div class="infos__row">
+      <div class="infos__item">
+        <strong>E-mail:</strong> {{ data.originalUser.email }}
+      </div>
+      <div class="infos__item">
+        <strong>E-mail:</strong> {{ data.updatedUser.email }}
+      </div>
+    </div>
+    <div class="infos__row">
+      <div class="infos__item">
+        <strong>Data de Nascimento:</strong> {{ data.originalUser.birthDate }}
+      </div>
+      <div class="infos__item">
+        <strong>Data de Nascimento:</strong> {{ data.updatedUser.birthDate }}
+      </div>
+    </div>
+    <div class="infos__row">
+      <div class="infos__item">
+        <strong>Estado:</strong>
+        {{ data.originalUser.state | statesDescription }}
+      </div>
+      <div class="infos__item">
+        <strong>Estado</strong> {{ data.updatedUser.state | statesDescription }}
+      </div>
+    </div>
+    @for (originalMusic of data.originalUser.musics; track $index; let i =
+    $index) {
+    <div class="infos__row">
+      <div class="infos__item">
+        <strong>Música {{ i + 1 }} - Título : </strong>
+        {{ originalMusic.title }}
+      </div>
+      <div class="infos__item">
+        <strong>Música {{ i + 1 }} - Título :</strong>
+        {{ data.updatedUser.musics[i].title }}
+      </div>
+    </div>
+    <div class="infos__row">
+      <div class="infos__item">
+        <strong>Música {{ i + 1 }} - Banda: </strong>
+        {{ originalMusic.band }}
+      </div>
+      <div class="infos__item">
+        <strong>Música {{ i + 1 }} - Banda:</strong>
+        {{ data.updatedUser.musics[i].band }}
+      </div>
+    </div>
+    <div class="infos__row">
+      <div class="infos__item">
+        <strong>Música {{ i + 1 }} - Genêro: </strong>
+        {{ originalMusic.genre | genreDescription }}
+      </div>
+      <div class="infos__item">
+        <strong>Música {{ i + 1 }} - Genêro:</strong>
+        {{ data.updatedUser.musics[i].genre | genreDescription }}
+      </div>
+    </div>
+    <div class="infos__row">
+      <div class="infos__item">
+        <strong>Música {{ i + 1 }} - Favorita: </strong>
+        {{ originalMusic.isFavorite | isFavoriteDescription}}
+      </div>
+      <div class="infos__item">
+        <strong>Música {{ i + 1 }} - Favorita:</strong>
+        {{ data.updatedUser.musics[i].isFavorite | isFavoriteDescription}}
+      </div>
+    </div>
+
+    }
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close color="warn">Cancelar</button>
+  <button mat-raised-button [mat-dialog-close]="true" color="primary">Confirmar</button>
+</mat-dialog-actions>

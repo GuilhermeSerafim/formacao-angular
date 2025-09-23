@@ -38,5 +38,8 @@ export class GenresService {
     });
     // return of(this.genresList);
   }
-  constructor() {}
+
+  getGenreDescription(genreId: number): string {
+    return this.genresList.find((g) => g.id === genreId)?.description ?? '';
+  }
 }
