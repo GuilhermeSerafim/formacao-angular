@@ -58,11 +58,19 @@ export class AppComponent implements OnInit {
     if (this.userSelectedIndex === undefined) return;
     const original = this.usersList[this.userSelectedIndex];
 
-    this.openBeforeAndAfterDialog(original, this.userSelected);
+    this.openBeforeAndAfterDialog(
+      original,
+      this.userSelected,
+      this.userSelectedIndex
+    );
   }
 
-  openBeforeAndAfterDialog(originalUser: IUser, updatedUser: IUser) {
-    this.dialog.open(UserBeforeAndAfterDialogComponent, {
+  openBeforeAndAfterDialog(
+    originalUser: IUser,
+    updatedUser: IUser,
+    userSelectedIndex: number
+  ) {
+    const dialogRef = this.dialog.open(UserBeforeAndAfterDialogComponent, {
       // O Material joga esse objeto dentro de um injection token
       data: {
         originalUser,
@@ -70,6 +78,13 @@ export class AppComponent implements OnInit {
       },
       minWidth: '70%',
     });
+    dialogRef.afterClosed().subscribe((r) => {
+      if (r) this.confirmUserUpdate(updatedUser, userSelectedIndex);
+    });
+  }
+
+  confirmUserUpdate(updatedUser: IUser, userSelectedIndex: number) {
+    this.usersList[userSelectedIndex] = structuredClone(updatedUser); 
   }
 
   private getBrazilianState() {
