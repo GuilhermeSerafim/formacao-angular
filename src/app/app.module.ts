@@ -7,14 +7,13 @@ import localePt from '@angular/common/locales/pt';
 
 import { provideHttpClient } from '@angular/common/http';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { ComponentsModule } from './components/components.module';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 
 registerLocaleData(localePt, 'pt-BR');
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, ComponentsModule],
+  imports: [BrowserModule],
   providers: [
     { provide: LOCALE_ID, useValue: 'pt-BR' },
     { provide: DEFAULT_CURRENCY_CODE, useValue: 'BRL' },
