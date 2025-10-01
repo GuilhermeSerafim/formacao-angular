@@ -8,12 +8,14 @@ import localePt from '@angular/common/locales/pt';
 import { provideHttpClient } from '@angular/common/http';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
+import { FormControlComponent } from './EXEMPLOS/form-control/form-control.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 registerLocaleData(localePt, 'pt-BR');
 
 @NgModule({
-  declarations: [AppComponent],
-  imports: [BrowserModule],
+  declarations: [AppComponent, FormControlComponent],
+  imports: [BrowserModule, ReactiveFormsModule],
   providers: [
     { provide: LOCALE_ID, useValue: 'pt-BR' },
     { provide: DEFAULT_CURRENCY_CODE, useValue: 'BRL' },
