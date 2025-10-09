@@ -1,5 +1,8 @@
-<label for="name">Nome:</label> <input type="text" [formControl]="nome" (input)="inputAlterado()" />
+<label for="name">Nome:</label>
+<input type="text" [formControl]="nome" (input)="inputAlterado()" />
 <p>Valor: {{ nome.value }}</p>
 
 <button (click)="mostrarStatus()">Mostrar Status</button>
 <button (click)="alterarValor()">Alterar Valor</button>
+<button (click)="desabilitar()">Desabilita</button>
+<button (click)="habilitar()">Habilita</button>
