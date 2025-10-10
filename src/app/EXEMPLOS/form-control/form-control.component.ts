@@ -7,7 +7,7 @@ import { FormControl, Validators } from '@angular/forms';
   styleUrl: './form-control.component.scss',
 })
 export class FormControlComponent implements OnInit {
-  nome = new FormControl({ value: '', disabled: true }, Validators.required);
+  nome = new FormControl('', Validators.required);
   ngOnInit(): void {
     console.log(this.nome);
   }
@@ -25,5 +25,8 @@ export class FormControlComponent implements OnInit {
   }
   desabilitar() {
     this.nome.disable();
+  }
+  reset() {
+    this.nome.reset();
   }
 }
