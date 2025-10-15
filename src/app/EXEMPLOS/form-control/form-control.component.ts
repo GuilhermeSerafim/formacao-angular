@@ -7,25 +7,36 @@ import { FormControl, Validators } from '@angular/forms';
   styleUrl: './form-control.component.scss',
 })
 export class FormControlComponent implements OnInit {
-  nome = new FormControl('', Validators.required);
+  // nome = new FormControl('Valor inicial', Validators.required);
+  nome = new FormControl('Valor inicial', {
+    nonNullable: true,
+    validators: Validators.required,
+  });
+
   ngOnInit(): void {
     console.log(this.nome);
   }
+
   mostrarStatus() {
     console.log(this.nome);
   }
+
   alterarValor() {
     this.nome.setValue('Guilherme');
   }
+
   inputAlterado() {
     console.log(this.nome.value);
   }
+
   habilitar() {
     this.nome.enable();
   }
+
   desabilitar() {
     this.nome.disable();
   }
+
   reset() {
     this.nome.reset();
   }
