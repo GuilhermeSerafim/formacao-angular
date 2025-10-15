@@ -38,6 +38,7 @@ export class FormControlComponent implements OnInit {
   }
 
   reset() {
-    this.nome.reset();
+    // Passa um valor, mas torna o campo não tocado e não sujo
+    this.nome.reset("Valor Reset");
   }
 }
