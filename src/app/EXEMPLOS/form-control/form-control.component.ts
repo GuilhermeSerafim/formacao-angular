@@ -7,14 +7,16 @@ import { FormControl, Validators } from '@angular/forms';
   styleUrl: './form-control.component.scss',
 })
 export class FormControlComponent implements OnInit {
-  nome = new FormControl('Valor inicial', [
-    Validators.required,
-    Validators.minLength(6),
-  ]);
-  // nome = new FormControl('Valor inicial', {
-  //   nonNullable: true,
-  //   validators: Validators.required,
-  // });
+  // nome = new FormControl('Valor inicial', [
+  //   Validators.required,
+  //   Validators.minLength(6),
+  // ]);
+  nome = new FormControl('Valor inicial', {
+    nonNullable: true,
+    validators: Validators.required,
+    // obs: Os observables emitidos por valuesChanges e statusChanges são emitidos de acordo com o updateOn
+    updateOn: 'blur'
+  });
 
   ngOnInit(): void {
     console.log(this.nome);
