@@ -21,6 +21,8 @@ export class FormControlComponent implements OnInit {
 
     // Sempre que mudar o valor, o valueChanges emiti um Observable, se você estiver inscrito, consegue capturar se inscrevendo nele
     this.nome.valueChanges.subscribe((r) => console.log('valuesChanges:', r));
+
+    this.nome.statusChanges.subscribe((r) => console.log('statusChanges', r));
   }
 
   mostrarStatus() {
