@@ -7,11 +7,14 @@ import { FormControl, Validators } from '@angular/forms';
   styleUrl: './form-control.component.scss',
 })
 export class FormControlComponent implements OnInit {
-  // nome = new FormControl('Valor inicial', Validators.required);
-  nome = new FormControl('Valor inicial', {
-    nonNullable: true,
-    validators: Validators.required,
-  });
+  nome = new FormControl('Valor inicial', [
+    Validators.required,
+    Validators.minLength(6),
+  ]);
+  // nome = new FormControl('Valor inicial', {
+  //   nonNullable: true,
+  //   validators: Validators.required,
+  // });
 
   ngOnInit(): void {
     console.log(this.nome);
@@ -39,6 +42,6 @@ export class FormControlComponent implements OnInit {
 
   reset() {
     // Passa um valor, mas torna o campo não tocado e não sujo
-    this.nome.reset("Valor Reset");
+    this.nome.reset('Valor Reset');
   }
 }

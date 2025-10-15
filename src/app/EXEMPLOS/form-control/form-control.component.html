@@ -1,6 +1,7 @@
 <label for="name">Nome:</label>
 <input type="text" [formControl]="nome" (input)="inputAlterado()" />
 <p>Valor: {{ nome.value }}</p>
+<p>Válido: {{ nome.valid }}</p>
 
 <button (click)="mostrarStatus()">Mostrar Status</button><br/>
 <button (click)="alterarValor()">Alterar Valor</button><br/>
